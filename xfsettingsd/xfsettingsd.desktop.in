@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Xfsettingsd
+_Comment=The Xfce Settings Daemon
+Exec=xfsettingsd
+Icon=applications-system
+Terminal=false
+Type=Application
+StartupNotify=false
+OnlyShowIn=XFCE;

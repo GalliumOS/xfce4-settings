@@ -1,0 +1,1615 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce4-settings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-02 22:46+0200\n"
+"PO-Revision-Date: 2013-11-19 13:19+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce/language/lt/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:1
+#: ../dialogs/accessibility-settings/xfce4-accessibility-settings.desktop.in.h:1
+msgid "Accessibility"
+msgstr "Prieinamumas"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:2
+msgid "Configure keyboard and mouse accessibility"
+msgstr "Konfigūruoti klaviatūros ir pelės nustatymus"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:3
+msgid "_Enable assistive technologies"
+msgstr "Į_jungti pagalbines technologijas"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:4
+msgid ""
+"If enabled, the session manager will start the required applications for "
+"screen readers and magnifiers"
+msgstr "Jei įjungta, seanso tvarkyklė paleis reikalingas programas skirtas ekrano skaityklėms ir didintuvams"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:5
+msgid ""
+"Assistive technologies will be available the\n"
+"next time you login"
+msgstr "Pagalbinės technologijos bus prieinamos\nkitą kart prisijungus"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:7
+msgid "No AT-SPI provider was found on your system"
+msgstr "Jūsų sistemoje nerastas joks AT-SPI tiekėjas"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:8
+msgid "Assistive _Technologies"
+msgstr ""
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:9
+msgid "_Use sticky keys"
+msgstr ""
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:10
+msgid ""
+"When selected, modifier keys (such as Control, Alt, and Shift) do not need "
+"to be held down (they can be pressed and then released) when multiple keys "
+"would normally need to be pressed at the same time"
+msgstr "Kai pasirenkamas vykdomasis klavišas (toks kaip Control, Alt ir Shift) nebereikia laikyti nuspausto (juos galima paspausti ir atleisti), kai tuo tarpu paprastai reikia nuspausti kelis klavišus kartu"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:11
+msgid "_Lock sticky keys"
+msgstr "_Užrakinti lipniuosius klavišus"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:12
+msgid ""
+"When selected, modifier keys (such as Control, Alt, and Shift) will remain "
+"locked in the pressed state until pressed again"
+msgstr "Kai pasirenkamas vykdomasis klavišas (toks kaip Control, Alt ir Shift) liks nuspaustas"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:13
+msgid "Disable sticky keys if two keys are _pressed"
+msgstr ""
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:14
+msgid ""
+"When selected, the \"sticky keys\" feature will be disabled if two keys are "
+"pressed simultaneously"
+msgstr "Pasirinkus „lipnių klavišų“ funkcija bus išjungta jei du klavišai paspaudžiami kartu"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:15
+msgid "Sticky Keys"
+msgstr "Lipnūs klavišai"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:16
+msgid "Use slow _keys"
+msgstr "Na_udoti lėtus klavišus"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:17
+msgid ""
+"To help prevent accidental keystrokes, slow keys requires that a key is held"
+" for a certain minimum amount of time before the keystroke will be accepted"
+msgstr "Norint apsaugoti nuo atsitiktinių klavišų paspaudimų, lėti klavišai turi būti palaikyti nuspausti tam tikrą laiko tarpą, prieš tai kai jis bus priimtas"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:18
+msgid "Acceptance _delay:"
+msgstr "Priėmimo _delsa:"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:19
+msgid ""
+"The amount of time, in milliseconds, that must elapse before a keystroke "
+"will be accepted"
+msgstr "Laiko kiekis milisekundėmis, kuris turi praeiti kol klavišo paspaudimai bus vėl priimami"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:20
+msgid "Slow Keys"
+msgstr "Lėti klavišai"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:21
+msgid "Use _bounce keys"
+msgstr "Naudoti tamprius _klavišus"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:22
+msgid ""
+"To help prevent accidental multiple keystrokes, bounce keys imposes a "
+"minimum delay between keystrokes"
+msgstr "Norint apsaugoti nuo atsitiktinių klavišų paspaudimų, tamprūs klavišai naudoja minimalią delsą tarp klavišų paspaudimų"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:23
+msgid "K_eystroke delay:"
+msgstr "_Klavišo paspaudimo delsa:"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:24
+msgid "The amount of time, in milliseconds, required between keystrokes"
+msgstr "Laiko kiekis milisekundėmis, tarp klavišų paspaudimų"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:25
+msgid "Bounce Keys"
+msgstr "Pasikartojantys klavišai"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:26
+msgid "Keyboa_rd"
+msgstr "K_laviatūra"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:27
+msgid "_Use mouse emulation"
+msgstr "_Naudoti pelės emuliaciją"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:28
+msgid ""
+"When selected, the mouse pointer can be controlled using the keyboard number"
+" pad"
+msgstr "Pasirinkus pelės žymeklis gali būti valdomas klaviatūros skaičių sritimi"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:29
+msgid "R_epeat interval:"
+msgstr "Ka_rtojimo intervalas:"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:30
+msgid "_Acceleration delay:"
+msgstr "P_agreičio delsa:"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:31
+msgid "Acceleration t_ime:"
+msgstr ""
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:32
+msgid "Ma_ximum speed:"
+msgstr ""
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:33
+msgid "Acceleration _profile:"
+msgstr "Pagreičio _profilis:"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:34
+msgid "msec"
+msgstr "milisek."
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:35
+msgid "pixels/sec"
+msgstr "pikseliai/s"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:36
+msgid ""
+"The time, in milliseconds, between the initial key press and first repeated "
+"motion event"
+msgstr "Laikas milisekundėmis, tarp pirmo klavišo paspaudimo ir pirmo pasikartojančio judesio įvykio"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:37
+msgid "The time, in milliseconds, between repeated motion events"
+msgstr "Laikas milisekundėmis, tarp pasikartojančių judėjimo įvykių"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:38
+msgid "The ramp used to reach maximum pointer speed"
+msgstr "Rampa naudojama pasiekti didžiausią žymeklio greitį"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:39
+msgid "The maximum pointer speed after acceleration"
+msgstr "Didžiausias žymeklio greitis po greitinimo"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:40
+msgid "The time, in milliseconds, to get to maximum speed"
+msgstr "Laikas milisekundėmis, didžiausio greičio gavimui"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:41
+msgid "Mouse Emulation"
+msgstr "Pelės emuliacija"
+
+#: ../dialogs/accessibility-settings/accessibility-dialog.glade.h:42
+msgid "_Mouse"
+msgstr "_Pelė"
+
+#: ../dialogs/accessibility-settings/main.c:43
+#: ../dialogs/appearance-settings/main.c:95
+#: ../dialogs/display-settings/main.c:137
+#: ../dialogs/keyboard-settings/main.c:39 ../dialogs/mouse-settings/main.c:79
+msgid "Settings manager socket"
+msgstr "Nustatymų tvarkyklės lizdas"
+
+#: ../dialogs/accessibility-settings/main.c:43
+#: ../dialogs/appearance-settings/main.c:95
+#: ../dialogs/display-settings/main.c:137
+#: ../dialogs/keyboard-settings/main.c:39 ../dialogs/mouse-settings/main.c:79
+msgid "SOCKET ID"
+msgstr "LIZDO ID"
+
+#: ../dialogs/accessibility-settings/main.c:44
+#: ../dialogs/appearance-settings/main.c:96
+#: ../dialogs/display-settings/main.c:138
+#: ../dialogs/keyboard-settings/main.c:40 ../dialogs/mime-settings/main.c:40
+#: ../dialogs/mouse-settings/main.c:80 ../xfce4-settings-editor/main.c:43
+#: ../xfsettingsd/main.c:77 ../xfce4-settings-manager/main.c:40
+msgid "Version information"
+msgstr "Versijos infomacija"
+
+#: ../dialogs/accessibility-settings/main.c:192
+#: ../dialogs/appearance-settings/main.c:1006
+#: ../dialogs/display-settings/main.c:1943
+#: ../dialogs/keyboard-settings/main.c:76 ../dialogs/mime-settings/main.c:62
+#: ../dialogs/mouse-settings/main.c:1611 ../xfce4-settings-editor/main.c:63
+#: ../xfsettingsd/main.c:187 ../xfce4-settings-manager/main.c:61
+#, c-format
+msgid "Type '%s --help' for usage."
+msgstr "Bandykite „%s –help“, jei norite išsamesnės informacijos."
+
+#: ../dialogs/accessibility-settings/main.c:211
+#: ../dialogs/appearance-settings/main.c:1025
+#: ../dialogs/display-settings/main.c:1962
+#: ../dialogs/keyboard-settings/main.c:92 ../dialogs/mime-settings/main.c:81
+#: ../dialogs/mouse-settings/main.c:1630 ../xfce4-settings-editor/main.c:82
+#: ../xfsettingsd/main.c:203 ../xfce4-settings-manager/main.c:77
+msgid "The Xfce development team. All rights reserved."
+msgstr "Xfce kūrėjų komanda. Visos teisės saugomos."
+
+#: ../dialogs/accessibility-settings/main.c:212
+#: ../dialogs/appearance-settings/main.c:1026
+#: ../dialogs/display-settings/main.c:1963
+#: ../dialogs/keyboard-settings/main.c:93 ../dialogs/mime-settings/main.c:82
+#: ../dialogs/mouse-settings/main.c:1631 ../xfce4-settings-editor/main.c:83
+#: ../xfsettingsd/main.c:204 ../xfce4-settings-manager/main.c:78
+#, c-format
+msgid "Please report bugs to <%s>."
+msgstr "Apie klaidas pranešti <%s>."
+
+#: ../dialogs/accessibility-settings/xfce4-accessibility-settings.desktop.in.h:2
+msgid "Improve keyboard and mouse accessibility"
+msgstr "Pagerinti klaviatūros ir pelės pasiekiamumą"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:1
+#: ../dialogs/appearance-settings/xfce-ui-settings.desktop.in.h:1
+msgid "Appearance"
+msgstr "Išvaizda"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:2
+#: ../dialogs/appearance-settings/xfce-ui-settings.desktop.in.h:2
+msgid "Customize the look of your desktop"
+msgstr "Derinkite darbastalio išvaizdą"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:3
+msgid "St_yle"
+msgstr "St_ilius"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:4
+msgid "_Icons"
+msgstr "_Piktogramos"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:5
+msgid ""
+"This font will be used as the default font used when drawing user interface "
+"text"
+msgstr "Šis šriftas bus naudojamas kaip numatytasis, piešiant naudotojo sąsajos tekstą"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:6
+msgid "Select a default font"
+msgstr "Pasirinkite numatytąjį šriftą"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:7
+msgid "Default Fon_t"
+msgstr "Numatytasis š_riftas"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:8
+msgid ""
+"Many fonts contain information that provides extra hints as to how best draw"
+" the font; pick whichever looks best according to personal preference"
+msgstr "Dauguma šriftų turi informaciją kuri suteikia papildomą taškinę korekciją, taip kad šriftas atrodytų geriausiai; pasirinkite tą kuri jūsų nuomone atrodo geriausiai"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:9
+msgid ""
+"Font quality on a TFT or LCD screen can be greatly improved by choosing the "
+"correct sub-pixel order of the screen"
+msgstr "Šriftų kokybė TFT ar LCD ekranuose gali būti smarkiai pagerinta pasirinkus teisingą ekrano popikselinę tvarką"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:10
+msgid "Sub-_pixel order:"
+msgstr "Po_pikselinė tvarka:"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:11
+msgid "Hintin_g:"
+msgstr ""
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:12
+msgid "_Enable anti-aliasing"
+msgstr ""
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:13
+msgid ""
+"Anti-aliasing, or font smoothing, can improve the look of text on the screen"
+msgstr "Glodinimas arba šriftų lyginimas gali pagerinti teksto išvaizdą ekrane"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:14
+msgid "Rendering"
+msgstr "Atvaizdavimas"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:15
+msgid "Custom _DPI setting:"
+msgstr "Pasirinktiniai _DPI nustatymai:"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:16
+msgid ""
+"Override the detected monitor resolution if fonts look too large or too "
+"small"
+msgstr "Perrašyti nustatytą ekrano raišką, jei šriftas atrodo per didelis ar per mažas"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:17
+msgid "DPI"
+msgstr "DPI"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:18
+msgid "_Fonts"
+msgstr "Šri_ftai"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:19
+msgid "Specify what should be displayed in toolbar items"
+msgstr "Nurodykite kas turi būti rodoma įrankių juostų elementuose"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:20
+msgid "_Toolbar Style"
+msgstr "Į_rankių juostos stilius"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:21
+msgid "Show images on _buttons"
+msgstr "Rodyti ženkliukus ant _mygtukų"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:22
+msgid "Specify whether icons should be displayed next to text in buttons"
+msgstr "Nurodykite ar piktogramos turi būti rodomos šalia teksto mygtukuose"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:23
+msgid "Show images in _menus"
+msgstr "Rodyti ženkliukus _meniu"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:24
+msgid "Specify whether icons should be displayed next to items in menus"
+msgstr "Nurodykite ar piktogramos turi būti rodomos šalia elementų meniu"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:25
+msgid "Enable e_ditable accelerators"
+msgstr "Įjungti _redaguojamus greituosius klavišus"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:26
+msgid ""
+"If selected, keyboard shortcuts for menu items can be changed by hovering "
+"the mouse over the menu item and pressing the new key combination for the "
+"shortcut"
+msgstr "Jei pasirinkta, klaviatūros susiejimai gali būti keičiami užvedus virš jų pelę ir paspaudus naują susiejimo kombinaciją"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:27
+msgid "Menus and Buttons"
+msgstr "Meniu ir mygtukai"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:28
+msgid "Enable _event sounds"
+msgstr "Įjungti į_vykių garsus"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:29
+msgid "Enable or disable event sounds globally (requires \"Canberra\" support)"
+msgstr "Įjungti arba išjungti įvykių garsus globaliai (reikia „Canberra“ palaikymo)"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:30
+msgid "Enable input feedbac_k sounds"
+msgstr ""
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:31
+msgid ""
+"Specify whether mouse clicks and other user input will cause event sounds to"
+" play"
+msgstr "Nurodykite ar pelės spragtelėjimai ir kiti įvesties įvykiai iššauks įvykių garsus"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:32
+msgid "Event sounds"
+msgstr "Įvykių garsai"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:33
+msgid "Setti_ngs"
+msgstr ""
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:34
+#: ../dialogs/appearance-settings/main.c:892
+#: ../dialogs/display-settings/main.c:103
+#: ../dialogs/display-settings/main.c:114
+msgid "None"
+msgstr "Nėra"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:35
+msgid "Slight"
+msgstr "Lengvas"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:36
+msgid "Medium"
+msgstr "Vidutinis"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:37
+msgid "Full"
+msgstr "Pilnas"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:38
+msgid "Icons"
+msgstr "Piktogramos"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:39
+msgid "Text"
+msgstr "Tekstas"
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:40
+msgid "Text under icons"
+msgstr ""
+
+#: ../dialogs/appearance-settings/appearance-dialog.glade.h:41
+msgid "Text next to icons"
+msgstr ""
+
+#: ../dialogs/appearance-settings/main.c:355
+#, c-format
+msgid ""
+"Warning: this icon theme has no cache file. You can create this by running "
+"<i>gtk-update-icon-cache %s/%s/</i> in a terminal emulator."
+msgstr ""
+
+#: ../dialogs/appearance-settings/main.c:765
+#, c-format
+msgid "File is larger than %d MB, installation aborted"
+msgstr "Failas yra didesnis nei %d MB, įdiegimas atšauktas"
+
+#: ../dialogs/appearance-settings/main.c:770
+msgid "Failed to create temporary directory"
+msgstr "Nepavyko sukurti laikinojo aplanko"
+
+#: ../dialogs/appearance-settings/main.c:775
+msgid "Failed to extract archive"
+msgstr "Nepavyko išarchyvuoti"
+
+#: ../dialogs/appearance-settings/main.c:780
+msgid "Unknown format, only archives and directories are supported"
+msgstr "Nežinomas formatas, palaikomi tik archyvai ir aplankai"
+
+#: ../dialogs/appearance-settings/main.c:785
+#, c-format
+msgid "An unknown error, exit code is %d"
+msgstr "Nežinoma klaida, išėjimo kodas yra %d"
+
+#: ../dialogs/appearance-settings/main.c:792
+msgid "Failed to install theme"
+msgstr "Nepavyko įdiegti temos"
+
+#: ../dialogs/appearance-settings/main.c:896
+msgid "RGB"
+msgstr "RGB"
+
+#: ../dialogs/appearance-settings/main.c:900
+msgid "BGR"
+msgstr "BGR"
+
+#: ../dialogs/appearance-settings/main.c:904
+msgid "Vertical RGB"
+msgstr "Vertikalus RGB"
+
+#: ../dialogs/appearance-settings/main.c:908
+msgid "Vertical BGR"
+msgstr "Vertikalus BGR"
+
+#: ../dialogs/display-settings/confirmation-dialog.glade.h:1
+msgid "Confirmation"
+msgstr "Patvirtinimas"
+
+#: ../dialogs/display-settings/confirmation-dialog.glade.h:2
+msgid "Keep this configuration"
+msgstr "Palikti šią konfigūraciją"
+
+#: ../dialogs/display-settings/confirmation-dialog.glade.h:3
+msgid "Restore the previous configuration"
+msgstr "Atstatyti prieš tai buvusią konfigūraciją"
+
+#: ../dialogs/display-settings/confirmation-dialog.glade.h:4
+msgid "<big><b>Would you like to keep this configuration?</b></big>"
+msgstr "<big><b>Ar norite pasilikti šią konfigūraciją?</b></big>"
+
+#: ../dialogs/display-settings/confirmation-dialog.glade.h:5
+msgid ""
+"The previous configuration will be restored in 10 seconds if you do not "
+"reply to this question."
+msgstr "Jei neatsakysite į šį klausimą, po 10 sekundžių bus atstatyta buvusi konfigūracija."
+
+#: ../dialogs/display-settings/display-dialog.glade.h:1
+#: ../dialogs/display-settings/xfce-display-settings.desktop.in.h:1
+msgid "Display"
+msgstr "Ekranas"
+
+#: ../dialogs/display-settings/display-dialog.glade.h:2
+#: ../dialogs/display-settings/xfce-display-settings.desktop.in.h:2
+msgid "Configure screen settings and layout"
+msgstr "Konfigūruoti ekrano nustatymus ir išdėstymą"
+
+#: ../dialogs/display-settings/display-dialog.glade.h:3
+msgid "Ref_lection:"
+msgstr "Atspindy_s:"
+
+#: ../dialogs/display-settings/display-dialog.glade.h:4
+msgid "Ro_tation:"
+msgstr "_Pasukimas:"
+
+#: ../dialogs/display-settings/display-dialog.glade.h:5
+msgid "Refresh _rate:"
+msgstr "Atnaujinimo _dažnis:"
+
+#: ../dialogs/display-settings/display-dialog.glade.h:6
+msgid "R_esolution:"
+msgstr "R_aiška:"
+
+#: ../dialogs/display-settings/display-dialog.glade.h:7
+msgid "P_osition:"
+msgstr ""
+
+#: ../dialogs/display-settings/display-dialog.glade.h:8
+msgid "_Use this output"
+msgstr "_Įjungti"
+
+#: ../dialogs/display-settings/display-dialog.glade.h:9
+msgid "_Mirror displays"
+msgstr ""
+
+#: ../dialogs/display-settings/display-dialog.glade.h:10
+msgid "Configure _new displays when connected"
+msgstr ""
+
+#: ../dialogs/display-settings/minimal-display-dialog.glade.h:1
+msgid "Displays"
+msgstr ""
+
+#: ../dialogs/display-settings/minimal-display-dialog.glade.h:2
+msgid "Only Display 1"
+msgstr ""
+
+#: ../dialogs/display-settings/minimal-display-dialog.glade.h:3
+msgid "Mirror Displays"
+msgstr ""
+
+#: ../dialogs/display-settings/minimal-display-dialog.glade.h:4
+msgid "Extend to the right"
+msgstr ""
+
+#: ../dialogs/display-settings/minimal-display-dialog.glade.h:5
+msgid "Only Display 2"
+msgstr ""
+
+#: ../dialogs/display-settings/minimal-display-dialog.glade.h:6
+msgid "Advanced"
+msgstr ""
+
+#: ../dialogs/display-settings/minimal-display-dialog.glade.h:7
+msgid "radiobutton"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:91
+msgid "Same as"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:92
+msgid "Above"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:93
+msgid "Below"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:94
+msgid "Right of"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:95
+msgid "Left of"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:104
+msgid "Left"
+msgstr "Kairėje"
+
+#: ../dialogs/display-settings/main.c:105
+msgid "Inverted"
+msgstr "Invertuotas"
+
+#: ../dialogs/display-settings/main.c:106
+msgid "Right"
+msgstr "Dešinėje"
+
+#: ../dialogs/display-settings/main.c:115
+msgid "Horizontal"
+msgstr "Horizontalus"
+
+#: ../dialogs/display-settings/main.c:116
+msgid "Vertical"
+msgstr "Vertikalus"
+
+#: ../dialogs/display-settings/main.c:117
+msgid "Horizontal and Vertical"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:139
+msgid "Minimal interface to set up an external output"
+msgstr "Minimali sąsaja nustatyti išorinę išvestį"
+
+#: ../dialogs/display-settings/main.c:227
+#, c-format
+msgid ""
+"The previous configuration will be restored in %i seconds if you do not "
+"reply to this question."
+msgstr "Jei neatsakysite į šį klausimą po %i sekundžių bus atstatyta buvusi konfigūracija."
+
+#. Insert the mode
+#: ../dialogs/display-settings/main.c:748
+#, c-format
+msgid "%.1f Hz"
+msgstr "%.1f Hz"
+
+#: ../dialogs/display-settings/main.c:1041
+msgid "Display:"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:1046
+msgid "Resolution:"
+msgstr ""
+
+#: ../dialogs/display-settings/main.c:1233
+msgid ""
+"The last active output must not be disabled, the system would be unusable."
+msgstr "Paskutinė veikianti išvestis neturėtų būti išjungta, nes sistema bus nepanaudojama."
+
+#: ../dialogs/display-settings/main.c:1235
+msgid "Selected output not disabled"
+msgstr "Pasirinkta išvestis išjungta"
+
+#: ../dialogs/display-settings/main.c:1975
+#: ../dialogs/display-settings/xfce-randr.c:350
+#, c-format
+msgid "Unable to query the version of the RandR extension being used"
+msgstr "Nepavyko gauti naudojamos RandR plėtinio versijos"
+
+#: ../dialogs/display-settings/main.c:1976
+#: ../dialogs/display-settings/main.c:2012
+msgid "Unable to start the Xfce Display Settings"
+msgstr "Nepavyko paleisti Xfce darbastalio nustatymų"
+
+#: ../dialogs/display-settings/main.c:2007
+msgid "ATI Settings"
+msgstr "ATI nustatymai"
+
+#: ../dialogs/display-settings/main.c:2022
+msgid "Unable to launch the proprietary driver settings"
+msgstr "Nepavyko paleisti nuosavybinės tvarkyklės nustatymų"
+
+#. 1.2 is required
+#: ../dialogs/display-settings/xfce-randr.c:358
+#, c-format
+msgid ""
+"This system is using RandR %d.%d. For the display settings to work version "
+"1.2 is required at least"
+msgstr "Sistema naudoja RandR %d.%d. Ekrano nuostatom veikti reikia bent 1.2 versijos"
+
+#: ../dialogs/display-settings/xfce-randr.c:626
+msgid "Laptop"
+msgstr "Nešiojamas kompiuteris"
+
+#: ../dialogs/display-settings/xfce-randr.c:647
+msgid "Monitor"
+msgstr "Monitorius"
+
+#: ../dialogs/display-settings/xfce-randr.c:650
+msgid "Television"
+msgstr "Televizorius"
+
+#: ../dialogs/display-settings/xfce-randr.c:654
+msgid "Digital display"
+msgstr "Skaitmeninis vaizduoklis"
+
+#. Translators: "Unknown" here is used to identify a monitor for which
+#. * we don't know the vendor. When a vendor is known, the name of the
+#. * vendor is used.
+#: ../dialogs/display-settings/display-name.c:269
+msgctxt "Monitor vendor"
+msgid "Unknown"
+msgstr "Nežinomas"
+
+#. Set dialog title and icon
+#: ../dialogs/keyboard-settings/command-dialog.c:108
+msgid "Shortcut Command"
+msgstr "Susiejimo komanda"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:147
+msgid "Enter the command you want to trigger with a shortcut."
+msgstr ""
+
+#. We are editing an existing shortcut
+#: ../dialogs/keyboard-settings/command-dialog.c:165
+msgid "Shortcut:"
+msgstr "Susiejimas:"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:176
+msgid "Command:"
+msgstr "Komanda:"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:196
+msgid "Use _startup notification"
+msgstr "Naudoti _paleidimo pranešimą"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:243
+msgid "The command may not be empty."
+msgstr "Komanda negali būti tuščia."
+
+#: ../dialogs/keyboard-settings/command-dialog.c:263
+msgid "Select command"
+msgstr "Pasirinkti komandą"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:271
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:386
+msgid "All Files"
+msgstr "Visi failai"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:276
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:391
+msgid "Executable Files"
+msgstr "Vykdomi failai"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:291
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:406
+msgid "Perl Scripts"
+msgstr "Perl scenarijai"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:297
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:412
+msgid "Python Scripts"
+msgstr "Python scenarijai"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:303
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:418
+msgid "Ruby Scripts"
+msgstr "Ruby scenarijai"
+
+#: ../dialogs/keyboard-settings/command-dialog.c:309
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:424
+msgid "Shell Scripts"
+msgstr "Shell scenarijai"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:1
+msgid "Keyboard layout selection"
+msgstr "Klaviatūros išdėstymo pasirinkimas"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:2
+msgid "Select keyboard layout and variant"
+msgstr "Pasirinkite klaviatūros išdėstymą ir variantą"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:3
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.desktop.in.h:1
+msgid "Keyboard"
+msgstr "Klaviatūra"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:4
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.desktop.in.h:2
+msgid "Edit keyboard settings and application shortcuts"
+msgstr "Keiskite klaviatūros nustatymus ir programų susiejimus"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:5
+msgid "Restore num l_ock state on startup"
+msgstr "Paleidžiant atstatyti num _lock būseną"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:6
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:30
+msgid "General"
+msgstr "Bendra"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:7
+msgid "_Enable key repeat"
+msgstr "Į_jungti kartojimo režimą"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:8
+msgid ""
+"When selected, pressing and holding down a key emits the same character over"
+" and over again"
+msgstr "Pasirinkus, paspaudus ir laikant klavišą tas simbolis siunčiamas dar ir dar kartą"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:9
+msgid "_Repeat delay:"
+msgstr "_Kartojimo delsa:"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:10
+msgid "The time, in milliseconds, before a pressed key begins repeating"
+msgstr "Laikas milisekundėmis, prieš tai kai paspaustas klavišas kartojamas"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:11
+msgid "Repe_at speed:"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:12
+msgid "The rate at which keystrokes are generated while a key is pressed"
+msgstr "Dažnis kuriuo generuojami klavišų paspaudimai, kol klavišas yra paspaustas"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:13
+msgid "Typing Settings"
+msgstr "Rašymo nustatymai"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:14
+msgid "Show _blinking"
+msgstr "Rodyti _mirksintį"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:15
+msgid "Specify whether or not the text cursor blinks"
+msgstr "Nurodykite ar teksto žymeklis mirksės"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:16
+msgid "Blink _delay:"
+msgstr "Mirksėjimo _delsa:"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:17
+msgid "The delay, in milliseconds, between successive blinks of the cursor"
+msgstr "Delsa milisekundėmis, tarp sėkmingų žymeklio mirktelėjimų"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:18
+msgid "Cursor"
+msgstr "Žymeklis"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:19
+msgid "_Test area:"
+msgstr "Vieta _pabandymui:"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:20
+msgid "Beha_vior"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:21
+msgid "Define shortcuts for la_unching applications:"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:22
+msgid "Reset to _Defaults"
+msgstr "Atkurti _numatytuosius"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:23
+msgid "A_pplication Shortcuts"
+msgstr "_Programų susiejimai"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:24
+msgid "_Use system defaults"
+msgstr "Nau_doti sistemos numatytuosius"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:25
+msgid ""
+"Specifies whether the keyboard layout is controlled with this settings "
+"dialog, or by the X server"
+msgstr "Nurodo ar klaviatūros išdėstymas valdomas šiuo nustatymų langu ar X serveriu"
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:26
+msgid "_Keyboard model"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:27
+msgid "Change la_yout option"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:28
+msgid "Co_mpose key"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:29
+msgid "Move currently selected item up by one row"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:30
+msgid "Move currently selected item down by one row"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:31
+msgid "Key_board layout"
+msgstr ""
+
+#: ../dialogs/keyboard-settings/keyboard-dialog.glade.h:32
+msgid "_Layout"
+msgstr "_Išdėstymas"
+
+#: ../dialogs/keyboard-settings/main.c:82
+msgid "Unable to initialize GTK+."
+msgstr "Nepavyko inicializuoti GTK+."
+
+#: ../dialogs/keyboard-settings/main.c:102
+#, c-format
+msgid "Failed to connect to xfconf daemon. Reason: %s"
+msgstr "Nepavyko prisijungti prie xfconf demono. Priežastis: %s"
+
+#: ../dialogs/keyboard-settings/main.c:113
+msgid "Could not create the settings dialog."
+msgstr "Nepavyko sukurti nustatymų dialogo."
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:397
+msgid "Command"
+msgstr "Komanda"
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:402
+msgid "Shortcut"
+msgstr "Susiejimas"
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:478
+msgid "Layout"
+msgstr "Išdėstymas"
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:479
+msgid "Variant"
+msgstr "Variantas"
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:1002
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:1106
+msgid "Shortcut command may not be empty."
+msgstr "Susiejimo komanda negali būti tuščia."
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:1272
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:1273
+msgid "Reset to Defaults"
+msgstr "Atstatyti numatytuosius"
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:1274
+msgid ""
+"This will reset all shortcuts to their default values. Do you really want to"
+" do this?"
+msgstr "Visi susiejimai bus atstatyti į jų numatytąsias reikšmes. Ar tikrai to norite?"
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:1353
+msgid "The system defaults will be restored next time you log in."
+msgstr "Sistemos numatytieji bus atstatyti kitą kart prisijungus."
+
+#: ../dialogs/keyboard-settings/xfce-keyboard-settings.c:1355
+msgid "Warning"
+msgstr "Įspėjimas"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:128
+msgid "Select Application"
+msgstr "Pasirinkite programą"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:204
+msgid "Use a c_ustom command:"
+msgstr "Naudoti _pasirinktinę komandą:"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:205
+msgid ""
+"Use a custom command for an application that is not available from the above"
+" application list."
+msgstr "Naudoti pasirinktinę komandą programai, kuri nepasiekiama iš aukščiau pateikto programų sąrašo."
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:223
+msgid "_Browse..."
+msgstr "_Naršyti..."
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:376
+msgid "Select an Application"
+msgstr "Pasirinkite programą"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:526
+msgid "None available"
+msgstr "Neprieinama"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:573
+msgid "Recommended Applications"
+msgstr "Rekomenduojamos programos"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:591
+msgid "Other Applications"
+msgstr "Kitos programos"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:611
+#, c-format
+msgid "Open <i>%s</i> and other files of type \"%s\" with:"
+msgstr "Atverti <i>%s<i/> ir kitus „%s“ tipo failus su:"
+
+#: ../dialogs/mime-settings/xfce-mime-chooser.c:647
+#, c-format
+msgid "Failed to add new application \"%s\""
+msgstr "Nepavyko pridėti naujos programos „%s“"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:174
+#: ../dialogs/mime-settings/xfce4-mime-settings.desktop.in.h:1
+msgid "MIME Type Editor"
+msgstr "MIME tipų redaktorius"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:178
+#: ../dialogs/mime-settings/xfce4-mime-settings.desktop.in.h:2
+msgid "Associate applications with MIME types"
+msgstr "Susiekite programas su MIME tipais"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:203
+msgid "_Filter:"
+msgstr "_Filtras:"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:211
+msgid "Clear filter"
+msgstr "Išvalyti filtrą"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:257
+msgid "MIME Type"
+msgstr "MIME tipas"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:287
+msgid "Status"
+msgstr "Būsena"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:308
+msgid "Default Application"
+msgstr "Numatytoji programa"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:479
+#: ../dialogs/mime-settings/xfce-mime-window.c:604
+msgid "User Set"
+msgstr "Naudotojo nustatyta"
+
+#. sort the names but keep Default on top
+#: ../dialogs/mime-settings/xfce-mime-window.c:481
+#: ../dialogs/mime-settings/xfce-mime-window.c:604
+#: ../dialogs/mouse-settings/main.c:366 ../dialogs/mouse-settings/main.c:368
+#: ../dialogs/mouse-settings/main.c:428
+msgid "Default"
+msgstr "Numatyta"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:550
+#, c-format
+msgid "%d MIME type found"
+msgid_plural "%d MIME types found"
+msgstr[0] "Rastas %d MIME tipas "
+msgstr[1] "Rasti %d MIME tipai"
+msgstr[2] "Rasta %d MIME tipų"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:649
+#, c-format
+msgid "Failed to set application \"%s\" for mime type \"%s\"."
+msgstr "Nepavyko nustatyti programą „%s“ mime tipui „%s“."
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:906
+#, c-format
+msgid "Are you sure you want to reset content type \"%s\" to its default value?"
+msgstr "Ar tikrai norite atstatyti turinio tipą „%s“ į jo numatytąją reikšmę?"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:910
+msgid "Question"
+msgstr "Klausimas"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:913
+msgid ""
+"This will remove your custom mime-association and restore the system-wide "
+"default."
+msgstr "Bus pašalinti jūsų pasirinkti mime susiejimai ir atstatyti sistemos numatytieji."
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:917
+#: ../dialogs/mime-settings/xfce-mime-window.c:988
+msgid "Reset to Default"
+msgstr "Atstatyti numatytuosius"
+
+#: ../dialogs/mime-settings/xfce-mime-window.c:983
+msgid "Choose Application..."
+msgstr "Pasirinkite programą..."
+
+#: ../dialogs/mouse-settings/main.c:78
+msgid "Active device in the dialog"
+msgstr "Aktyvus įrenginys dialoge"
+
+#: ../dialogs/mouse-settings/main.c:78
+msgid "DEVICE NAME"
+msgstr "ĮRENGINIO_VARDAS"
+
+#. pixel value for some of the scales in the dialog
+#: ../dialogs/mouse-settings/main.c:124
+#, c-format
+msgid "%g px"
+msgstr "%g px"
+
+#. miliseconds value for some of the scales in the dialog
+#: ../dialogs/mouse-settings/main.c:134
+#, c-format
+msgid "%g ms"
+msgstr "%g ms"
+
+#. seconds value for some of the scales in the dialog
+#: ../dialogs/mouse-settings/main.c:145
+#, c-format
+msgid "%.1f s"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:1
+msgid "Disabled"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:2
+msgid "Edge scrolling"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:3
+msgid "Two-finger scrolling"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:4
+msgid "Circular scrolling"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:5
+msgid "None (right-handed)"
+msgstr "Joks (dešiniarankiams)"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:6
+msgid "Half (left-handed)"
+msgstr "Pusė (kairiarankiams)"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:7
+msgid "Clockwise"
+msgstr "Pagal laikrodžio rodyklę"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:8
+msgid "Counterclockwise"
+msgstr "Prieš laikrodžio rodyklę"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:9
+#: ../dialogs/mouse-settings/xfce-mouse-settings.desktop.in.h:1
+msgid "Mouse and Touchpad"
+msgstr "Pelė ir jutiklinis kilimėlis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:10
+#: ../dialogs/mouse-settings/xfce-mouse-settings.desktop.in.h:2
+msgid "Configure pointer device behavior and appearance"
+msgstr "Konfigūruoti žymėjimo įrenginio elgseną ir išvaizdą"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:11
+msgid "De_vice:"
+msgstr "Į_renginys:"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:12
+msgid "_Enable this device"
+msgstr "Į_jungti šį įrenginį"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:13
+msgid "Ri_ght-handed"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:14
+msgid "Le_ft-handed"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:15
+msgid "Reverse scroll d_irection"
+msgstr "Atvirkštinė slinkties _kryptis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:16
+msgid "When selected, the scroll wheel will work in the opposite direction"
+msgstr "Pasirinkus, pelės ratukas veiks priešinga kryptimi"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:17
+msgid "Buttons"
+msgstr "Mygtukai"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:18
+msgid "Acceleratio_n:"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:19
+msgid ""
+"The factor at which the pointer's speed will increase as the mouse is moved"
+msgstr "Faktorius ties kuriuo žymeklio greitis didės judant pelei"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:20
+msgid ""
+"The number of pixels the pointer must move in a short time before it starts "
+"accelerating"
+msgstr "Pikselių skaičius kurį turi nukeliauti žymeklis, kad prasidėtų greitėjimas"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:21
+msgid "Sensitivit_y:"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:22
+msgid "_Reset to Defaults"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:23
+msgid ""
+"Set the acceleration and sensitivity for the selected device to the default "
+"values"
+msgstr "Nustatyti pasirinkto įrenginio greitėjimo ir jautrumo numatytąsias reikšmes"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:24
+msgid "Pointer Speed"
+msgstr "Žymeklio greitis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:25
+msgid "B_uttons and Feedback"
+msgstr "_Mygtukai ir grįžtamasis ryšys"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:26
+msgid "Disable touchpad _while typing"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:27
+msgid ""
+"When selected, the touchpad will be disabled when the keyboard is being used"
+msgstr "Pasirinkus, naudojant klaviatūrą bus išjungtas jutiklinis kilimėlis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:28
+msgid "Duratio_n:"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:29
+msgid "Tap touchpad to clic_k"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:31
+msgid "Scrolling _mode:"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:32
+msgid "Enable hori_zontal scrolling"
+msgstr "Horizontali _kampų slinktis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:33
+msgid "Scrolling"
+msgstr "Slinktis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:34
+msgid "T_ouchpad"
+msgstr "_Jutiklinis kilimėlis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:35
+msgid "Trac_king mode:"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:36
+msgid "_Rotation:"
+msgstr "_Pasukimas:"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:37
+msgid "Tab_let"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:38
+msgid "_Devices"
+msgstr "Į_renginiai"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:39
+msgid "Th_reshold:"
+msgstr "_Slenkstis:"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:40
+msgid ""
+"The number of pixels the pointer must move before a drag operation will "
+"start"
+msgstr "Pikselių skaičius kurį turi nukeliauti žymeklis, kad būtų pradėtas vilkimas"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:41
+msgid "Drag and Drop"
+msgstr "Nuvelkamas"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:42
+msgid "Ti_me:"
+msgstr "_Laikas:"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:43
+msgid ""
+"Two mouse clicks in less than this length of time (in milliseconds) will be "
+"considered a double click"
+msgstr "Du pelės spragtelėjimai per trumpesnį nei šis laiką(milisekundėmis), bus laikoma dvigubu paspaudimu"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:44
+msgid "D_istance:"
+msgstr "_Atstumas:"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:45
+msgid ""
+"The mouse pointer cannot move farther than this distance between two clicks "
+"for them to be considered a double click"
+msgstr "Pelės žymeklis negali judėti toliau nei šis atstumas tarp dviejų paspaudimų, kad jie būtų laikomi dvigubu paspaudimu"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:46
+msgid "Double Click"
+msgstr "Dvigubas spragtelėjimas"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:47
+msgid "_Behavior"
+msgstr "_Elgsena"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:48
+msgid "Cursor si_ze:"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:49
+msgid "Size"
+msgstr "Dydis"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:50
+msgid "Preview"
+msgstr "Peržiūra"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:51
+msgid "_Theme"
+msgstr ""
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:52
+msgid "Pen (absolute)"
+msgstr "Pieštukas (absoliutus)"
+
+#: ../dialogs/mouse-settings/mouse-dialog.glade.h:53
+msgid "Mouse (relative)"
+msgstr "Pelė (sąlyginis)"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:184
+#: ../xfce4-settings-editor/xfce4-settings-editor.desktop.in.h:1
+msgid "Settings Editor"
+msgstr "Nustatymų redaktorius"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:185
+msgid "Customize settings stored by Xfconf"
+msgstr "Derinkite Xfconf saugomus nustatymus"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:230
+msgid "Channel"
+msgstr "Kanalas"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:264
+msgid "Property"
+msgstr "Savybė"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:271
+msgid "Type"
+msgstr "Tipas"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:278
+msgid "Locked"
+msgstr "Užrakinta"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:285
+msgid "Value"
+msgstr "Reikšmė"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:302
+msgid "New property"
+msgstr "Nauja savybė"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:313
+msgid "Edit selected property"
+msgstr "Keisti pasirinktą savybę"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:321
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:1026
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:1369
+msgid "_Reset"
+msgstr "A_tstatyti"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:324
+msgid "Reset selected property"
+msgstr "Atstatyti pasirinktą savybę"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:448
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:539
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:658
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:90
+msgid "Empty"
+msgstr "Tuščia"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:451
+msgid "Array"
+msgstr "Masyvas"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:456
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:91
+msgid "String"
+msgstr "Eilutė"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:464
+msgid "Integer"
+msgstr "Skaičius"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:467
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:92
+msgid "Boolean"
+msgstr "Loginė reikšmė"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:470
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:94
+msgid "Double"
+msgstr "Dviguba"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:804
+msgid "_Reset Channel"
+msgstr "_Atstatyti kanalą"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:805
+msgid "Resetting a channel will permanently remove those custom settings."
+msgstr "Atstačius kanalą bus prarasti visi pasirinktiniai nustatymai."
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:806
+#, c-format
+msgid "Are you sure you want to reset channel \"%s\" and all its properties?"
+msgstr "Ar tikrai norite atstatyti „%s“ kanalą ir visas jo savybes?"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:881
+msgid "reset"
+msgstr "atstatyti"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:938
+#, c-format
+msgid "Monitor %s"
+msgstr "Stebėti %s"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:946
+msgid "Watch an Xfconf channel for property changes"
+msgstr "Stebėti Xfconf kanalo savybių pasikeitimus"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:982
+#, c-format
+msgid "start monitoring channel \"%s\""
+msgstr "pradėti stebėti kanalą „%s“"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:1036
+msgid "_Monitor"
+msgstr "_Stebėti"
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:1370
+msgid "Resetting a property will permanently remove those custom settings."
+msgstr "Atstačius savybę bus prarasti visi pasirinktiniai nustatymai."
+
+#: ../xfce4-settings-editor/xfce-settings-editor-dialog.c:1371
+#, c-format
+msgid "Are you sure you want to reset property \"%s\"?"
+msgstr "Ar tikrai norite atstatyti savybę „%s“?"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:93
+msgid "Int"
+msgstr "Int"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:95
+msgid "Unsigned Int"
+msgstr "Unsigned Int"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:96
+msgid "Int64"
+msgstr "Int64"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:97
+msgid "Unsigned Int64"
+msgstr "Unsigned Int64"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:141
+msgid "New Property"
+msgstr "Nauja savybė"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:158
+msgid "_Property:"
+msgstr "_Savybė"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:173
+msgid "_Type:"
+msgstr "_Tipas:"
+
+#. strings
+#. integers
+#. bool
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:204
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:215
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:227
+msgid "_Value:"
+msgstr "_Reikšmė:"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:385
+#, c-format
+msgid "Property names must start with a '/' character"
+msgstr "Savybės vardas turi prasidėti simboliu '/'"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:396
+#, c-format
+msgid "The root element ('/') is not a valid property name"
+msgstr "Šakninis elementas ('/') nėra tinkamas savybės vardas"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:412
+#, c-format
+msgid ""
+"Property names can only include the ASCII characters A-Z, a-z, 0-9, '_', "
+"'-', '<' and '>', as well as '/' as a separator"
+msgstr "Savybių vardai gali turėti tik ASCII simbolius A-Z, a-z, 0-9, '_', '-', '<' ir '>', taipogi '/' kaip skirtuką"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:425
+#, c-format
+msgid "Property names cannot have two or more consecutive '/' characters"
+msgstr "Savybių vardai negali turėti kelių iš eilės einančių '/' simbolių"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:439
+#, c-format
+msgid "Property names cannot end with a '/' character"
+msgstr "Savybių vardai negali baigtis simboliu '/'"
+
+#: ../xfce4-settings-editor/xfce-settings-prop-dialog.c:652
+msgid "Edit Property"
+msgstr "Keisti savybę"
+
+#: ../xfce4-settings-editor/xfce4-settings-editor.desktop.in.h:2
+msgid "Graphical settings editor for Xfconf"
+msgstr "Grafinis nustatymų redaktorius skirtas Xfconf"
+
+#: ../xfsettingsd/accessibility.c:412
+msgid "Sticky keys are enabled"
+msgstr "Lipnūs klavišai įjungti"
+
+#: ../xfsettingsd/accessibility.c:414
+msgid "Sticky keys are disabled"
+msgstr "Lipnūs klavišai išjungti"
+
+#: ../xfsettingsd/accessibility.c:416
+msgid "Sticky keys"
+msgstr "Lipnūs klavišai"
+
+#: ../xfsettingsd/accessibility.c:421
+msgid "Slow keys are enabled"
+msgstr "Lėti klavišai įjungti"
+
+#: ../xfsettingsd/accessibility.c:423
+msgid "Slow keys are disabled"
+msgstr "Lėti klavišai išjungti"
+
+#: ../xfsettingsd/accessibility.c:425
+msgid "Slow keys"
+msgstr "Lėti klavišai"
+
+#: ../xfsettingsd/accessibility.c:430
+msgid "Bounce keys are enabled"
+msgstr "Pasikartojantys klavišai įjungti"
+
+#: ../xfsettingsd/accessibility.c:432
+msgid "Bounce keys are disabled"
+msgstr "Pasikartojantys klavišai išjungti"
+
+#: ../xfsettingsd/accessibility.c:434
+msgid "Bounce keys"
+msgstr "Tamprūs klavišai"
+
+#: ../xfsettingsd/keyboard-shortcuts.c:244
+#, c-format
+msgid "Failed to launch shortcut \"%s\""
+msgstr "Nepavyko paleisti susiejimo „%s“"
+
+#: ../xfsettingsd/main.c:78
+msgid "Do not fork to the background"
+msgstr "Nevykdyti fone"
+
+#: ../xfsettingsd/main.c:79
+msgid "Replace running xsettings daemon (if any)"
+msgstr "Pakeisti vykdomą xsettings demoną (jei toks yra)"
+
+#: ../xfsettingsd/workspaces.c:385
+#, c-format
+msgid "Workspace %d"
+msgstr "Darbalaukis %d"
+
+#: ../xfsettingsd/xfsettingsd.desktop.in.h:1
+msgid "The Xfce Settings Daemon"
+msgstr "Xfce nustatymų demonas"
+
+#: ../xfce4-settings-manager/main.c:41
+msgid "Settings dialog to show"
+msgstr "Nustatymų dialogas kurį rodyti"
+
+#: ../xfce4-settings-manager/xfce-settings-manager-dialog.c:192
+msgid "All _Settings"
+msgstr ""
+
+#: ../xfce4-settings-manager/xfce-settings-manager-dialog.c:386
+msgid "Settings"
+msgstr "Nustatymai"
+
+#: ../xfce4-settings-manager/xfce-settings-manager-dialog.c:388
+msgid "Customize your desktop"
+msgstr "Derinti darbastalį"
+
+#: ../xfce4-settings-manager/xfce-settings-manager-dialog.c:878
+#: ../xfce4-settings-manager/xfce-settings-manager-dialog.c:889
+#, c-format
+msgid "Unable to start \"%s\""
+msgstr "Nepavyko paleisti „%s“"
+
+#: ../xfce4-settings-manager/xfce-settings-manager.desktop.in.h:1
+msgid "Settings Manager"
+msgstr "Nustatymų tvarkyklė"
+
+#: ../xfce4-settings-manager/xfce-settings-manager.desktop.in.h:2
+msgid "Graphical Settings Manager for Xfce 4"
+msgstr "Grafinė nustatymų tvarkyklė skirta Xfce 4"
