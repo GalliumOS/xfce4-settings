@@ -1068,12 +1068,12 @@ xfce_displays_helper_normalize_crtc (XfceRRCrtc         *crtc,
 
     /* The 'physical size' of an X screen is meaningless if that screen
      * can consist of many monitors. So just pick a size that make the
-     * dpi 96.
+     * dpi 133.
      *
      * Firefox and Evince apparently believe what X tells them.
      */
-    helper->mm_width = (helper->width / 96.0) * 25.4 + 0.5;
-    helper->mm_height = (helper->height / 96.0) * 25.4 + 0.5;
+    helper->mm_width = (helper->width / 133.0) * 25.4 + 0.5;
+    helper->mm_height = (helper->height / 133.0) * 25.4 + 0.5;
 }
 
 
