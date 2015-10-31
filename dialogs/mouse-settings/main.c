@@ -74,6 +74,9 @@ static gint locked = 0;
 /* device update id */
 static guint timeout_id = 0;
 
+/* last tap to click change */
+static guint last_tap_to_click_change = 0;
+
 #ifdef DEVICE_HOTPLUGGING
 /* event id for device add/remove */
 static gint device_presence_event_type = 0;
@@ -930,7 +933,15 @@ mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
     GObject   *object;
     gchar     *prop;
     GValue    *val;
-    
+    struct timeval tv;
+
+    if (!gettimeofday(&tv, NULL))
+	return;
+
+    if (tv.tv_sec - last_tap_to_click_change < 2)
+	return;
+
+    last_tap_to_click_change = tv.tv_sec; 
     if (mouse_settings_device_get_selected (builder, &device, &name))
     {
         object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
@@ -967,12 +978,9 @@ mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
 	      
 	      xfconf_array_free (array);
 	      
-	      mouse_settings_set_libgestures_enable (xdisplay, device, 0);
 	      XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
 				     device, tap_enable, XA_INTEGER, 8,
 				     PropModeReplace, data, n_items);
-	      usleep(500);
-	      mouse_settings_set_libgestures_enable (xdisplay, device, 1);
 	    }
 
             XFree (data);
