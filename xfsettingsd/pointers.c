@@ -627,13 +627,15 @@ xfce_pointers_helper_change_feedback (XDeviceInfo *device_info,
         int gestures_accel;
         GValue value = G_VALUE_INIT;
 
-        gestures_accel = CLAMP (threshold, 1, 5);
-        g_value_init (&value, G_TYPE_INT);
-        g_value_set_int (&value, gestures_accel);
-
-        xfce_pointers_helper_change_property (device_info, device, xdisplay,
-                                              LIBGESTURES_PROP_SENSITIVITY,
-					      &value);
+	if (threshold > -2) {
+	  gestures_accel = CLAMP (threshold, 1, 5);
+	  g_value_init (&value, G_TYPE_INT);
+	  g_value_set_int (&value, gestures_accel);
+	  
+	  xfce_pointers_helper_change_property (device_info, device, xdisplay,
+						LIBGESTURES_PROP_SENSITIVITY,
+						&value);
+	}
         return;
     }
 #endif /* HAVE_CMT */
@@ -663,7 +665,7 @@ xfce_pointers_helper_change_feedback (XDeviceInfo *device_info,
         feedback.class = PtrFeedbackClass;
         feedback.length = sizeof (XPtrFeedbackControl);
         feedback.id = pt->id;
-        feedback.threshold = -1;
+        feedback.threshold = 4;
         feedback.accelNum = -1;
         feedback.accelDenom = -1;
 
@@ -1050,10 +1052,10 @@ xfce_pointers_helper_restore_devices (XfcePointersHelper *helper,
 
         /* read feedback settings */
         g_snprintf (prop, sizeof (prop), "/%s/Threshold", device_name);
-        threshold = xfconf_channel_get_int (helper->channel, prop, -1);
+        threshold = xfconf_channel_get_int (helper->channel, prop, 4);
 
         g_snprintf (prop, sizeof (prop), "/%s/Acceleration", device_name);
-        acceleration = xfconf_channel_get_double (helper->channel, prop, -1.00);
+        acceleration = xfconf_channel_get_double (helper->channel, prop, 4.00);
 
         if (threshold != -1 || acceleration != -1.00)
         {

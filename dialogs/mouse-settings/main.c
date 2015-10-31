@@ -62,6 +62,7 @@
 #define LIBGESTURES_PROP_TAP_TO_CLICK "Tap Enable"
 #define LIBGESTURES_PROP_AUST "Australian Scrolling"
 #define LIBGESTURES_PROP_MOUSE "Device Mouse"
+#define LIBGESTURES_PROP_ENABLE "Device Enabled"
 
 /* global setting channels */
 XfconfChannel *xsettings_channel;
@@ -745,7 +746,7 @@ mouse_settings_get_libgestures_australian (Display *xdisplay,
 					LIBGESTURES_PROP_AUST, 
 	XA_INTEGER, 1, &pdata[0]))
     {
-        *val = (gint) (pdata[0].c);
+	*val = (gint) (pdata[0].c);
 
         return TRUE;
     }
@@ -764,6 +765,7 @@ mouse_settings_get_libgestures_tap_to_click (Display *xdisplay,
 					LIBGESTURES_PROP_TAP_TO_CLICK, 
 	XA_INTEGER, 1, &pdata[0]))
     {
+	      
         *val = (gint) (pdata[0].c);
 
         return TRUE;
@@ -771,6 +773,46 @@ mouse_settings_get_libgestures_tap_to_click (Display *xdisplay,
 
     return FALSE;
 }
+
+static gboolean
+mouse_settings_set_libgestures_enable (Display *xdisplay, XDevice *device, int enable)
+{
+    Atom       enable_prop;
+    Atom       type;
+    gint       format;
+    guchar    *data;
+    gint       res;
+    gchar     *prop;
+    gulong    n_items, bytes_after;
+    
+    enable_prop = XInternAtom (xdisplay, LIBGESTURES_PROP_ENABLE,
+			       True);
+    res = XGetDeviceProperty (xdisplay, device, enable_prop, 0, 1,
+			      False,
+			      XA_INTEGER, &type, &format,
+			      &n_items, &bytes_after, &data);
+    if (gdk_error_trap_pop () == 0
+	&& res == Success)
+        {
+            if (type == XA_INTEGER
+                && format == 8
+                && n_items == 1)
+		{		    
+		    data[0] = enable;
+		    XChangeDeviceProperty (xdisplay,
+					   device, enable_prop, XA_INTEGER, 8,
+					   PropModeReplace, data, n_items);
+		}
+	    
+            XFree (data);
+        }
+    else {
+	return FALSE;
+    }
+
+    return TRUE;
+}
+
 static gboolean
 mouse_settings_get_libgestures_is_mouse (Display *xdisplay,
                                          XDevice *device,
@@ -877,7 +919,7 @@ mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
     Display   *xdisplay = GDK_DISPLAY ();
     XDevice   *device;
     gchar     *name = NULL;
-    Atom       tap_ation_prop;
+    Atom       tap_enable;
     Atom       type;
     gint       format;
     gulong     n, n_items, bytes_after;
@@ -888,16 +930,16 @@ mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
     GObject   *object;
     gchar     *prop;
     GValue    *val;
-
+    
     if (mouse_settings_device_get_selected (builder, &device, &name))
     {
         object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
         tap_to_click = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (object));
 
         gdk_error_trap_push ();
-        tap_ation_prop = XInternAtom (xdisplay, LIBGESTURES_PROP_TAP_TO_CLICK,
+        tap_enable = XInternAtom (xdisplay, LIBGESTURES_PROP_TAP_TO_CLICK,
 				      True);
-        res = XGetDeviceProperty (xdisplay, device, tap_ation_prop, 0, 1,
+        res = XGetDeviceProperty (xdisplay, device, tap_enable, 0, 1,
 				  False,
                                   XA_INTEGER, &type, &format,
                                   &n_items, &bytes_after, &data);
@@ -924,9 +966,13 @@ mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
 	      g_free (prop);
 	      
 	      xfconf_array_free (array);
+	      
+	      mouse_settings_set_libgestures_enable (xdisplay, device, 0);
 	      XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-				     device, tap_ation_prop, XA_INTEGER, 8,
+				     device, tap_enable, XA_INTEGER, 8,
 				     PropModeReplace, data, n_items);
+	      usleep(500);
+	      mouse_settings_set_libgestures_enable (xdisplay, device, 1);
 	    }
 
             XFree (data);
@@ -1366,8 +1412,8 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
         cmt_prop = XInternAtom (xdisplay, "Device Touchpad", True);
 #ifdef HAVE_CMT
         mouse_settings_get_libgestures_sensitivity (xdisplay, device, &threshold);
-	mouse_settings_get_libgestures_tap_to_click (xdisplay, device,
-						     &cmt_tap_to_click);
+	synaptics_tap_to_click = mouse_settings_get_libgestures_tap_to_click (xdisplay, device,
+									      &cmt_tap_to_click);
 
         mouse_settings_get_libgestures_australian (xdisplay, device, 
 						   &reverse_scrolling);
@@ -1500,8 +1546,7 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
     {
         object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
         gtk_widget_set_sensitive (GTK_WIDGET (object),
-				  synaptics_tap_to_click != -1 ||
-				  cmt_tap_to_click);
+				  synaptics_tap_to_click != -1);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (object),
 				      synaptics_tap_to_click > 0 ||
 				      cmt_tap_to_click);
@@ -1835,14 +1880,14 @@ mouse_settings_device_reset (GtkWidget  *button,
             /* make the button insensitive */
             gtk_widget_set_sensitive (button, FALSE);
 
-            /* set the threshold to -1 */
+            /* set the threshold to 4 */
             property_name = g_strdup_printf ("/%s/Threshold", name);
-            xfconf_channel_set_int (pointers_channel, property_name, -1);
+            xfconf_channel_set_int (pointers_channel, property_name, 4);
             g_free (property_name);
 
-            /* set the acceleration to -1 */
+            /* set the acceleration to 4 */
             property_name = g_strdup_printf ("/%s/Acceleration", name);
-            xfconf_channel_set_double (pointers_channel, property_name, -1.00);
+            xfconf_channel_set_double (pointers_channel, property_name, 4.00);
             g_free (property_name);
 
             /* update the sliders in 500ms */
