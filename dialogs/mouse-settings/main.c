@@ -47,6 +47,8 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
 
+#include <sys/time.h>
+
 #include "mouse-dialog_ui.h"
 
 /* settings */
@@ -778,45 +780,6 @@ mouse_settings_get_libgestures_tap_to_click (Display *xdisplay,
 }
 
 static gboolean
-mouse_settings_set_libgestures_enable (Display *xdisplay, XDevice *device, int enable)
-{
-    Atom       enable_prop;
-    Atom       type;
-    gint       format;
-    guchar    *data;
-    gint       res;
-    gchar     *prop;
-    gulong    n_items, bytes_after;
-    
-    enable_prop = XInternAtom (xdisplay, LIBGESTURES_PROP_ENABLE,
-			       True);
-    res = XGetDeviceProperty (xdisplay, device, enable_prop, 0, 1,
-			      False,
-			      XA_INTEGER, &type, &format,
-			      &n_items, &bytes_after, &data);
-    if (gdk_error_trap_pop () == 0
-	&& res == Success)
-        {
-            if (type == XA_INTEGER
-                && format == 8
-                && n_items == 1)
-		{		    
-		    data[0] = enable;
-		    XChangeDeviceProperty (xdisplay,
-					   device, enable_prop, XA_INTEGER, 8,
-					   PropModeReplace, data, n_items);
-		}
-	    
-            XFree (data);
-        }
-    else {
-	return FALSE;
-    }
-
-    return TRUE;
-}
-
-static gboolean
 mouse_settings_get_libgestures_is_mouse (Display *xdisplay,
                                          XDevice *device,
 					 gint *val)
@@ -916,6 +879,16 @@ mouse_settings_device_get_selected (GtkBuilder  *builder,
 }
 
 #ifdef HAVE_CMT
+static gboolean
+enable_tap_to_click_button(void *data) {
+  GObject *object = (GObject *)data;
+
+  if (object)
+    gtk_widget_set_sensitive(GTK_WIDGET(object), TRUE);
+  
+  return FALSE;
+}
+
 static void
 mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
 {
@@ -927,29 +900,21 @@ mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
     gint       format;
     gulong     n, n_items, bytes_after;
     guchar    *data;
-    gboolean   tap_to_click;
     GPtrArray *array;
     gint       res;
     GObject   *object;
     gchar     *prop;
     GValue    *val;
-    struct timeval tv;
-
-    if (!gettimeofday(&tv, NULL))
-	return;
-
-    if (tv.tv_sec - last_tap_to_click_change < 2)
-	return;
-
-    last_tap_to_click_change = tv.tv_sec; 
+    int ret;
+    
     if (mouse_settings_device_get_selected (builder, &device, &name))
     {
         object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
-        tap_to_click = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (object));
-
+	gtk_widget_set_sensitive(GTK_WIDGET(object), FALSE);
+	g_timeout_add(400, enable_tap_to_click_button, object);
         gdk_error_trap_push ();
         tap_enable = XInternAtom (xdisplay, LIBGESTURES_PROP_TAP_TO_CLICK,
-				      True);
+				  True);
         res = XGetDeviceProperty (xdisplay, device, tap_enable, 0, 1,
 				  False,
                                   XA_INTEGER, &type, &format,
@@ -961,8 +926,7 @@ mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
                 && format == 8
                 && n_items == 1)
             {
-
-	      data[0] = tap_to_click;
+	      data[0] = !data[0];
 	      array = g_ptr_array_sized_new (n_items);
 	      for (n = 0; n < n_items; n++)
                 {
@@ -1556,7 +1520,6 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
         gtk_widget_set_sensitive (GTK_WIDGET (object),
 				  synaptics_tap_to_click != -1);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (object),
-				      synaptics_tap_to_click > 0 ||
 				      cmt_tap_to_click);
 
         /* Values for synaptics_scroll_mode:

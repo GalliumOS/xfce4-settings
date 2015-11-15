@@ -1,3 +1,15 @@
+xfce4-settings (4.12.6-0ubuntu1) vivid; urgency=medium
+
+  * Fixed tap to click checkbox for touchpads
+
+ -- Hugh <hugh@distroshare.com>  Mon, 9 Nov 2015 11:09:11 -0600
+
+xfce4-settings (4.12.4-0ubuntu1) vivid; urgency=medium
+
+  * Various fixes
+
+ -- Hugh <hugh@distroshare.com>  Fri, 30 Oct 2015 11:09:11 -0600
+
 xfce4-settings (4.12.2-0ubuntu1) vivid; urgency=medium
 
   * Fixes for ChromeOS mouse driver
