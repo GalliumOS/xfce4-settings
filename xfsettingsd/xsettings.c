@@ -674,6 +674,12 @@ xfce_xsettings_helper_notify_xft (XfceXSettingsHelper *helper)
     str = XResourceManagerString (xdisplay);
     resource = g_string_new (str);
 
+    /* set for Xcursor.theme */
+    g_value_init (&bool_val, G_TYPE_BOOLEAN);
+    g_value_set_boolean (&bool_val, TRUE);
+    xfce_xsettings_helper_notify_xft_update (resource, "Xcursor.theme_core:", &bool_val);
+    g_value_unset (&bool_val);
+
     /* update/insert the properties */
     for (i = 0; i < G_N_ELEMENTS (props); i++)
     {
@@ -684,12 +690,6 @@ xfce_xsettings_helper_notify_xft (XfceXSettingsHelper *helper)
                                                      setting->value);
         }
     }
-
-    /* set for Xcursor.theme */
-    g_value_init (&bool_val, G_TYPE_BOOLEAN);
-    g_value_set_boolean (&bool_val, TRUE);
-    xfce_xsettings_helper_notify_xft_update (resource, "Xcursor.theme_core:", &bool_val);
-    g_value_unset (&bool_val);
 
     gdk_error_trap_push ();
 
