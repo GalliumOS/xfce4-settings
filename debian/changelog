@@ -1,3 +1,9 @@
+xfce4-settings (4.12.7-0ubuntu1) vivid; urgency=medium
+
+  * The 133 dpi change was not needed
+
+ -- Hugh <hugh@distroshare.com>  Wed, 18 Nov 2015 11:09:11 -0600
+
 xfce4-settings (4.12.6-0ubuntu1) vivid; urgency=medium
 
   * Fixed tap to click checkbox for touchpads
