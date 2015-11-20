@@ -1,3 +1,15 @@
+xfce4-settings (4.12.9-0ubuntu1) vivid; urgency=medium
+
+  * Undid last fix
+
+ -- Hugh <hugh@galliumos.org>  Thu, 19 Nov 2015 11:09:11 -0600
+
+xfce4-settings (4.12.8-0ubuntu1) vivid; urgency=medium
+
+  * A fix for the mouse cursor/size not being persistant
+
+ -- Hugh <hugh@galliumos.org>  Thu, 19 Nov 2015 11:09:11 -0600
+
 xfce4-settings (4.12.7-0ubuntu1) vivid; urgency=medium
 
   * The 133 dpi change was not needed

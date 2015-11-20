@@ -662,6 +662,7 @@ xfce_xsettings_helper_notify_xft (XfceXSettingsHelper *helper)
         { "/Gtk/CursorThemeSize", "Xcursor.size:" }
     };
 
+    printf("in func to set cursor\n");
     g_return_if_fail (XFCE_IS_XSETTINGS_HELPER (helper));
 
     if (G_LIKELY (helper->screens == NULL))
@@ -674,13 +675,7 @@ xfce_xsettings_helper_notify_xft (XfceXSettingsHelper *helper)
     str = XResourceManagerString (xdisplay);
     resource = g_string_new (str);
 
-    /* set for Xcursor.theme */
-    g_value_init (&bool_val, G_TYPE_BOOLEAN);
-    g_value_set_boolean (&bool_val, TRUE);
-    xfce_xsettings_helper_notify_xft_update (resource, "Xcursor.theme_core:", &bool_val);
-    g_value_unset (&bool_val);
-
-    /* update/insert the properties */
+    printf("setting cursor\n");
     for (i = 0; i < G_N_ELEMENTS (props); i++)
     {
         setting = g_hash_table_lookup (helper->settings, props[i][0]);
@@ -691,6 +686,13 @@ xfce_xsettings_helper_notify_xft (XfceXSettingsHelper *helper)
         }
     }
 
+    /* set for Xcursor.theme */
+    g_value_init (&bool_val, G_TYPE_BOOLEAN);
+    g_value_set_boolean (&bool_val, TRUE);
+    xfce_xsettings_helper_notify_xft_update (resource, "Xcursor.theme_core:", &bool_val);
+    g_value_unset (&bool_val);
+
+    /* update/insert the properties */
     gdk_error_trap_push ();
 
     /* set the new resource manager string */
