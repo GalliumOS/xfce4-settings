@@ -1,6 +1,7 @@
 xfce4-settings (4.12.9-0ubuntu1) vivid; urgency=medium
 
   * Undid last fix
+  * Removed autostart file
 
  -- Hugh <hugh@galliumos.org>  Thu, 19 Nov 2015 11:09:11 -0600
 
