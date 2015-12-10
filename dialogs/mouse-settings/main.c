@@ -1411,6 +1411,7 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
                     is_synaptics = TRUE;
                 else if (props[i] == cmt_prop) {
                     is_cmt = TRUE;
+		    acceleration = -1;
 #ifdef HAVE_CMT
                     mouse_settings_get_libgestures_is_mouse (xdisplay, device,
                                                              &is_cmt_mouse);
@@ -1484,9 +1485,19 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
     object = gtk_builder_get_object (builder, "device-acceleration-scale");
     gtk_range_set_value (GTK_RANGE (object), acceleration);
     gtk_widget_set_sensitive (GTK_WIDGET (object), acceleration != -1);
-
+    gtk_widget_set_visible (GTK_WIDGET (object), acceleration != -1);
+    object = gtk_builder_get_object (builder, "device-acceleration-label");
+    gtk_widget_set_visible (GTK_WIDGET (object), acceleration != -1);
+    
     /* update threshold scale */
     object = gtk_builder_get_object (builder, "device-threshold-scale");
+
+    /* change the threshold range for cmt */
+    if (is_cmt)
+      gtk_range_set_range(GTK_RANGE(object), 1, 5);
+    else
+      gtk_range_set_range(GTK_RANGE(object), 1, 30);
+    
     gtk_range_set_value (GTK_RANGE (object), threshold);
     gtk_widget_set_visible (GTK_WIDGET (object), threshold != -1);
     object = gtk_builder_get_object (builder, "device-threshold-label");
