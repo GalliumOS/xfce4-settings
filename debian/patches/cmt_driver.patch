@@ -365,7 +365,7 @@
 +static gboolean
 +enable_tap_to_click_button(void *data) {
 +  GObject *object = (GObject *)data;
- 
++
 +  if (object)
 +    gtk_widget_set_sensitive(GTK_WIDGET(object), TRUE);
 +  
@@ -429,7 +429,7 @@
 +				     device, tap_enable, XA_INTEGER, 8,
 +				     PropModeReplace, data, n_items);
 +	    }
-+
+ 
 +            XFree (data);
 +        }
 +    }
@@ -663,9 +663,11 @@
              g_signal_connect_swapped (G_OBJECT (object), "value-changed",
                                        G_CALLBACK (mouse_settings_device_save), builder);
  
-@@ -1999,13 +2097,12 @@
+@@ -1998,14 +2096,15 @@
+             xfconf_g_property_bind (pointers_channel, "/DisableTouchpadDuration",
                                      G_TYPE_DOUBLE, G_OBJECT (object), "value");
  
++#ifdef HAVE_CMT
              object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
 -            g_signal_connect_swapped (G_OBJECT (object), "toggled",
 -                                      G_CALLBACK (mouse_settings_synaptics_set_tap_to_click), builder);
@@ -673,6 +675,7 @@
 -            object = gtk_builder_get_object (builder, "synaptics-scroll");
 +	    g_signal_connect_swapped (G_OBJECT (object), "toggled",
 +                                      G_CALLBACK (mouse_settings_set_libgestures_tap_to_click), builder);
++#endif
 +	    object = gtk_builder_get_object (builder, "synaptics-scroll");
              g_signal_connect (G_OBJECT (object), "changed",
                                G_CALLBACK (mouse_settings_synaptics_set_scrolling), builder);
