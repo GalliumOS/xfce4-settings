@@ -107,9 +107,16 @@ endif
 settingsdir = $(sysconfdir)/xdg/xfce4/xfconf/xfce-perchannel-xml
 settings_DATA = xsettings.xml
 
+autostartdir = $(sysconfdir)/xdg/autostart
+autostart_in_files = xfsettingsd.desktop.in
+autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = \
-	$(settings_DATA) 
+	$(settings_DATA) \
+	$(autostart_in_files)
+
+DISTCLEANFILES = \
+	$(autostart_DATA)
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

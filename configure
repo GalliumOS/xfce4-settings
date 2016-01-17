@@ -663,12 +663,6 @@ LIBXKLAVIER_REQUIRED_VERSION
 LIBXKLAVIER_LIBS
 LIBXKLAVIER_CFLAGS
 LIBXKLAVIER_VERSION
-HAVE_CMT_FALSE
-HAVE_CMT_TRUE
-CMT_REQUIRED_VERSION
-CMT_LIBS
-CMT_CFLAGS
-CMT_VERSION
 HAVE_LIBINPUT_FALSE
 HAVE_LIBINPUT_TRUE
 LIBINPUT_REQUIRED_VERSION
@@ -958,7 +952,6 @@ enable_libnotify
 enable_gio_unix
 enable_xcursor
 enable_xorg_libinput
-enable_xorg_cmt
 enable_libxklavier
 enable_pluggable_dialogs
 enable_sound_settings
@@ -1634,9 +1627,6 @@ Optional Features:
   --enable-xorg-libinput  Enable checking for libinput Xorg driver support
                           (default=[])
   --disable-xorg-libinput Disable checking for libinput Xorg driver support
-  --enable-xorg-cmt       Enable checking for Xorg cmt driver support
-                          (default=[])
-  --disable-xorg-cmt      Disable checking for Xorg cmt driver support
   --enable-libxklavier    Enable checking for Keyboard layout selection
                           (default=[])
   --disable-libxklavier   Disable checking for Keyboard layout selection
@@ -19129,243 +19119,6 @@ fi
 
 
 
-  # Check whether --enable-xorg-cmt was given.
-if test "${enable_xorg_cmt+set}" = set; then :
-  enableval=$enable_xorg_cmt; xdt_cv_CMT_check=$enableval
-else
-  xdt_cv_CMT_check=yes
-fi
-
-
-  if test x"$xdt_cv_CMT_check" = x"yes"; then
-    if $PKG_CONFIG --exists "xorg-cmt >= 0" >/dev/null 2>&1; then
-
-
-  # minimum supported version of pkg-config
-  xdt_cv_PKG_CONFIG_MIN_VERSION=0.9.0
-
-
-
-
-
-
-
-
-
-if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
-	if test -n "$ac_tool_prefix"; then
-  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
-set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
-$as_echo_n "checking for $ac_word... " >&6; }
-if ${ac_cv_path_PKG_CONFIG+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  case $PKG_CONFIG in
-  [\\/]* | ?:[\\/]*)
-  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
-  ;;
-  *)
-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-for as_dir in $PATH
-do
-  IFS=$as_save_IFS
-  test -z "$as_dir" && as_dir=.
-    for ac_exec_ext in '' $ac_executable_extensions; do
-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
-    break 2
-  fi
-done
-  done
-IFS=$as_save_IFS
-
-  ;;
-esac
-fi
-PKG_CONFIG=$ac_cv_path_PKG_CONFIG
-if test -n "$PKG_CONFIG"; then
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
-$as_echo "$PKG_CONFIG" >&6; }
-else
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-fi
-
-
-fi
-if test -z "$ac_cv_path_PKG_CONFIG"; then
-  ac_pt_PKG_CONFIG=$PKG_CONFIG
-  # Extract the first word of "pkg-config", so it can be a program name with args.
-set dummy pkg-config; ac_word=$2
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
-$as_echo_n "checking for $ac_word... " >&6; }
-if ${ac_cv_path_ac_pt_PKG_CONFIG+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  case $ac_pt_PKG_CONFIG in
-  [\\/]* | ?:[\\/]*)
-  ac_cv_path_ac_pt_PKG_CONFIG="$ac_pt_PKG_CONFIG" # Let the user override the test with a path.
-  ;;
-  *)
-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-for as_dir in $PATH
-do
-  IFS=$as_save_IFS
-  test -z "$as_dir" && as_dir=.
-    for ac_exec_ext in '' $ac_executable_extensions; do
-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_ac_pt_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
-    break 2
-  fi
-done
-  done
-IFS=$as_save_IFS
-
-  ;;
-esac
-fi
-ac_pt_PKG_CONFIG=$ac_cv_path_ac_pt_PKG_CONFIG
-if test -n "$ac_pt_PKG_CONFIG"; then
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_pt_PKG_CONFIG" >&5
-$as_echo "$ac_pt_PKG_CONFIG" >&6; }
-else
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-fi
-
-  if test "x$ac_pt_PKG_CONFIG" = x; then
-    PKG_CONFIG=""
-  else
-    case $cross_compiling:$ac_tool_warned in
-yes:)
-{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
-$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
-ac_tool_warned=yes ;;
-esac
-    PKG_CONFIG=$ac_pt_PKG_CONFIG
-  fi
-else
-  PKG_CONFIG="$ac_cv_path_PKG_CONFIG"
-fi
-
-fi
-if test -n "$PKG_CONFIG"; then
-	_pkg_min_version=$xdt_cv_PKG_CONFIG_MIN_VERSION
-	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking pkg-config is at least version $_pkg_min_version" >&5
-$as_echo_n "checking pkg-config is at least version $_pkg_min_version... " >&6; }
-	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-$as_echo "yes" >&6; }
-	else
-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-		PKG_CONFIG=""
-	fi
-fi
-
-      if test x"$PKG_CONFIG" = x""; then
-        echo
-        echo "*** Your version of pkg-config is too old. You need atleast"
-        echo "*** pkg-config $xdt_cv_PKG_CONFIG_MIN_VERSION or newer. You can download pkg-config"
-        echo "*** from the freedesktop.org software repository at"
-        echo "***"
-        echo "***    http://www.freedesktop.org/software/pkgconfig"
-        echo "***"
-        exit 1;
-      fi
-
-
-
-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for xorg-cmt >= 0" >&5
-$as_echo_n "checking for xorg-cmt >= 0... " >&6; }
-  if $PKG_CONFIG "--atleast-version=0" "xorg-cmt" >/dev/null 2>&1; then
-    CMT_VERSION=`$PKG_CONFIG --modversion "xorg-cmt"`
-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $CMT_VERSION" >&5
-$as_echo "$CMT_VERSION" >&6; }
-
-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking CMT_CFLAGS" >&5
-$as_echo_n "checking CMT_CFLAGS... " >&6; }
-    CMT_CFLAGS=`$PKG_CONFIG --cflags "xorg-cmt"`
-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $CMT_CFLAGS" >&5
-$as_echo "$CMT_CFLAGS" >&6; }
-
-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking CMT_LIBS" >&5
-$as_echo_n "checking CMT_LIBS... " >&6; }
-    CMT_LIBS=`$PKG_CONFIG --libs "xorg-cmt"`
-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $CMT_LIBS" >&5
-$as_echo "$CMT_LIBS" >&6; }
-
-    CMT_REQUIRED_VERSION=0
-
-
-
-
-
-
-
-
-$as_echo "#define HAVE_CMT 1" >>confdefs.h
-
-        CMT_FOUND="yes"
-
-  elif $PKG_CONFIG --exists "xorg-cmt" >/dev/null 2>&1; then
-    xdt_cv_version=`$PKG_CONFIG --modversion "xorg-cmt"`
-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
-$as_echo "found, but $xdt_cv_version" >&6; }
-
-
-      echo "*** The required package xorg-cmt was found on your system,"
-      echo "*** but the installed version ($xdt_cv_version) is too old."
-      echo "*** Please upgrade xorg-cmt to atleast version 0, or adjust"
-      echo "*** the PKG_CONFIG_PATH environment variable if you installed"
-      echo "*** the new version of the package in a nonstandard prefix so"
-      echo "*** pkg-config is able to find it."
-      exit 1
-
-  else
-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
-$as_echo "not found" >&6; }
-
-
-      echo "*** The required package xorg-cmt was not found on your system."
-      echo "*** Please install xorg-cmt (atleast version 0) or adjust"
-      echo "*** the PKG_CONFIG_PATH environment variable if you"
-      echo "*** installed the package in a nonstandard prefix so that"
-      echo "*** pkg-config is able to find it."
-      exit 1
-
-  fi
-
-    else
-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for optional package xorg-cmt >= 0" >&5
-$as_echo_n "checking for optional package xorg-cmt >= 0... " >&6; }
-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
-$as_echo "not found" >&6; }
-    fi
-  else
-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for optional package xorg-cmt" >&5
-$as_echo_n "checking for optional package xorg-cmt... " >&6; }
-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: disabled" >&5
-$as_echo "disabled" >&6; }
-  fi
-
-   if test x"$CMT_FOUND" = x"yes"; then
-  HAVE_CMT_TRUE=
-  HAVE_CMT_FALSE='#'
-else
-  HAVE_CMT_TRUE='#'
-  HAVE_CMT_FALSE=
-fi
-
-
-
-
-
-
-
   # Check whether --enable-libxklavier was given.
 if test "${enable_libxklavier+set}" = set; then :
   enableval=$enable_libxklavier; xdt_cv_LIBXKLAVIER_check=$enableval
@@ -20432,10 +20185,6 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HAVE_LIBINPUT_TRUE}" && test -z "${HAVE_LIBINPUT_FALSE}"; then
   as_fn_error $? "conditional \"HAVE_LIBINPUT\" was never defined.
-Usually this means the macro was only invoked conditionally." "$LINENO" 5
-fi
-if test -z "${HAVE_CMT_TRUE}" && test -z "${HAVE_CMT_FALSE}"; then
-  as_fn_error $? "conditional \"HAVE_CMT\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HAVE_LIBXKLAVIER_TRUE}" && test -z "${HAVE_LIBXKLAVIER_FALSE}"; then
@@ -22746,11 +22495,6 @@ if test x"$LIBINPUT_FOUND" = x"yes"; then
 echo "* Xorg libinput support:     yes"
 else
 echo "* Xorg libinput support:     no"
-fi
-if test x"$CMT_FOUND" = x"yes"; then
-echo "* Xorg cmt driver support:     yes"
-else
-echo "* Xorg cmt driver support:     no"
 fi
 if test x"$ENABLE_PLUGGABLE_DIALOGS" = x"1"; then
 echo "* Embedded settings dialogs  yes"

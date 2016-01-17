@@ -182,13 +182,6 @@ dnl *************************************************
 XDT_CHECK_OPTIONAL_PACKAGE([LIBINPUT], [xorg-libinput], [0.6.0],
                            [xorg-libinput], [libinput Xorg driver support])
 
-dnl *************************************************
-dnl *** Optional support for Xorg CMT driver ***
-dnl *************************************************
-XDT_CHECK_OPTIONAL_PACKAGE([CMT], [xorg-cmt], [0],
-                           [xorg-cmt], [Xorg cmt driver support])
-
-
 dnl ****************************************
 dnl *** Optional support for Libxklavier ***
 dnl ****************************************
@@ -307,11 +300,6 @@ if test x"$LIBINPUT_FOUND" = x"yes"; then
 echo "* Xorg libinput support:     yes"
 else
 echo "* Xorg libinput support:     no"
-fi
-if test x"$CMT_FOUND" = x"yes"; then
-echo "* Xorg cmt driver support:     yes"
-else
-echo "* Xorg cmt driver support:     no"
 fi
 if test x"$ENABLE_PLUGGABLE_DIALOGS" = x"1"; then
 echo "* Embedded settings dialogs  yes"

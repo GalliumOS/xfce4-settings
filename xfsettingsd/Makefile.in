@@ -115,7 +115,8 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(settingsdir)"
+am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(autostartdir)" \
+	"$(DESTDIR)$(settingsdir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__xfsettingsd_SOURCES_DIST = main.c accessibility.c accessibility.h \
 	debug.c debug.h clipboard-manager.c clipboard-manager.h \
@@ -226,7 +227,7 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-DATA = $(settings_DATA)
+DATA = $(autostart_DATA) $(settings_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -261,10 +262,6 @@ CATOBJEXT = @CATOBJEXT@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
-CMT_CFLAGS = @CMT_CFLAGS@
-CMT_LIBS = @CMT_LIBS@
-CMT_REQUIRED_VERSION = @CMT_REQUIRED_VERSION@
-CMT_VERSION = @CMT_VERSION@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -540,8 +537,15 @@ xfsettingsd_LDADD = $(GTK_LIBS) $(GLIB_LIBS) $(GTHREAD_LIBS) \
 	$(LIBINPUT_LIBS) -lm $(am__append_3) $(am__append_6)
 settingsdir = $(sysconfdir)/xdg/xfce4/xfconf/xfce-perchannel-xml
 settings_DATA = xsettings.xml
+autostartdir = $(sysconfdir)/xdg/autostart
+autostart_in_files = xfsettingsd.desktop.in
+autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 EXTRA_DIST = \
-	$(settings_DATA) 
+	$(settings_DATA) \
+	$(autostart_in_files)
+
+DISTCLEANFILES = \
+	$(autostart_DATA)
 
 all: all-am
 
@@ -859,6 +863,27 @@ mostlyclean-libtool:
 
 clean-libtool:
 	-rm -rf .libs _libs
+install-autostartDATA: $(autostart_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(autostart_DATA)'; test -n "$(autostartdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(autostartdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(autostartdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(autostartdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(autostartdir)" || exit $$?; \
+	done
+
+uninstall-autostartDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(autostart_DATA)'; test -n "$(autostartdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(autostartdir)'; $(am__uninstall_files_from_dir)
 install-settingsDATA: $(settings_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(settings_DATA)'; test -n "$(settingsdir)" || list=; \
@@ -967,7 +992,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(PROGRAMS) $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(settingsdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(autostartdir)" "$(DESTDIR)$(settingsdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -996,6 +1021,7 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -1022,7 +1048,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-settingsDATA
+install-data-am: install-autostartDATA install-settingsDATA
 
 install-dvi: install-dvi-am
 
@@ -1068,7 +1094,8 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-binPROGRAMS uninstall-settingsDATA
+uninstall-am: uninstall-autostartDATA uninstall-binPROGRAMS \
+	uninstall-settingsDATA
 
 .MAKE: install-am install-strip
 
@@ -1076,17 +1103,17 @@ uninstall-am: uninstall-binPROGRAMS uninstall-settingsDATA
 	clean-binPROGRAMS clean-generic clean-libtool cscopelist-am \
 	ctags ctags-am distclean distclean-compile distclean-generic \
 	distclean-libtool distclean-tags distdir dvi dvi-am html \
-	html-am info info-am install install-am install-binPROGRAMS \
-	install-data install-data-am install-dvi install-dvi-am \
-	install-exec install-exec-am install-html install-html-am \
-	install-info install-info-am install-man install-pdf \
-	install-pdf-am install-ps install-ps-am install-settingsDATA \
-	install-strip installcheck installcheck-am installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
-	pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am \
+	html-am info info-am install install-am install-autostartDATA \
+	install-binPROGRAMS install-data install-data-am install-dvi \
+	install-dvi-am install-exec install-exec-am install-html \
+	install-html-am install-info install-info-am install-man \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-settingsDATA install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	tags tags-am uninstall uninstall-am uninstall-autostartDATA \
 	uninstall-binPROGRAMS uninstall-settingsDATA
-
 
 @INTLTOOL_DESKTOP_RULE@
 

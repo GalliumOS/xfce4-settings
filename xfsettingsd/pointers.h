@@ -19,9 +19,6 @@
 #ifndef __POINTERS_H__
 #define __POINTERS_H__
 
-#define LIBGESTURES_PROP_SENSITIVITY "Pointer Sensitivity"
-#define LIBGESTURES_PROP_AUSTRALIAN_SCROLL "Australian Scrolling"
-
 typedef struct _XfcePointersHelperClass XfcePointersHelperClass;
 typedef struct _XfcePointersHelper      XfcePointersHelper;
 

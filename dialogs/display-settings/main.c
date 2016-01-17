@@ -968,7 +968,8 @@ display_setting_mirror_displays_populate (GtkBuilder *builder)
         if (xfce_randr->mode[n] == None)
             continue;
 
-	cloned = xfce_randr->mirrored[n];
+        cloned &= (xfce_randr->mode[n] == mode &&
+                   xfce_randr->mirrored[n]);
 
         if (!cloned)
             break;

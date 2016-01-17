@@ -47,8 +47,6 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
 
-#include <sys/time.h>
-
 #include "mouse-dialog_ui.h"
 
 /* settings */
@@ -59,12 +57,6 @@
 #define PREVIEW_SPACING (2)
 #endif /* !HAVE_XCURSOR */
 
-/* libgestures */
-#define LIBGESTURES_PROP_SENSITIVITY "Pointer Sensitivity"
-#define LIBGESTURES_PROP_TAP_TO_CLICK "Tap Enable"
-#define LIBGESTURES_PROP_AUST "Australian Scrolling"
-#define LIBGESTURES_PROP_MOUSE "Device Mouse"
-#define LIBGESTURES_PROP_ENABLE "Device Enabled"
 
 /* global setting channels */
 XfconfChannel *xsettings_channel;
@@ -75,9 +67,6 @@ static gint locked = 0;
 
 /* device update id */
 static guint timeout_id = 0;
-
-/* last tap to click change */
-static guint last_tap_to_click_change = 0;
 
 #ifdef DEVICE_HOTPLUGGING
 /* event id for device add/remove */
@@ -601,7 +590,7 @@ mouse_settings_themes_populate_store (GtkBuilder *builder)
 
 
 
-#if defined(HAVE_LIBINPUT) || defined(HAVE_CMT)
+#ifdef HAVE_LIBINPUT
 /* FIXME: Completely overkill here and better suited in some common file */
 static gboolean
 mouse_settings_get_device_prop (Display     *xdisplay,
@@ -700,9 +689,29 @@ mouse_settings_get_device_prop (Display     *xdisplay,
 
     return FALSE;
 }
-#endif
 
-#ifdef HAVE_LIBINPUT
+static gboolean
+mouse_settings_get_libinput_accel (Display *xdisplay,
+                                   XDevice *device,
+                                   gdouble *val)
+{
+    propdata_t pdata[1];
+    Atom float_type;
+
+    float_type = XInternAtom (xdisplay, "FLOAT", False);
+    if (mouse_settings_get_device_prop (xdisplay, device, LIBINPUT_PROP_ACCEL, float_type, 1, &pdata[0]))
+    {
+        /* We use double internally, for whatever reason */
+        *val = (gdouble) (pdata[0].f + 1.0) * 5.0;
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+
+
 static gboolean
 mouse_settings_get_libinput_boolean (Display     *xdisplay,
                                      XDevice     *device,
@@ -722,83 +731,7 @@ mouse_settings_get_libinput_boolean (Display     *xdisplay,
 }
 #endif /* HAVE_LIBINPUT */
 
-#ifdef HAVE_CMT
-static gboolean
-mouse_settings_get_libgestures_sensitivity (Display *xdisplay,
-                                            XDevice *device,
-                                            gint *val)
-{
-    propdata_t pdata[1];
 
-    if (mouse_settings_get_device_prop (xdisplay, device, LIBGESTURES_PROP_SENSITIVITY, 
-	XA_INTEGER, 1, &pdata[0]))
-    {
-        *val = (gint) (pdata[0].c);
-
-        return TRUE;
-    }
-
-    return FALSE;
-}
-static gboolean
-mouse_settings_get_libgestures_australian (Display *xdisplay,
-					   XDevice *device,
-					   gint *val)
-{
-    propdata_t pdata[1];
-
-    if (mouse_settings_get_device_prop (xdisplay, device,
-					LIBGESTURES_PROP_AUST, 
-	XA_INTEGER, 1, &pdata[0]))
-    {
-	*val = (gint) (pdata[0].c);
-
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
-static gboolean
-mouse_settings_get_libgestures_tap_to_click (Display *xdisplay,
-					     XDevice *device,
-					     gint *val)
-{
-    propdata_t pdata[1];
-
-    if (mouse_settings_get_device_prop (xdisplay, device,
-					LIBGESTURES_PROP_TAP_TO_CLICK, 
-	XA_INTEGER, 1, &pdata[0]))
-    {
-	      
-        *val = (gint) (pdata[0].c);
-
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
-static gboolean
-mouse_settings_get_libgestures_is_mouse (Display *xdisplay,
-                                         XDevice *device,
-					 gint *val)
-{
-    propdata_t pdata[1];
-
-    if (mouse_settings_get_device_prop (xdisplay, device,
-					LIBGESTURES_PROP_MOUSE, 
-	XA_INTEGER, 1, &pdata[0]))
-    {
-        *val = (gint) (pdata[0].c);
-
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
-#endif
 
 #ifdef DEVICE_PROPERTIES
 static gint
@@ -878,81 +811,7 @@ mouse_settings_device_get_selected (GtkBuilder  *builder,
     return found;
 }
 
-#ifdef HAVE_CMT
-static gboolean
-enable_tap_to_click_button(void *data) {
-  GObject *object = (GObject *)data;
 
-  if (object)
-    gtk_widget_set_sensitive(GTK_WIDGET(object), TRUE);
-  
-  return FALSE;
-}
-
-static void
-mouse_settings_set_libgestures_tap_to_click (GtkBuilder *builder)
-{
-    Display   *xdisplay = GDK_DISPLAY ();
-    XDevice   *device;
-    gchar     *name = NULL;
-    Atom       tap_enable;
-    Atom       type;
-    gint       format;
-    gulong     n, n_items, bytes_after;
-    guchar    *data;
-    GPtrArray *array;
-    gint       res;
-    GObject   *object;
-    gchar     *prop;
-    GValue    *val;
-    int ret;
-    
-    if (mouse_settings_device_get_selected (builder, &device, &name))
-    {
-        object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
-	gtk_widget_set_sensitive(GTK_WIDGET(object), FALSE);
-	g_timeout_add(400, enable_tap_to_click_button, object);
-        gdk_error_trap_push ();
-        tap_enable = XInternAtom (xdisplay, LIBGESTURES_PROP_TAP_TO_CLICK,
-				  True);
-        res = XGetDeviceProperty (xdisplay, device, tap_enable, 0, 1,
-				  False,
-                                  XA_INTEGER, &type, &format,
-                                  &n_items, &bytes_after, &data);
-        if (gdk_error_trap_pop () == 0
-            && res == Success)
-        {
-            if (type == XA_INTEGER
-                && format == 8
-                && n_items == 1)
-            {
-	      data[0] = !data[0];
-	      array = g_ptr_array_sized_new (n_items);
-	      for (n = 0; n < n_items; n++)
-                {
-		  val = g_new0 (GValue, 1);
-		  g_value_init (val, G_TYPE_INT);
-		  g_value_set_int (val, data[n]);
-		  g_ptr_array_add (array, val);
-                }
-	      
-	      prop = g_strconcat ("/", name, "/Properties/Synaptics_Tap_Action", NULL);
-	      xfconf_channel_set_arrayv (pointers_channel, prop, array);
-	      g_free (prop);
-	      
-	      xfconf_array_free (array);
-	      
-	      XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-				     device, tap_enable, XA_INTEGER, 8,
-				     PropModeReplace, data, n_items);
-	    }
-
-            XFree (data);
-        }
-    }
-    g_free (name);
-}
-#endif
 
 #ifdef DEVICE_PROPERTIES
 static void
@@ -1026,6 +885,83 @@ mouse_settings_wacom_set_mode (GtkComboBox *combobox,
     g_free (name);
 }
 #endif
+
+
+
+#if defined(DEVICE_PROPERTIES) || defined (HAVE_LIBINPUT)
+static void
+mouse_settings_synaptics_set_tap_to_click (GtkBuilder *builder)
+{
+    Display   *xdisplay = GDK_DISPLAY ();
+    XDevice   *device;
+    gchar     *name = NULL;
+    Atom       tap_ation_prop;
+    Atom       type;
+    gint       format;
+    gulong     n, n_items, bytes_after;
+    guchar    *data;
+    gboolean   tap_to_click;
+    GPtrArray *array;
+    gint       res;
+    GObject   *object;
+    gchar     *prop;
+    GValue    *val;
+
+    if (mouse_settings_device_get_selected (builder, &device, &name))
+    {
+        object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
+        tap_to_click = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (object));
+
+        gdk_error_trap_push ();
+        tap_ation_prop = XInternAtom (xdisplay, "Synaptics Tap Action", True);
+        res = XGetDeviceProperty (xdisplay, device, tap_ation_prop, 0, 1000, False,
+                                  AnyPropertyType, &type, &format,
+                                  &n_items, &bytes_after, &data);
+        if (gdk_error_trap_pop () == 0
+            && res == Success)
+        {
+            if (type == XA_INTEGER
+                && format == 8
+                && n_items >= 7)
+            {
+
+                /* format: RT, RB, LT, LB, F1, F2, F3 */
+                data[4] = tap_to_click ? 1 : 0;
+                data[5] = tap_to_click ? 3 : 0;
+                data[6] = tap_to_click ? 2 : 0;
+
+                array = g_ptr_array_sized_new (n_items);
+                for (n = 0; n < n_items; n++)
+                {
+                    val = g_new0 (GValue, 1);
+                    g_value_init (val, G_TYPE_INT);
+                    g_value_set_int (val, data[n]);
+                    g_ptr_array_add (array, val);
+                }
+
+                prop = g_strconcat ("/", name, "/Properties/Synaptics_Tap_Action", NULL);
+                xfconf_channel_set_arrayv (pointers_channel, prop, array);
+                g_free (prop);
+
+                xfconf_array_free (array);
+            }
+
+            XFree (data);
+        }
+
+#ifdef HAVE_LIBINPUT
+        /* Set the corresponding libinput property as well */
+        prop = g_strdup_printf ("/%s/Properties/%s", name, LIBINPUT_PROP_TAP);
+        g_strdelimit (prop, " ", '_');
+        xfconf_channel_set_int (pointers_channel, prop, (int) tap_to_click);
+        g_free (prop);
+#endif /* HAVE_LIBINPUT */
+    }
+    g_free (name);
+}
+#endif /* DEVICE_PROPERTIES || HAVE_LIBINPUT */
+
+
 
 #ifdef DEVICE_PROPERTIES
 static void
@@ -1233,8 +1169,6 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
     GObject           *object;
     gint               ndevices;
     gboolean           is_synaptics = FALSE;
-    gboolean           is_cmt = FALSE;
-    gint               is_cmt_mouse = 0;
     gboolean           is_wacom = FALSE;
     gboolean           left_handed = FALSE;
     gboolean           reverse_scrolling = FALSE;
@@ -1247,7 +1181,6 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
     Atom               libinput_scroll_methods_prop;
 #endif /* HAVE_LIBINPUT */
     Atom               synaptics_prop;
-    Atom               cmt_prop;
     Atom               wacom_prop;
     Atom               synaptics_tap_prop;
     Atom               synaptics_edge_scroll_prop;
@@ -1263,7 +1196,6 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
     gint               synaptics_two_hscroll = -1;
     gint               synaptics_circ_scroll = -1;
     gint               synaptics_scroll_mode = 0;
-    gint               cmt_tap_to_click = -1;
     GtkTreeIter        iter;
     gint               wacom_rotation = -1;
     Atom              *props;
@@ -1372,7 +1304,7 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
                 XFreeFeedbackList (states);
             }
         }
-#if defined(DEVICE_PROPERTIES) || defined (HAVE_LIBINPUT) || defined (HAVE_CMT)
+#if defined(DEVICE_PROPERTIES) || defined (HAVE_LIBINPUT)
 #ifdef HAVE_LIBINPUT
         /* lininput properties */
         libinput_tap_prop = XInternAtom (xdisplay, LIBINPUT_PROP_TAP, True);
@@ -1381,16 +1313,6 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
         /* wacom and synaptics specific properties */
         device_enabled_prop = XInternAtom (xdisplay, "Device Enabled", True);
         synaptics_prop = XInternAtom (xdisplay, "Synaptics Off", True);
-        cmt_prop = XInternAtom (xdisplay, "Device Touchpad", True);
-#ifdef HAVE_CMT
-        mouse_settings_get_libgestures_sensitivity (xdisplay, device, &threshold);
-	synaptics_tap_to_click = mouse_settings_get_libgestures_tap_to_click (xdisplay, device,
-									      &cmt_tap_to_click);
-
-        mouse_settings_get_libgestures_australian (xdisplay, device, 
-						   &reverse_scrolling);
-#endif /* HAVE_CMT */
-	
         wacom_prop = XInternAtom (xdisplay, "Wacom Tool Type", True);
         synaptics_tap_prop = XInternAtom (xdisplay, "Synaptics Tap Action", True);
         synaptics_edge_scroll_prop = XInternAtom (xdisplay, "Synaptics Edge Scrolling", True);
@@ -1409,14 +1331,7 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
                     is_enabled = mouse_settings_device_get_int_property (device, props[i], 0, NULL);
                 else if (props[i] == synaptics_prop)
                     is_synaptics = TRUE;
-                else if (props[i] == cmt_prop) {
-                    is_cmt = TRUE;
-		    acceleration = -1;
-#ifdef HAVE_CMT
-                    mouse_settings_get_libgestures_is_mouse (xdisplay, device,
-                                                             &is_cmt_mouse);
-#endif
-                } else if (props[i] == wacom_prop)
+                else if (props[i] == wacom_prop)
                     is_wacom = TRUE;
                 else if (props[i] == synaptics_tap_prop)
                     synaptics_tap_to_click = mouse_settings_device_get_int_property (device, props[i], 4, NULL);
@@ -1485,19 +1400,9 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
     object = gtk_builder_get_object (builder, "device-acceleration-scale");
     gtk_range_set_value (GTK_RANGE (object), acceleration);
     gtk_widget_set_sensitive (GTK_WIDGET (object), acceleration != -1);
-    gtk_widget_set_visible (GTK_WIDGET (object), acceleration != -1);
-    object = gtk_builder_get_object (builder, "device-acceleration-label");
-    gtk_widget_set_visible (GTK_WIDGET (object), acceleration != -1);
-    
+
     /* update threshold scale */
     object = gtk_builder_get_object (builder, "device-threshold-scale");
-
-    /* change the threshold range for cmt */
-    if (is_cmt)
-      gtk_range_set_range(GTK_RANGE(object), 1, 5);
-    else
-      gtk_range_set_range(GTK_RANGE(object), 1, 30);
-    
     gtk_range_set_value (GTK_RANGE (object), threshold);
     gtk_widget_set_visible (GTK_WIDGET (object), threshold != -1);
     object = gtk_builder_get_object (builder, "device-threshold-label");
@@ -1521,17 +1426,14 @@ mouse_settings_device_selection_changed (GtkBuilder *builder)
 
     /* synaptics options */
     object = gtk_builder_get_object (builder, "synaptics-tab");
-    gtk_widget_set_visible (GTK_WIDGET (object), is_synaptics || 
-			    (is_cmt && !is_cmt_mouse));
+    gtk_widget_set_visible (GTK_WIDGET (object), is_synaptics);
 
 #if defined(DEVICE_PROPERTIES) || defined (HAVE_LIBINPUT)
-    if (is_synaptics || (is_cmt && !is_cmt_mouse))
+    if (is_synaptics)
     {
         object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
-        gtk_widget_set_sensitive (GTK_WIDGET (object),
-				  synaptics_tap_to_click != -1);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (object),
-				      cmt_tap_to_click);
+        gtk_widget_set_sensitive (GTK_WIDGET (object), synaptics_tap_to_click != -1);
+        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (object), synaptics_tap_to_click > 0);
 
         /* Values for synaptics_scroll_mode:
          * -1 no selection
@@ -1862,14 +1764,14 @@ mouse_settings_device_reset (GtkWidget  *button,
             /* make the button insensitive */
             gtk_widget_set_sensitive (button, FALSE);
 
-            /* set the threshold to 4 */
+            /* set the threshold to -1 */
             property_name = g_strdup_printf ("/%s/Threshold", name);
-            xfconf_channel_set_int (pointers_channel, property_name, 4);
+            xfconf_channel_set_int (pointers_channel, property_name, -1);
             g_free (property_name);
 
-            /* set the acceleration to 4 */
+            /* set the acceleration to -1 */
             property_name = g_strdup_printf ("/%s/Acceleration", name);
-            xfconf_channel_set_double (pointers_channel, property_name, 4.00);
+            xfconf_channel_set_double (pointers_channel, property_name, -1.00);
             g_free (property_name);
 
             /* update the sliders in 500ms */
@@ -2053,8 +1955,8 @@ main (gint argc, gchar **argv)
                                       G_CALLBACK (mouse_settings_device_save), builder);
 
             object = gtk_builder_get_object (builder, "device-threshold-scale");
-//            g_signal_connect (G_OBJECT (object), "format-value",
-//                              G_CALLBACK (mouse_settings_format_value_px), NULL);
+            g_signal_connect (G_OBJECT (object), "format-value",
+                              G_CALLBACK (mouse_settings_format_value_px), NULL);
             g_signal_connect_swapped (G_OBJECT (object), "value-changed",
                                       G_CALLBACK (mouse_settings_device_save), builder);
 
@@ -2097,12 +1999,13 @@ main (gint argc, gchar **argv)
                                     G_TYPE_DOUBLE, G_OBJECT (object), "value");
 
             object = gtk_builder_get_object (builder, "synaptics-tap-to-click");
-	    g_signal_connect_swapped (G_OBJECT (object), "toggled",
-                                      G_CALLBACK (mouse_settings_set_libgestures_tap_to_click), builder);
-	    object = gtk_builder_get_object (builder, "synaptics-scroll");
+            g_signal_connect_swapped (G_OBJECT (object), "toggled",
+                                      G_CALLBACK (mouse_settings_synaptics_set_tap_to_click), builder);
+
+            object = gtk_builder_get_object (builder, "synaptics-scroll");
             g_signal_connect (G_OBJECT (object), "changed",
                               G_CALLBACK (mouse_settings_synaptics_set_scrolling), builder);
-	    
+
             object = gtk_builder_get_object (builder, "synaptics-scroll-horiz");
             g_signal_connect (G_OBJECT (object), "toggled",
                               G_CALLBACK (mouse_settings_synaptics_set_scroll_horiz), builder);

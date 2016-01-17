@@ -203,7 +203,7 @@ xfce_pointers_helper_finalize (GObject *object)
 
 
 
-#if defined(HAVE_LIBINPUT) || defined(HAVE_CMT)
+#ifdef HAVE_LIBINPUT
 static gboolean
 xfce_pointers_is_enabled (Display *xdisplay,
                           XDevice *device)
@@ -229,9 +229,9 @@ xfce_pointers_is_enabled (Display *xdisplay,
 
     return FALSE;
 }
-#endif /* HAVE_LIBINPUT || HAVE_LIBGUESTURES*/
 
-#ifdef HAVE_LIBINPUT
+
+
 static gboolean
 xfce_pointers_is_libinput (Display *xdisplay,
                            XDevice *device)
@@ -256,32 +256,6 @@ xfce_pointers_is_libinput (Display *xdisplay,
     return FALSE;
 }
 #endif /* HAVE_LIBINPUT */
-
-#ifdef HAVE_CMT
-static gboolean
-xfce_pointers_is_libgestures (Display *xdisplay,
-			      XDevice *device)
-{
-    Atom     prop, type;
-    gulong   n_items, bytes_after;
-    gint     rc, format;
-    guchar  *data;
-
-    prop = XInternAtom (xdisplay, LIBGESTURES_PROP_SENSITIVITY, False);
-    gdk_error_trap_push ();
-    rc = XGetDeviceProperty (xdisplay, device, prop, 0, 1, False,
-                             XA_INTEGER, &type, &format, &n_items,
-                             &bytes_after, &data);
-    gdk_error_trap_pop ();
-    if (rc == Success)
-    {
-        XFree (data);
-        return (n_items > 0);
-    }
-
-    return FALSE;
-}
-#endif /* HAVE_CMT */
 
 
 
@@ -449,7 +423,6 @@ xfce_pointers_helper_change_button_mapping (XDeviceInfo *device_info,
     gint          n;
     gint          right_button;
     GString      *readable_map;
-    gboolean      is_cmt = FALSE;
 
 #ifdef HAVE_LIBINPUT
     if (xfce_pointers_is_libinput (xdisplay, device))
@@ -479,23 +452,6 @@ xfce_pointers_helper_change_button_mapping (XDeviceInfo *device_info,
         return;
     }
 #endif /* HAVE_LIBINPUT */
-
-#ifdef HAVE_CMT
-    if ((is_cmt = xfce_pointers_is_libgestures (xdisplay, device)))
-    {
-        if (reverse_scrolling != -1)
-        {
-            GValue value = G_VALUE_INIT;
-
-            g_value_init (&value, G_TYPE_INT);
-            g_value_set_int (&value, reverse_scrolling);
-
-            xfce_pointers_helper_change_property (device_info, device, xdisplay,
-                                                  LIBGESTURES_PROP_AUSTRALIAN_SCROLL,
-						  &value);
-        }
-    }
-#endif /* HAVE_CMT */
 
     /* search the number of buttons */
     for (n = 0, ptr = device_info->inputclassinfo; n < device_info->num_classes; n++)
@@ -542,7 +498,7 @@ xfce_pointers_helper_change_button_mapping (XDeviceInfo *device_info,
     }
 
     /* -1 means we don't change this in the mapping */
-    if (!is_cmt && reverse_scrolling != -1 && num_buttons >= 5)
+    if (reverse_scrolling != -1 && num_buttons >= 5)
     {
         /* check the buttons and swap them if needed */
         if (xfce_pointers_helper_change_button_mapping_swap (buttonmap, num_buttons,
@@ -621,25 +577,6 @@ xfce_pointers_helper_change_feedback (XDeviceInfo *device_info,
         return;
     }
 #endif /* HAVE_LIBINPUT */
-#ifdef HAVE_CMT
-    if (xfce_pointers_is_libgestures (xdisplay, device))
-    {
-        int gestures_accel;
-        GValue value = G_VALUE_INIT;
-
-	if (threshold > -2) {
-	  gestures_accel = CLAMP (threshold, 1, 5);
-	  g_value_init (&value, G_TYPE_INT);
-	  g_value_set_int (&value, gestures_accel);
-	  
-	  xfce_pointers_helper_change_property (device_info, device, xdisplay,
-						LIBGESTURES_PROP_SENSITIVITY,
-						&value);
-	}
-        return;
-    }
-#endif /* HAVE_CMT */
-
     /* get the feedback states for this device */
     gdk_error_trap_push ();
     states = XGetFeedbackControl (xdisplay, device, &num_feedbacks);
@@ -665,7 +602,7 @@ xfce_pointers_helper_change_feedback (XDeviceInfo *device_info,
         feedback.class = PtrFeedbackClass;
         feedback.length = sizeof (XPtrFeedbackControl);
         feedback.id = pt->id;
-        feedback.threshold = 4;
+        feedback.threshold = -1;
         feedback.accelNum = -1;
         feedback.accelDenom = -1;
 
@@ -834,7 +771,7 @@ xfce_pointers_helper_change_property (XDeviceInfo  *device_info,
     if (prop == None)
         return;
 
-#if defined(HAVE_LIBINPUT) || defined(HAVE_CMT)
+#ifdef HAVE_LIBINPUT
     /*
      * libinput cannot change properties on disabled devices
      * see: https://bugs.freedesktop.org/show_bug.cgi?id=89296
@@ -1052,10 +989,10 @@ xfce_pointers_helper_restore_devices (XfcePointersHelper *helper,
 
         /* read feedback settings */
         g_snprintf (prop, sizeof (prop), "/%s/Threshold", device_name);
-        threshold = xfconf_channel_get_int (helper->channel, prop, 4);
+        threshold = xfconf_channel_get_int (helper->channel, prop, -1);
 
         g_snprintf (prop, sizeof (prop), "/%s/Acceleration", device_name);
-        acceleration = xfconf_channel_get_double (helper->channel, prop, 4.00);
+        acceleration = xfconf_channel_get_double (helper->channel, prop, -1.00);
 
         if (threshold != -1 || acceleration != -1.00)
         {
