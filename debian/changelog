@@ -1,3 +1,9 @@
+xfce4-settings (4.12.0-0ubuntu1-galliumos9) vivid; urgency=medium
+
+  * Set the acceleration and threshold feedbacks for the cmt driver
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Tue, 16 Feb 2016 21:05:33 +0000
+
 xfce4-settings (4.12.0-0ubuntu1-galliumos8) vivid; urgency=medium
 
   * Put all cmt driver related changes in a patch

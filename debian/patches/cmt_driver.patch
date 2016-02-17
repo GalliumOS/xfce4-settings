@@ -39,7 +39,7 @@
  
 +if test x"$enable_cmt" = x"yes"; then
 +
-+$as_echo "#define ENABLE_CMT 1" >>confdefs.h
++$as_echo "#define HAVE_CMT 1" >>confdefs.h
 +
 +  ENABLE_CMT=1
 +fi
@@ -70,7 +70,7 @@
 +
 +dnl make cmt driver support optional
 +if test x"$enable_cmt" = x"yes"; then
-+  AC_DEFINE([ENABLE_CMT], [1], [Define to enable cmt driver support])
++  AC_DEFINE([HAVE_CMT], [1], [Define to enable cmt driver support])
 +  ENABLE_CMT=1
 +fi
 +AC_SUBST(ENABLE_CMT)
@@ -1753,12 +1753,27 @@
      {
          /* check the buttons and swap them if needed */
          if (xfce_pointers_helper_change_button_mapping_swap (buttonmap, num_buttons,
-@@ -577,6 +621,25 @@
+@@ -561,7 +605,7 @@
+     gulong               mask = 0;
+     gint                 num, denom, gcd;
+     gboolean             found = FALSE;
+-
++    gboolean             is_cmt;
+ #ifdef HAVE_LIBINPUT
+     if (xfce_pointers_is_libinput (xdisplay, device))
+     {
+@@ -577,6 +621,31 @@
          return;
      }
  #endif /* HAVE_LIBINPUT */
++
++    is_cmt = FALSE;
 +#ifdef HAVE_CMT
-+    if (xfce_pointers_is_libgestures (xdisplay, device))
++    is_cmt = xfce_pointers_is_libgestures (xdisplay, device);
++#endif
++
++#ifdef HAVE_CMT
++    if (is_cmt)
 +    {
 +        int gestures_accel;
 +        GValue value = G_VALUE_INIT;
@@ -1767,7 +1782,7 @@
 +	  gestures_accel = CLAMP (threshold, 1, 5);
 +	  g_value_init (&value, G_TYPE_INT);
 +	  g_value_set_int (&value, gestures_accel);
-+	  
++
 +	  xfce_pointers_helper_change_property (device_info, device, xdisplay,
 +						LIBGESTURES_PROP_SENSITIVITY,
 +						&value);
@@ -1779,16 +1794,92 @@
      /* get the feedback states for this device */
      gdk_error_trap_push ();
      states = XGetFeedbackControl (xdisplay, device, &num_feedbacks);
-@@ -602,7 +665,7 @@
+@@ -602,42 +671,49 @@
          feedback.class = PtrFeedbackClass;
          feedback.length = sizeof (XPtrFeedbackControl);
          feedback.id = pt->id;
 -        feedback.threshold = -1;
-+        feedback.threshold = 4;
-         feedback.accelNum = -1;
-         feedback.accelDenom = -1;
+-        feedback.accelNum = -1;
+-        feedback.accelDenom = -1;
+-
+-        found = TRUE;
+-
+-        /* above 0 is a valid value, -1 is reset, -2.00
+-         * is passed if no change is required */
+-        if (acceleration >= 0 || acceleration == -1)
+-        {
+-            if (acceleration >= 0)
+-            {
+-                /* calculate the faction of the acceleration */
+-                num = acceleration * MAX_DENOMINATOR;
+-                denom = MAX_DENOMINATOR;
+-                gcd = xfce_pointers_helper_gcd (num, denom);
+-                num /= gcd;
+-                denom /= gcd;
+-
+-                feedback.accelNum = num;
+-                feedback.accelDenom = denom;
+-            }
+-
+-            /* include acceleration in the mask */
+-            mask |= DvAccelNum | DvAccelDenom;
+-        }
++	found = TRUE;
  
-@@ -771,7 +834,7 @@
+-        /* above 0 is a valid value, -1 is reset, -2 is
+-         * passed if no change is required */
+-        if (threshold > 0 || threshold == -1)
+-        {
+-            if (threshold > 0)
+-                feedback.threshold = threshold;
+-
+-            mask |= DvThreshold;
+-        }
++	if (!is_cmt) {
++	    feedback.threshold = 4;
++	    feedback.accelNum = -1;
++	    feedback.accelDenom = -1;
++
++	    /* above 0 is a valid value, -1 is reset, -2.00
++	     * is passed if no change is required */
++	    if (acceleration >= 0 || acceleration == -1)
++		{
++		    if (acceleration >= 0)
++			{
++			    /* calculate the faction of the acceleration */
++			    num = acceleration * MAX_DENOMINATOR;
++			    denom = MAX_DENOMINATOR;
++			    gcd = xfce_pointers_helper_gcd (num, denom);
++			    num /= gcd;
++			    denom /= gcd;
++
++			    feedback.accelNum = num;
++			    feedback.accelDenom = denom;
++			}
++
++		    /* include acceleration in the mask */
++		    mask |= DvAccelNum | DvAccelDenom;
++		}
++
++	    /* above 0 is a valid value, -1 is reset, -2 is
++	     * passed if no change is required */
++	    if (threshold > 0 || threshold == -1)
++		{
++		    if (threshold > 0)
++			feedback.threshold = threshold;
++
++		    mask |= DvThreshold;
++		}
++	} else {
++	    feedback.threshold = 0;
++	    feedback.accelNum = 0;
++	    feedback.accelDenom = 1;
++	    mask |= DvAccelNum | DvAccelDenom | DvThreshold;
++	}
+ 
+         /* update the feedback of the device */
+         gdk_error_trap_push ();
+@@ -771,7 +847,7 @@
      if (prop == None)
          return;
  
@@ -1797,7 +1888,7 @@
      /*
       * libinput cannot change properties on disabled devices
       * see: https://bugs.freedesktop.org/show_bug.cgi?id=89296
-@@ -989,10 +1052,10 @@
+@@ -989,10 +1065,10 @@
  
          /* read feedback settings */
          g_snprintf (prop, sizeof (prop), "/%s/Threshold", device_name);
