@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.16.1),
  libxklavier-dev (>= 5.0), libnotify-dev, intltool (>= 0.31),
  libgarcon-1-0-dev (>= 0.2.0), libupower-glib-dev (>= 0.99)
 Build-Conflicts: libxfcegui4-dev (<< 4.7.0)
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: http://www.xfce.org
 Vcs-Svn: svn://anonscm.debian.org/pkg-xfce/desktop/trunk/xfce4-settings
 Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-xfce/desktop/trunk/xfce4-settings/
@@ -19,7 +19,7 @@ Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-xfce/desktop/trunk/xfce4-setti
 Package: xfce4-settings
 Architecture: any
 Depends: ${shlibs:Depends}, xfconf, libgarcon-common (>= 0.2.0), ${misc:Depends}
-Recommends: xfce4-volumed, x11-utils, greybird-gtk-theme, xubuntu-icon-theme
+Recommends: x11-utils, greybird-gtk-theme, xubuntu-icon-theme
 Description: graphical application for managing Xfce settings
  xfce4-settings is the Xfce settings manager front-end. It comes
  with several different components for configuring application-independent

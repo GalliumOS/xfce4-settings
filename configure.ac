@@ -16,9 +16,9 @@ dnl *** Version information ***
 dnl ***************************
 m4_define([xfce4_settings_version_major], [4])
 m4_define([xfce4_settings_version_minor], [12])
-m4_define([xfce4_settings_version_micro], [0])
+m4_define([xfce4_settings_version_micro], [3])
 m4_define([xfce4_settings_version_nano], [])
-m4_define([xfce4_settings_version_build], [6f9cff8])
+m4_define([xfce4_settings_version_build], [8ec7827])
 m4_define([xfce4_settings_version_tag], []) # Leave empty for releases
 m4_define([xfce4_settings_version], [xfce4_settings_version_major().xfce4_settings_version_minor().xfce4_settings_version_micro()ifelse(xfce4_settings_version_nano(), [], [], [.xfce4_settings_version_nano()])ifelse(xfce4_settings_version_tag(), [git], [xfce4_settings_version_tag()-xfce4_settings_version_build()], [xfce4_settings_version_tag()])])
 
@@ -42,7 +42,7 @@ AC_COPYRIGHT([Copyright (c) 2008-2015
 AC_INIT([xfce4-settings], [xfce4_settings_version], [http://bugzilla.xfce.org/])
 AC_PREREQ([2.60])
 AC_CONFIG_MACRO_DIR([m4])
-AC_REVISION([6f9cff8])
+AC_REVISION([8ec7827])
 
 dnl ***************************
 dnl *** Initialize automake ***
@@ -83,7 +83,7 @@ AC_CHECK_FUNCS([daemon setsid])
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-XDT_I18N([ar ast bg bn ca cs da de el en_AU en_GB es eu fi fr gl he hr hu id is it ja kk ko lt lv ms nb nl nn oc pa pl pt_BR pt ro ru si sk sl sr sv te th tr ug uk ur_PK ur zh_CN zh_HK zh_TW ])
+XDT_I18N([ar ast be bg bn ca cs da de el en_AU en_GB es eu fi fr gl he hr hu id is it ja kk ko lt lv ms nb nl nn oc pa pl pt_BR pt ro ru si sk sl sr sv te th tr ug uk ur_PK ur zh_CN zh_HK zh_TW ])
 
 dnl ***********************************
 dnl *** Version string for the docs ***
@@ -322,5 +322,3 @@ else
 echo "* Mime settings (gio-unix):  no"
 fi
 echo
-
-

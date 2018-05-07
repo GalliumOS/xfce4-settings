@@ -17,13 +17,14 @@ xfce4_settings_editor_SOURCES = \
 	main.c \
 	xfce-settings-cell-renderer.c \
 	xfce-settings-cell-renderer.h \
-	xfce-settings-editor-dialog.c \
-	xfce-settings-editor-dialog.h \
+	xfce-settings-editor-box.c \
+	xfce-settings-editor-box.h \
 	xfce-settings-prop-dialog.c \
 	xfce-settings-prop-dialog.h
 
 xfce4_settings_editor_CFLAGS = \
 	$(GTK_CFLAGS) \
+	$(DBUS_GLIB_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS) \
 	$(LIBXFCE4UI_CFLAGS) \
 	$(XFCONF_CFLAGS) \
@@ -35,6 +36,7 @@ xfce4_settings_editor_LDFLAGS = \
 
 xfce4_settings_editor_LDADD = \
 	$(GTK_LIBS) \
+	$(DBUS_GLIB_LIBS) \
 	$(LIBXFCE4UTIL_LIBS) \
 	$(LIBXFCE4UI_LIBS) \
 	$(XFCONF_LIBS)

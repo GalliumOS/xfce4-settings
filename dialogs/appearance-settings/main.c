@@ -460,7 +460,8 @@ theme_create_preview (GdkColor *colors)
     gint width = 44;
     gint height = 22;
 
-    drawable = gdk_pixmap_new (NULL, width, height, 24);
+    drawable = gdk_pixmap_new (gdk_get_default_root_window(), width, height,
+                               gdk_drawable_get_depth (gdk_get_default_root_window ()));
     cr = gdk_cairo_create (drawable);
     cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
 
@@ -561,6 +562,9 @@ cb_hinting_style_combo_changed (GtkComboBox *combo)
 
     /* Save setting */
     xfconf_channel_set_string (xsettings_channel, "/Xft/HintStyle", xft_hint_styles_array[active]);
+
+    /* Also update /Xft/Hinting to match */
+    xfconf_channel_set_int (xsettings_channel, "/Xft/Hinting", active > 0 ? 1 : 0);
 }
 
 static void
@@ -720,6 +724,7 @@ appearance_settings_load_icon_themes (preview_data *pd)
 
                     for (p = 0; p < 4; p++)
                     {
+                        icon = NULL;
                         if (gtk_icon_theme_has_icon (icon_theme, preview_icons[p]))
                             icon = gtk_icon_theme_load_icon (icon_theme, preview_icons[p], 16, 0, NULL);
                         else if (gtk_icon_theme_has_icon (icon_theme, "image-missing"))
@@ -775,6 +780,7 @@ appearance_settings_load_icon_themes (preview_data *pd)
                         gtk_tree_path_free (tree_path);
                     }
 
+                    g_object_unref (icon_theme);
                     g_object_unref (preview);
                 }
             }
@@ -1400,6 +1406,11 @@ appearance_settings_dialog_configure_widgets (GtkBuilder *builder)
     /* Font name */
     object = gtk_builder_get_object (builder, "gtk_fontname_button");
     xfconf_g_property_bind (xsettings_channel,  "/Gtk/FontName", G_TYPE_STRING,
+                            G_OBJECT (object), "font-name");
+
+    /* Monospace font name */
+    object = gtk_builder_get_object (builder, "gtk_monospace_fontname_button");
+    xfconf_g_property_bind (xsettings_channel,  "/Gtk/MonospaceFontName", G_TYPE_STRING,
                             G_OBJECT (object), "font-name");
 
     /* Toolbar style */
