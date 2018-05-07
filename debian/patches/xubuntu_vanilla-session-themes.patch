@@ -1,0 +1,26 @@
+Description: Change default themes
+ A vanilla Xfce session will use Xfce and Rodent as default themes, but
+ they are not shipped anymore on our images, so replace them with existing
+ themes in order to provide a better experience to people choosing the
+ 'Xfce Session' over the 'Xubuntu Session'.
+Author: Lionel Le Folgoc <mrpouit@ubuntu.com>
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/xfce4-settings/+bug/947603
+Forwarded: not-needed
+
+---
+ xfsettingsd/xsettings.xml |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+--- a/xfsettingsd/xsettings.xml
++++ b/xfsettingsd/xsettings.xml
+@@ -6,8 +6,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <channel name="xsettings" version="1.0">
+   <property name="Net" type="empty">
+-    <property name="ThemeName" type="string" value="Xfce"/>
+-    <property name="IconThemeName" type="string" value="Tango"/>
++    <property name="ThemeName" type="string" value="Greybird"/>
++    <property name="IconThemeName" type="string" value="elementary-xfce-dark"/>
+     <property name="DoubleClickTime" type="int" value="400"/>
+     <property name="DoubleClickDistance" type="int" value="5"/>
+     <property name="DndDragThreshold" type="int" value="8"/>

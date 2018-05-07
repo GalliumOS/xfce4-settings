@@ -1,0 +1,410 @@
+4.12.0
+======
+- Do not change properties on disabled libinput devices
+- Increased required automake and libtool versions
+- Fix crashes for missing icons (bug #11568)
+- Fix warnings during configure
+- Fix primary checkbox expansion in the display settings
+- Translation updates: Asturian, Bulgarian, Chinese (China), 
+  Czech, Finnish, French, Hebrew, German, Spanish, 
+  Norwegian Bokmål, Portuguese, Romanian, Slovak, Turkish
+
+4.11.4
+======
+- Add touchpad support with libinput
+- Add previews for icon themes in appearance settings
+- Add Gtk+ theme palettes in the appearance dialog
+- Add support for versioned help documentation
+- Add support for libinput Xorg driver (bug #11469)
+- Add option to set the primary display (bug #8328)
+- Add helper to synchronize CSD layout to xfwm4
+- Support stat command flags on BSD systems (bug #11531)
+- Show more information in icon-theme list (bug #9130)
+- Width of display dialog is no longer hard-coded
+- Update display PNP IDs from hwdata
+- Update mimeapps.list location for glib >= 2.41 (bug #11293)
+- Use 1/10 Hz precision for displays (bug #10661)
+- Fix segmentation fault when renaming workspaces (bug #11229)
+- Fix --display argument being fatal (bug #11188)
+- Fix alignment of the sound settings
+- Fix issues found with cppcheck (bug #10879) and other
+  scanning utilities
+- Do not try to reencode libxklavier descriptions (bug #11317)
+- Prevent invalid characters from breaking display name (bug #11423)
+- Translation updates: Arabic, Asturian, Bulgarian,
+  Chinese (Simplified), Chinese (Traditional), Croatian, Czech,
+  Danish, Finnish, French, German, Spanish, Hebrew, Hungarian,
+  Icelandic, Italian, Japanese, Kazakh, Korean, Malay, Polish,
+  Portuguese, Portuguese (Brazilian), Russian, Serbian, Slovenian,
+  Thai, Turkish, Ukrainian
+
+4.11.3
+======
+- Reapply settings when external keyboard connects
+- New display settings dialog
+- Update the settings editor to match xfconf
+- Fix overlap variable shadowing a global function
+- Fork before gtk/dbus init (bug #10918)
+- Add support for upower 0.99 (bug #10918)
+- Translation updates: Asturian, Bulgarian, Chinese (China),
+  Chinese (Taiwan), Croatian, Dutch, English (Australia), French,
+  German, Hebrew, Hungarian, Icelandic, Italian, Japanese, Korean,
+  Malay, Norwegian Bokmål, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Serbian, Spanish, Swedish, Telugu, Thai,
+  Ukrainian.
+
+4.11.2
+======
+- Increase double click time to 400ms (bug #10562).
+- Show/hide display popups with focus.
+- Add hotplug checkbox to plug dialog.
+- Identify Displays button.
+- Fix display mirroring.
+- Make mirror button insensitive if not possible.
+- Translation updates: Arabic, Bengali, Danish, German, Greek,
+  English (United Kingdom), Basque, Finnish, Galician, Hebrew,
+  Croatian, Hungarian, Indonesian, Icelandic, Japanese, Kazakh,
+  Lithuanian, Norwegian Bokmal, Norwegian Nynorsk, Occitan (post 1500),
+  Polish, Portuguese, Portuguese (Brazilian), Romanian, Slovak,
+  Serbian, Swedish, Turkish, Ukrainian, Chinese (China), Chinese (Hong
+  Kong).
+
+4.11.1
+======
+- Automatically re-enable Laptop-displays if all other displays
+  get disconnected.
+- Add option to automatically show minimal-display dialog when new
+  display gets connected.
+- Fix bugs with mnemonic accelerators (bugs #9302 and #9308).
+- Rework accelerators (bugs #9302 and #9308).
+- Autotools updates.
+- Make touchpad type delay configurable (bug #8948).
+- Mention no cache file for icon themes.
+- Translation updates: Arabic, Asturian, Bulgarian, Bengali, Catalan
+  (Valencian), Czech, Danish, German, Greek, English (United Kingdom),
+  Spanish (Castilian), Basque, Finnish, French, Galician, Hebrew,
+  Croatian, Hungarian, Indonesian, Icelandic, Italian, Japanese,
+  Kazakh, Korean, Lithuanian, Latvian, Norwegian Bokmal, Dutch
+  (Flemish), Norwegian Nynorsk, Panjabi (Punjabi), Polish, Portuguese,
+  Portuguese (Brazilian), Romanian, Russian, Sinhala, Slovak, Serbian,
+  Swedish, Telugu, Thai, Turkish, Uyghur, Ukrainian, Urdu, Urdu
+  (Pakistan), Chinese (China), Chinese (Taiwan).
+
+4.11.0
+======
+- Support circular scrolling in the synaptics settings.
+- Make sure AccessXKeys control is disabled by default.
+- Lots of improvements in XKB code.
+- Xsettingsd: Unset input method properties (bug #5437).
+- Xfsettingsd: Check service name of NameOwnerChanged (bug #9273).
+- Appearance: Fix gtk3 theme detection in install script (bug #9272).
+- Show Strv arrays in the xfconf settings editor renderer.
+- Lot of improvements in the display code: support extended desktop
+  mode for 2 monitors, improve minimal dialog.
+- Xfsettingsd: Check for NoSuchExtension (bug #9390).
+
+4.10.0
+======
+- Use the more generic application-x-executable icon for MIME editor.
+- Xsettings ix an alignment problem seen on PPC.
+- Translation updates: English (United Kingdom), Spanish (Castilian),
+  French, Galician, Croatian, Hungarian, Japanese, Kazakh, Korean,
+  Lithuanian, Dutch (Flemish), Portuguese, Romanian, Chinese (China).
+
+4.9.5
+=====
+- Fix display rate matching.
+- Bump package dependency versions.
+- Fix missing : in Xft.hintstyle.
+- Set Xcursor resources too (bug #8673).
+- Fix typo in appearance error.
+- Add hardcoded fallback if menu is not found.
+- Translation updates: Arabic, Asturian, Bengali, Catalan
+  (Valencian), Czech, Danish, German, Greek, English (United Kingdom),
+  Spanish (Castilian), Basque, Finnish, French, Galician, Hebrew,
+  Croatian, Hungarian, Indonesian, Icelandic, Italian, Japanese,
+  Kazakh, Korean, Lithuanian, Latvian, Norwegian Bokmal, Dutch
+  (Flemish), Norwegian Nynorsk, Panjabi (Punjabi), Polish, Portuguese,
+  Portuguese (Brazilian), Romanian, Russian, Sinhala, Slovak, Swedish,
+  Telugu, Turkish, Uyghur, Ukrainian, Urdu, Urdu (Pakistan), Chinese
+  (China), Chinese (Taiwan).
+
+4.9.4
+=====
+- Fix compilation without device property support (bug #8611).
+- Translation updates: Catalan (Valencian), Korean, Turkish.
+
+4.9.3
+=====
+- Xfsettingsd: Don't set large dpi in xrdb (bug #8415).
+- Include xscreensaver in the manager dialog.
+- Complete theme installation script.
+- Settings editor: Set sensitivity of save button on init.
+- Xfsettingsd: Properly round display refresh rate to find match.
+- Translation updates: Arabic, Catalan (Valencian), Czech, Danish,
+  German, Spanish (Castilian), Basque, French, Indonesian, Korean,
+  Lithuanian, Portuguese, Russian, Slovak, Swedish, Telugu, Turkish,
+  Chinese (China), Chinese (Taiwan).wan).
+
+4.9.2
+=====
+- Add mime icons in the mime-editor treeview.
+- Store window and column sizes in xfconf.
+- Add cateogry based settings manager.
+- Re-add support for pluggable dialogs and enable them always.
+- Rework settings editor.
+- Clear out keyboard shortcuts before resetting to defaults (bug #8138).
+- Updated translations: ar, ca, cs, da, de, es, id, it, kk, lt, nl,
+  nn, pt, ru, tr, uk, zh_CN, zh_TW.
+
+4.9.1
+=====
+- Use daemon() for xfsettingsd if available.
+- Hide the xfconfd-already running message completely.
+- Excluded items with NoDisplay=true in the settings dialog.
+- Remove duplicated accelerators (bug #7734).
+- Add theme dnd-installation by dropping in a treeview.
+- Drop AC_LIBTOOL in favor of LT_PREREQ and LT_INIT.
+- Wait for the window manager before setting workspace names.
+- Add option to disable numlock restoring (bug #8302).
+- Add Help button and make existing buttons work with wiki.
+- Add new MIME Type editor.
+
+4.9.0
+=====
+- Depend on Gtk+ 2.20 and Glib 2.24.
+- Merge xfce4-settings-helper into xfsettingsd.
+- Add support to xfsettingsd for pointing device properties.
+- Rework the mouse dialog and add support for basic synaptics
+  and wacom settings.
+- Add option to enable assistive technologies during login.
+- Add fontconfig monitoring (bug #5011).
+- Improved debugging with XFSETTINGSD_DEBUG=1.
+
+4.8.2
+=====
+- Fix invalid desktop size when disabling a monitor (bug #7413).
+- Fix expiration of sticky, slow, bounce and mouse keys (bug #6305).
+- Set sensitivity of custom dpi spinner.
+- Dynamically allocate the filename (bug #7521).
+- Do not show an error if spawning fails (bug #7574).
+- Remove unused code and variables.
+- Fix segfault if pointer has no feedback states and free memory.
+- Start using the gsd clipboard manager again (bug #7588).
+- Updated translations: tr, ro, pt_BR, zh_CN, nl.
+
+4.8.1
+=====
+- Don't test for "default" output in xfce_randr_populate (bug #7092).
+- Fix double free when setting workspace names (bug #7174).
+- Updated translations: Turkish.
+
+4.8.0
+=====
+- Dispatch primary clipboard restoration (bug #6819).
+- Use preferences-desktop as settings manager icon (bug #7080).
+- Remove old shortuts from store when editing the key combo.
+- Updated translations: Romanian, French, Croatian, Polish, Greek.
+
+4.7.7
+=====
+- Remove duplicated terminal entry in xfce4-settings-helper autostart
+  desktop file (bug #6919).
+- Set sensitivity of the corrent sound checkbox.
+- Drop Glib 2.22 functions.
+- Get adjustments from builder directly.
+- Make sure default values are applied in dialogs.
+- Don't use xrdb to update xft and cursor settings (bug #7014).
+- Translations updates (de, cs, el, en_GB, nb, sv).
+
+4.7.6
+=====
+- Add checks for API change in libnotify 0.7.0.
+
+4.7.5
+=====
+- Use xfconf_channel_get instead of xfconf_channel_new.
+- Don't activate numlock on first launch.
+- Fix wrong capitalizations of Xfce.
+- Fix compiler warnings.
+- Drop Xfce from the settings manager .desktop name.
+- Fix free of invalid memory (bug #6909).
+- Translations updates (hu, zh_CN, he, pt, gl).
+
+4.7.4
+=====
+- Add X11/keysym.h include to keyboards.c (Bug #6778).
+- Fix compilation without Randr 1.3 (Bug #6779).
+- Translation updates (pt, it, fi, uk, ja, zh_TW, ca, id).
+
+4.7.3
+=====
+- Add startup notification support for keyboard shortcuts.
+- Process xmodmap file at startup and on layout change (bug #5094).
+- Save and restore numlock state (bug #3098).
+- Ignore virtual XTEST mouse (bug #6735).
+- keyboard: Fix handling of empty variants (bug #6727).
+- Use GTK_SELECTION_BROWSE for treeviews.
+- Use xkl_config_item_new instead of g_new0.
+- Double click a keyboard layout/variant to edit it.
+- Show xklavier descriptions instead of language codes.
+- Fix inclusion of several displays on a single crtc.
+- Scroll to the active gtk, icon or mouse theme.
+- Fix the alignment of the "Hinting" label.
+- Use selected keyboard layout on session startup (bug #5270).
+- Select first available keyboard layout when deleting the active one.
+- Translation updates (gl, de, ru, it, uk, fi, sv, kk, eu, pt, da).
+
+4.7.2
+=====
+- Rework the randr support in xfce4-settings, this requires
+  randr 1.2 or higher.
+- Add a minimal dialog for quick display setup (--minimal, -m).
+- Port to libxklavier 5.0 API.
+- Be consistent in the check for exo-1.
+- Require the correct version of xi and inputproto (bug #6033).
+- Fix the old shortcut duplicate after editing a command.
+- Set value after setting the range and digits.
+- Don't save settings dialogs when saving session (bug #5113).
+- Release the current editor channel on exit.
+- Allow resizing of the edit property dialogs.
+- Fix linking issues (bug #6236).
+- Fix pluggable dialogs (bug #6138).
+- Change the way workspace names are handled.
+- Remove deprecated encoding key from desktop files.
+- Make the display settings dialog pluggable (bug #6524).
+- Speedup startup of the keyboard settings dialog (bug #6661).
+- Translation updates (fi, ca, lv, sk, ru, es, el, it, pt_BR,
+  eu, de, uk, si, kk, is, tr, hr, id, zh_TW, fr, da, pt).
+
+4.7.1
+=====
+- Fix possible crash in the clipboard manager (bug #6125).
+- Allow the user to edit, reset and create properties using
+  xfce4-settings-editor.
+- Allow the user to reset channels in xfce4-settings-editor.
+- Edit properties when doubled-clicked in xfce4-settings-editor.
+- Revert properties when DEL is pressed in xfce4-settings-editor.
+- Plug some leaks in xfce4-settings-editor.
+- Do not draw a gradient on xfce4-settings-editor's toolbar.
+- Respect HIG in xfce4-settings-editor's dialogs.
+- Remember the geometry of xfce4-settings-editor's window.
+- Monitor the existing properties in xfce4-settings-editor.
+- Translation updates (pt, gl, ja, nl, zh_CN, da, cs).
+
+4.7.0
+=====
+- Add clipboard manager to xfce4-settings-helper (bug #4333).
+- Port to libxfce4ui.
+- Port to exo 0.5.
+- Use new XDT macros, required xfce-dev-tools 4.7.2.
+
+4.6.4
+=====
+- Fix /Net/CursorBlinkTime property typo (bug #5488).
+- Improve error handling when setting the button map (part of bug #5004).
+- Fix the check for Xi so it does not fail with Xi2 (bug #4929).
+- Translation updates (ru, ja).
+
+4.6.2/4.6.3
+===========
+- Avoid causing xfce4-session to time out on startup (bug #5040).
+- Fix type in xfconf property name (debian bug #527238).
+- Fix mnemonic widgets in accessibility dialog (bug #5550).
+- Fix translation macros in settings helper (bug #5554).
+- Always restore the default displa scheme on startup (bug #5311).
+- Make sure --verbose is simmilar to --debug instead of --version.
+- Fix compile-issue with libxklavier >= 4.
+
+4.6.1
+=====
+- Use the folder name for selecting the icon- and style-theme in the
+  appearance dialog (bug #4997).
+- Make sure inputproto 1.4.2 is available before enabling device
+  hotplugging in the code (bug #5084).
+- Remove unsigned clamp macro that broke applying the display settings
+  and select the correct refresh rate (bug #4966).
+- Make sure that the same .desktop file does not appear in the settings
+  manager more then once if it occurs in different locations in XDG_DATA_DIRS
+  (bug #5159).
+
+4.6.0
+=====
+- Make the Xrandr dependency optional. If Xrandr is disabled, the
+  display plugin won't be compiled at all (bug #4836).
+- When stealing a shortcut from another shortcuts provider, clear the
+  shortcut of that provider first.
+- Make embedded settings dialogs optional (and disabled by default).
+  They can be turned on using --enable-pluggable-dialogs.
+- Don't mark GTK+ stock labels as translatable
+- Fix DPI calculation when DPI settings are set to '-1', (eg default) since we
+  can not depend on pango, cairo or fontconfig to do the right thing.
+- Fix typing error in the ToolbarStyle default XSETTINGS registry value
+- Do not fill the xsettings channel from the settings-dialog, xfsettingsd takes
+  care of this.
+- Add Gtk/IMModule XSETTINGS key (Bug #4961)
+
+4.5.99.1 (Xfce 4.6rc1)
+======================
+- Properly handle missing RandR extension in xfce4-settings-helper
+  and xfce4-display-settings (bug #4836).
+- Fix possible segfault in xfce4-settings-helper (bug #4813).
+- Fix xfsettingsd segfault due to strings defaulting to NULL. Patch
+  by Lars-Peter Clausen (bug #4797).
+- Translation updates: Brazilian Portuguese, Catalan, Czech, Danish,
+  Finnish, French, Japanese, Simplified Chinese, Spanish and Swedish.
+
+4.5.93 (Xfce 4.6 beta3)
+=======================
+- Allow the settings manager window to be minimized (bug #4596).
+- Fix xfce4-settings-helper not setting workspace count.
+- Improve the UI of the shortcut command dialog and
+  xfce4-settings-editor a bit.
+- Fix label wrapping in the settings manager icon view (bug #4743).
+- Make workspaces helper multi-screen aware.
+- Set SmRestartIfRunning if started in debug mode.
+- Add XfceTextRenderer for prelit/follow-state and keyboard navigation
+  support in the settings manager dialog.
+- Add --dialog=<dialog name> command line parameter to
+  xfce4-settings-manager so that one can make it show any of its
+  children at startup.
+- Review strings.
+- Fully update the appearance dialog when the settings are changed in
+  another dialog or with xfconf-query.
+- Set a DPI size based on a calculation when a custom DPI is disabled,
+  this instead of the hard-coded 96 DPI.
+- Translation updates: Basque, Brazilian Portuguese, Catalan, Czech,
+  Finnish, French, German, Greek, Hungarian, Indonesian, Japanese,
+  Norwegian Bokmal, Spanish, Swedish, Turkish, Ukrainian.
+
+4.5.92 (Xfce 4.6 beta2)
+=======================
+- Add an option to disable keyboard settings.
+- Default to "Rodent" icon theme instead of "hicolor" (Bug 4545).
+- Use XfcePosixSignalHandler in xfce4-settings-helper to handle
+  signals, since calling gtk_main_quit() from a signal handler may
+  not be safe.
+- Make xfce4-settings-helper connect to the session manager and use
+  the SmRestartImmediately facility to make sure it keeps running.
+  Disable the autostart .desktop file if we were restored from a
+  saved session.  Attempt to acquire an X selection on startup to
+  ensure multiple copies of the helper aren't running (bug 4577).
+
+4.5.91 (Xfce 4.6 beta1)
+=======================
+- Add workspace name handling to xfce4-settings-helper.
+- Add support for embedding dialogs into xfce4-settings-manager (based
+  on the X-XfcePluggable and X-XfceHelpFile desktop file keys).
+- Add embedding support to the accessibility, appearance, mouse and
+  keyboard settings dialogs.
+- Don't use g_hash_table_get_keys() which requires GLib 2.14 (bug 4377).
+- Move xfsettingsd from xfconf into xfce4-settings.
+- Rework the way keyboard shortcuts are organized. Support default
+  shortcuts using /default and /custom base properties.
+- Add optional UI options to enable/disable sounds in Canberra (bug 4367).
+- Add GUI for selecting/changing the keyboard layout.
+- Translation updates: Dutch, Finnish, German.
+
+4.5.90 (Xfce 4.6 alpha)
+=======================
+- Initial release.

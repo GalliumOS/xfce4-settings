@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+_Name=Accessibility
+_Comment=Improve keyboard and mouse accessibility
+Exec=xfce4-accessibility-settings
+Icon=preferences-desktop-accessibility
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
+StartupNotify=true
+OnlyShowIn=XFCE;
+X-XfcePluggable=true
+X-XfceHelpPage=accessibility
