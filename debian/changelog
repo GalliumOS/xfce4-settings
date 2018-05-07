@@ -1,3 +1,54 @@
+xfce4-settings (4.12.3-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release. 
+
+ -- Sean Davis <smd.seandavis@gmail.com>  Tue, 20 Mar 2018 06:15:21 -0400
+
+xfce4-settings (4.12.2-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Sean Davis <smd.seandavis@gmail.com>  Wed, 28 Feb 2018 23:46:40 -0500
+
+xfce4-settings (4.12.1-1ubuntu1) zesty; urgency=medium
+
+  * Merge from Debian unstable.  Remaining changes:
+    - debian/patches/xubuntu_vanilla-session-themes.patch: Fix missing gtk and
+      icon themes with the vanilla Xfce session.
+    - Add greybird-gtk-theme to Recommends (LP: #1050012, #1322305)
+    - Add xubuntu-icon-theme to Recommends (LP: #1157706)
+
+ -- Sean Davis <smd.seandavis@gmail.com>  Thu, 03 Nov 2016 06:51:49 -0400
+
+xfce4-settings (4.12.1-1) unstable; urgency=medium
+
+  [ Mateusz Łukasik ]
+  * New upstream release.
+  * debian/patches:
+    - 02_enable-crtc - drop included upstream.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 15 Sep 2016 21:58:32 +0200
+
+xfce4-settings (4.12.0-3ubuntu1) devel; urgency=medium
+
+  * Merge from Debian unstable.  Remaining changes:
+    - debian/patches/xubuntu_vanilla-session-themes.patch: Fix missing gtk and
+      icon themes with the vanilla Xfce session.
+    - Add greybird-gtk-theme to Recommends (LP: #1050012, #1322305)
+    - Add xubuntu-icon-theme to Recommends (LP: #1157706)
+
+ -- Unit 193 <unit193@ubuntu.com>  Sun, 12 Jun 2016 22:42:42 +0000
+
+xfce4-settings (4.12.0-3) unstable; urgency=medium
+
+  * debian/patches:
+    - 02_enable-crtc added, re-enable CRTC after resume.        closes: #785622
+  * debian/control:
+    - update standards version to 3.9.8.
+    - drop recommends on xfce4-volumed, it's gone.              closes: #827104
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 12 Jun 2016 17:53:17 +0200
+
 xfce4-settings (4.12.0-2ubuntu1) wily; urgency=low
 
   * Merge from Debian unstable.  Remaining changes:
@@ -556,4 +607,3 @@ xfce4-settings (4.6.0-1) experimental; urgency=low
     - Applied patch from Lionel Le Folgoc filling it out
 
  -- Yves-Alexis Perez <corsac@debian.org>  Sat, 28 Feb 2009 12:30:43 +0100
-

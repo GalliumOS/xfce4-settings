@@ -415,6 +415,7 @@ xfce_displays_helper_screen_on_event (GdkXEvent *xevent,
     XfceRROutput       *output, *o;
     XEvent             *e = xevent;
     gint                event_num;
+    gint                j;
     guint               n, m, nactive = 0;
     gboolean            found = FALSE, changed = FALSE;
 
@@ -496,9 +497,39 @@ xfce_displays_helper_screen_on_event (GdkXEvent *xevent,
                 {
                     xfsettings_dbg (XFSD_DEBUG_DISPLAYS, "New output connected: %s",
                                     output->info->name);
+                    /* need to enable crtc for output ? */
+                    if (output->info->crtc == None)
+                    {
+                        xfsettings_dbg (XFSD_DEBUG_DISPLAYS, "enabling crtc for %s", output->info->name);
+                        crtc = xfce_displays_helper_find_usable_crtc (helper, output);
+                        if (crtc)
+                        {
+                            crtc->mode = output->preferred_mode;
+                            crtc->rotation = RR_Rotate_0;
+                            if ((crtc->x > gdk_screen_width() + 1) || (crtc->y > gdk_screen_height() + 1)) {
+                                crtc->x = crtc->y = 0;
+                            } /* else - leave values from last time we saw the monitor */
+                            /* set width and height */
+                            for (j = 0; j < helper->resources->nmode; ++j)
+                            {
+                                if (helper->resources->modes[j].id == output->preferred_mode)
+                                {
+                                    crtc->width = helper->resources->modes[j].width;
+                                    crtc->height = helper->resources->modes[j].height;
+                                    break;
+                                }
+                            }
+                            xfce_displays_helper_set_outputs (crtc, output);
+                            crtc->changed = TRUE;
+                        }
+                    }
+
                     changed = TRUE;
                 }
             }
+            if (changed)
+                xfce_displays_helper_apply_all (helper);
+
             /* Start the minimal dialog according to the user preferences */
             if (changed && xfconf_channel_get_bool (helper->channel, NOTIFY_PROP, FALSE))
                 xfce_spawn_command_line_on_screen (NULL, "xfce4-display-settings -m", FALSE,
@@ -830,7 +861,7 @@ xfce_displays_helper_list_outputs (XfceDisplaysHelper *helper)
 
                 if (l < output->info->npreferred)
                     dist = 0;
-                else if (output->info->mm_height != 0)
+                else if ((output->info->mm_height != 0) && (gdk_screen_height_mm () != 0))
                     dist = (1000 * gdk_screen_height () / gdk_screen_height_mm () -
                             1000 * helper->resources->modes[m].height / output->info->mm_height);
                 else
@@ -1316,6 +1347,7 @@ xfce_displays_helper_toggle_internal (gpointer           *power,
 
         /* Try to find the internal display */
         if (g_str_has_prefix (output->info->name, "LVDS")
+            || g_str_has_prefix (output->info->name, "eDP")
             || strcmp (output->info->name, "PANEL") == 0)
         {
             lvds = output;
@@ -1372,7 +1404,9 @@ xfce_displays_helper_toggle_internal (gpointer           *power,
                 return;
             crtc->mode = lvds->preferred_mode;
             crtc->rotation = RR_Rotate_0;
-            crtc->x = crtc->y = 0;
+            if ((crtc->x > gdk_screen_width() + 1) || (crtc->y > gdk_screen_height() + 1)) {
+                crtc->x = crtc->y = 0;
+            } /* else - leave values from last time we saw the monitor */
             /* set width and height */
             for (m = 0; m < helper->resources->nmode; ++m)
             {

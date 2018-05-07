@@ -1,3 +1,1761 @@
+commit 8ec78275a80734536ee1f6697683294bbe60db6b
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sun Mar 18 16:50:29 2018 -0400
+
+    Cast to correct types
+
+commit f21d72873ea5a9f12cd8288441971e8ecb4a45e0
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sun Mar 18 16:44:50 2018 -0400
+
+    Add missing static
+
+commit 591f53a97139b289d27382978e02319e949a5ef1
+Author: Emanuele Petriglia <inbox@emanuelepetriglia.me>
+Date:   Sun Mar 18 18:31:54 2018 +0100
+
+    I18n: Update translation it (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit b4fcbc514426749b8754edc32a1ce6313437ab6d
+Author: Πέτρος Σαμαράς <psamaras1@gmail.com>
+Date:   Sun Mar 18 18:31:54 2018 +0100
+
+    I18n: Update translation el (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 558ef884097efb20b83f965af21bc2b59186baa3
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Tue Mar 13 21:35:55 2018 -0400
+
+    Add files to .gitignore
+
+commit 93462f3008826eb97d4f354d973db566551d29e0
+Merge: 4779448 e672bc0
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Tue Mar 13 21:13:35 2018 -0400
+
+    Merge remote-tracking branch 'ochosi/draw-active-last' into xfce-4.12
+
+commit 4779448c30576681c58a531a3712a9ba41c1f01a
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Mar 14 00:31:14 2018 +0100
+
+    I18n: Update translation da (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit e672bc0f2118f9b90c09f23b2e75272da600f0c5
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Mon Mar 12 23:20:38 2018 +0100
+
+    display: Always draw active display last so it's on top
+    
+    This is especially useful when multiple displays overlay and ensures
+    that the currently active output's name is clearly readable and
+    therefore distinguishable.
+    Also tweaked the alpha values of both displays as a result.
+
+commit 00b0f9e0349988f3dcfab9b042cbb702cd90246f
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Mon Mar 12 22:53:03 2018 +0100
+
+    display: Fix race condition on monitor dis/connecting
+
+commit 8441a949aadc6e2ef4fec011856c5aefb259eff3
+Merge: db0fcec 34396b2
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sun Mar 11 08:07:56 2018 -0400
+
+    Merge remote-tracking branch 'schuellerf/mirrored-cloned-inconsistent-4.12' into xfce-4.12
+
+commit db0fcec8f9cf48ff8363b8ef8c9be2eb4694edbd
+Author: abuyop <abuyop@gmail.com>
+Date:   Sun Mar 11 12:31:26 2018 +0100
+
+    I18n: Update translation ms (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 6494c64b2eeee74a00c01e6a5ef930ca02d48497
+Author: Erlend Østlie <erlendandreas12368@gmail.com>
+Date:   Sat Mar 10 18:31:33 2018 +0100
+
+    I18n: Update translation nb (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit bef17732eb8d6ef8b62c1db6010d6b1941622385
+Author: Zmicer Turok <zmicerturok@gmail.com>
+Date:   Sat Mar 10 00:31:33 2018 +0100
+
+    I18n: Add new translation be (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 436448a3ab9c448f4f8785b3c751d05bc6136170
+Author: Necdet Yücel <necdetyucel@gmail.com>
+Date:   Mon Mar 5 06:31:14 2018 +0100
+
+    I18n: Update translation tr (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 0e17dea042098f65dd0bc33da4f533c2492e396c
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sun Mar 4 00:33:45 2018 +0100
+
+    display: Fix multimonitor position in extended mode
+    
+    When adding more than two monitors the widths should be added for all
+    subsequent monitors.
+
+commit 34396b237268d32959b1c28d297b9b574097446e
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sun Mar 4 00:13:07 2018 +0100
+
+    Fixed multimonitor position in extended mode
+    
+    When adding more than two monitors the widths should be added for all subsequent monitors
+
+commit e42a9a3ef7b5af5532c08314ec52824536ffbba9
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sat Mar 3 22:38:50 2018 +0100
+
+    Avoid Segfault on reconnect scenario
+    
+    I can reproduce a segfault with:
+     * Connect a monitor (Monitors "overlap" now)
+     * Select mirror mode
+     * Apply
+     * Disconnect monitor
+     * Connect monitor again
+
+commit 52d69f9e9509039cd76b4d231c7172438f5c3cf0
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Mar 2 23:09:07 2018 +0100
+
+    Fix the mirror state machine by visualizing all three states
+    
+    The three states are:
+     0: not cloned
+     1: cloned (same x/y, same resolution)
+     2: mirrored (same x/y, different resolution)
+    
+    In the case of 2 I added some precautions to make both overlapping
+    displays visible, so the user knows what the current state is.
+    
+    TODO: Make sure the resolution combobox is updated correctly when the
+    mirror checkbox is clicked (currently it remains unaltered, even if the
+    resolution would change through enabling mirror mode).
+
+commit 8e6f47ba40e7e5186a86851df078923285c60c90
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Mar 2 16:22:11 2018 +0100
+
+    display: Visually note if two displays overlap (mirrored) but are not cloned
+
+commit d02a6e0a9bdb58584f13f23e864647360f219f8b
+Author: Påvel Nicklasson <pavel2@frimix.se>
+Date:   Fri Mar 2 18:31:25 2018 +0100
+
+    I18n: Update translation sv (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 045fa132933ae11bbce65b778bc3afc33e982e57
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Mar 2 06:31:30 2018 +0100
+
+    I18n: Update translation pl (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 20b5c3f07c576f0c1cb65511d699141ba82fe045
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Thu Mar 1 12:31:20 2018 +0100
+
+    I18n: Update translation sr (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 17a31c24497e53975c6969035b19e14d6e2a790b
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Mar 1 06:31:30 2018 +0100
+
+    I18n: Update translation pt_BR (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit b6919f87e7b9656ee5c3f8f7ea4378cce7105b44
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Wed Feb 28 19:18:07 2018 -0500
+
+    Updates for release
+
+commit bbce4f56ac9bb46e26f05aa47eade1a8074e3157
+Author: gabrieltandil <gabriel.tandil@gmail.com>
+Date:   Wed Feb 28 18:31:38 2018 +0100
+
+    I18n: Update translation es (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 5c472232c969417c4ba73b01d44579bc0ef51285
+Author: Jiri Grönroos <jiri.gronroos@iki.fi>
+Date:   Wed Feb 28 12:31:44 2018 +0100
+
+    I18n: Update translation fi (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 48443315140f00c16d4c36d9f3d0a2a5d3360c14
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sun Nov 26 10:48:35 2017 +0100
+
+    Fix division by 0 crash
+    
+    While it isn't clear why gdk_screen_height_mm() would be 0 in the first place
+    some users faced this so we try to be on the safe side.
+
+commit 00544567799d177795c833b2ee6337b4b27a5ba1
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sun Nov 26 11:15:33 2017 +0100
+
+    Fix syndaemon not starting with certain locales
+    
+    Fixed syndaemon not starting if the current locale creates a colon in the
+    float-number for syndaemon.
+
+commit a1b709e3570b30940e9d0d9a0244b7e58358c3c7
+Author: SamHX <samzh@outlook.com>
+Date:   Tue Feb 27 18:31:39 2018 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit d06b926e672d99665c12b022c95c54298692e12a
+Author: Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:   Tue Feb 27 18:31:39 2018 +0100
+
+    I18n: Update translation kk (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit defae46979ec46601b71fa16cf492d3971e19f4c
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Tue Feb 27 18:31:39 2018 +0100
+
+    I18n: Update translation he (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit d98c5c207fb87edd0cbb63f559dbb7871ee178e2
+Author: gabrieltandil <gabriel.tandil@gmail.com>
+Date:   Tue Feb 27 18:31:39 2018 +0100
+
+    I18n: Update translation es (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit b3e979cbcd9eaa58d3b12d372d5f6852661ac6f9
+Author: Linuxbruger <y.z@live.dk>
+Date:   Tue Feb 27 18:31:38 2018 +0100
+
+    I18n: Update translation da (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 74a87af0978ecb0e9a1dc2dd1ff56bcb715a8c46
+Author: Jeff Huang <s8321414@gmail.com>
+Date:   Tue Feb 27 12:31:21 2018 +0100
+
+    I18n: Update translation zh_TW (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 9779f50138fcf04c580ada40d4d5ed90547d6a81
+Author: Slavko <linux@slavino.sk>
+Date:   Tue Feb 27 12:31:21 2018 +0100
+
+    I18n: Update translation sk (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 85fcf9e9c343c193680f0d9f918bb2821a91eb1f
+Author: Kevin Brubeck Unhammer <unhammer+dill@mm.st>
+Date:   Tue Feb 27 12:31:21 2018 +0100
+
+    I18n: Update translation nn (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 7593aefde3f8298c63453cdb3cace21313fb4c18
+Author: Edin Veskovic <edin.lockedin@gmail.com>
+Date:   Tue Feb 27 12:31:21 2018 +0100
+
+    I18n: Update translation hr (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit d955236253c9d07545bac484ffb02547aca56c08
+Author: Πέτρος Σαμαράς <psamaras1@gmail.com>
+Date:   Tue Feb 27 06:32:07 2018 +0100
+
+    I18n: Update translation el (100%).
+    
+    359 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 1cc31f60dcc8f9f83c09d4d5c58d1488f9c8459a
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 23:55:53 2018 +0100
+
+    Update changelog
+
+commit e60b12faecba833979025ea83a2abe41c419782b
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 23:42:34 2018 +0100
+
+    Fix indentation and code formatting
+
+commit 7b808732ceb2b21825d205396eed79d673d9c16c
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 23:42:18 2018 +0100
+
+    Finalize strings for configuration option
+
+commit 91a91862685b725b821d0655f13e1e8d4214c7a0
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 23:41:48 2018 +0100
+
+    Add destroy callback to always free the pixbuf
+
+commit 5a8d1e49413d922d23f6b6948fe4f3288cd2e50f
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 15:48:21 2018 +0100
+
+    Improve code formatting
+
+commit c4bb03d44304602e904ed866bd4e35dd563eac16
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 15:42:33 2018 +0100
+
+    Make sizes const and drop useless includes
+
+commit 151e294abf0649b3f193baeec49168b39f41743c
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 13:10:37 2018 +0100
+
+    Fix race condition and drop lots of unneeded calls
+    
+    Taking the screenshot should happen before the expose event, not
+    inside.
+    Also: don't query things we already know like width and height of
+    the window or the pointer position (as that always stays the same)
+
+commit 20f9fa26ee7cc2fe2922799b61f0ea7341fbce63
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Feb 25 12:36:30 2018 +0100
+
+    Clean up the motion-notify-event code
+
+commit f5a51959574642aa3993ddcdb0e83fc5beb7949f
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sun Feb 25 10:47:40 2018 +0100
+
+    Fixed screenshot around the "origin"
+
+commit e72d7382db1a328ea170c359220ded4830909bc2
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sat Feb 24 00:46:16 2018 +0100
+
+    Workaround for non-compositing mode
+
+commit 104ba82f29ec7edf63d4508ee59c79e12be5415f
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sat Feb 24 00:39:56 2018 +0100
+
+    Valgrind findings
+
+commit c1f700b8ff4d9eb2210ed55c2d3855400cc08355
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sat Feb 24 00:38:50 2018 +0100
+
+    Reduce hardcoded circle sizes
+
+commit 566476d5190e73dcb1fc1602e382b79d6a6863a5
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sat Feb 24 00:25:42 2018 +0100
+
+    Minimize error for wrong coordinates of screenshot
+
+commit 6d67a79ca11f67f3bd07a19ffb1918b87d956de8
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sat Feb 24 00:09:28 2018 +0100
+
+    Fixed indentation
+
+commit 35bc2c2db99e49d6624bb284b43b81a0bb682e40
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sat Feb 24 00:07:13 2018 +0100
+
+    Fixed screenshot in non-compositor mode
+    
+    Also a fallback if screenshot fails
+
+commit eaed9027092dc98a9e30ae2d7baf75bc743af734
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Feb 23 01:22:15 2018 +0100
+
+    Add comments and fixme
+
+commit e608b422c84182363001319c01a8d94b7dd5e80d
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Feb 23 01:20:10 2018 +0100
+
+    WIP: Fake transparency support
+    
+    This is for non-composited environments. Currently I have to use an
+    offset of 1px to get the pixbuf drawn. This should be fixed.
+
+commit 7d7491bc5f9e6f81fbcab341766ec7c854e83704
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Thu Feb 22 23:28:31 2018 +0100
+
+    Fix build
+
+commit fa5e67c03f8c36e152b21139f3cb7958d7a39017
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Wed Feb 21 21:21:00 2018 +0100
+
+    Create a popup window instead of a dock
+    
+    The dock hint and the popup window both have the effect of
+    the wm ignoring the (partly) offscreen position of the
+    window. The dock hint is not only wrong, it also means the
+    wm may draw a shadow underneath (xfwm4 has an option for
+    shadows under docks).
+
+commit 28fa4526810526a93f621d3d2b246c243c727e92
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Wed Feb 21 00:18:08 2018 +0100
+
+    Drop Gtk3 property halign
+
+commit 54af000a25a1b6f95c5c91765c517bcaba5b3839
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Feb 20 23:44:01 2018 +0100
+
+    Make the visualisation follow the mouse-cursor
+
+commit dfa685a1ad2bec457b92f061d014ae714a8412c8
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Feb 20 22:53:58 2018 +0100
+
+    Rename binary to xfce4-find-cursor for consistency
+
+commit 620bdbb360520551e8143b78b04fc846595e5270
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Feb 20 22:28:30 2018 +0100
+
+    Backport find-cursor to Gtk2
+
+commit be099e20b30246fe233d0d4a8e6f6656364a4f9b
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Feb 20 20:40:34 2018 +0100
+
+    Add xfconf setting to enable find-cursor
+    
+    Currently there is no keyboard shortcut bound, but the script
+    is only executed if the xfconf boolean setting is true.
+
+commit 5ba3f251541fa8cf45c30886c81de40e8dc8dc77
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Feb 20 15:32:15 2018 +0100
+
+    Code cleanup and better cairo drawing code
+
+commit 83e650c63335243298910aaef9bb3daa172d93a7
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Feb 20 15:29:47 2018 +0100
+
+    Make sure that the circles are always correctly positioned
+    
+    We do this by telling the WM to ignore display boundaries through
+    setting the GDK_WINDOW_TYPE_HINT_DOCK type hint.
+
+commit c1b58e0cee8df1a4eb5d7580d9503a327d6ed098
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Tue Feb 20 00:24:30 2018 +0100
+
+    Add a simple find-cursor helper
+
+commit ce7b3e5a2327a7e7262e71809c3a07414e345e88
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Thu Feb 22 21:08:40 2018 -0500
+
+    Update changelog
+
+commit bc40c7f1e25d1f13f874783b1e792b5736720458
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Thu Feb 22 20:52:43 2018 -0500
+
+    Sync translations from 4.13
+
+commit cf04fd4f02c07322778ef6ce194af9244104548c
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Thu Feb 22 20:42:08 2018 -0500
+
+    Adapt the monospace patch to GTK2
+
+commit b9a93ccafe1a81c0b1af1c0cdbd842da90ece7e4
+Author: Igor <f2404@yandex.ru>
+Date:   Tue Feb 14 17:57:34 2017 +0300
+
+    Add Default Monospace Font chooser to Appearance dialog
+    
+    Signed-off-by: Sean Davis <smd.seandavis@gmail.com>
+
+commit f628595a81475db27a863564c6a5b6018db8a691
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Wed Feb 15 00:21:04 2017 +0100
+
+    Support embedded DisplayPort connectors
+    
+    This is what modern laptops have as internal displays
+    
+    Signed-off-by: Sean Davis <smd.seandavis@gmail.com>
+
+commit e128126f5e32c1018854403bb846cb9d6a091bb0
+Author: Florian Schüller <florian.schueller@gmail.com>
+Date:   Sun Dec 17 20:56:23 2017 +0100
+
+    display: Leave the monitor where it was if possible (Bug #14096)
+    
+    If a monitor is known and re-attaching it would not lead to a gap don't
+    move it to (x=0, y=0)
+
+commit a640c11daa5f7bfcfa52cd8149aa237560529e9c
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Thu Sep 15 07:11:29 2016 -0400
+
+    Updates for release
+
+commit f010198fb6e52c66bd1b4a9119ad65c5d1467b3e
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Mon Aug 22 18:30:50 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 9355c744714cc7b0088cbc5b6bb324912121af8a
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Mon Aug 15 12:30:58 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 683822cdb02fdbee0a33f767af3dc5caa998d2c8
+Author: Dwight Engen <dwight.engen@gmail.com>
+Date:   Wed Sep 23 09:19:00 2015 -0500
+
+    Fix color scheme preview on low bit depth displays (Xfce #12223)
+    
+    Signed-off-by: Sean Davis <smd.seandavis@gmail.com>
+
+commit cd1ef4dc2a5323f130c31754a631caa228c9fd3b
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sat Aug 13 09:19:50 2016 -0400
+
+    Fix: Segfault in convert_xfce_output_info when plugging in an external model, fallback on 640x480 (Xfce #12580, RH #1317382)
+
+commit 82a6f87bb7325f1a210ecaaa271fd2d6efbe1bbb
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sat Aug 13 08:54:49 2016 -0400
+
+    Fix: /Xft/Hinting is never set (Xfce #12086), thanks Dan Callaghan
+
+commit 90c3f40da0ae66f0c532d788249b77b68241e1c0
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sat Aug 13 08:44:47 2016 -0400
+
+    Fix memory leak in xfce4-appearance-settings (Xfce #11746), thanks LOR-superuser
+
+commit 2233f20a7ec6d7cb7dcc5752d62d98e37d9c21ad
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Thu Aug 11 20:29:27 2016 -0400
+
+    Fix: xfsettingsd resets TV mode to NULL on power cycle (Xfce #11107), thanks to patch by jkampe68
+
+commit af6f6d1c1997c832bab199cb7a09775ca78bd284
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Aug 2 18:30:41 2016 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 803b352bf28e63360643a1dadc5616e2befa58f0
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jul 2 00:30:57 2016 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2167e397d20a5e66c78fe7db72031a8185b961aa
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Jun 24 18:31:12 2016 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6ce9120bf3d4c336aea4741317c3b4ddefa66da8
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Jun 24 12:30:38 2016 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 46de18d79532887c7f1233986f6441a70af6e5f9
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Mon Jun 6 18:31:14 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2cddb687bc98015a508e56fa42bb329917bd5448
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Mon Jun 6 12:30:42 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 78045a4e86b5cb2f89ea1ed1b404122747a7b98a
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Mon Jun 6 06:31:00 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 075854a1c7b67bf212f31fca8df5d02740592d58
+Author: Sergey Alyoshin <alyoshin.s@gmail.com>
+Date:   Sun May 29 18:30:47 2016 +0200
+
+    I18n: Update translation ru (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 56abfbdda77fe634eb4c42b03b9ce78c20c82e1d
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Sun May 8 12:30:38 2016 +0200
+
+    I18n: Update translation hr (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 37e2d2e3255e403a1a8abf26a9e7a6365232b602
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Wed May 4 18:30:50 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a18888704d43df46e94fead7accb47a7b8d79fef
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Tue May 3 18:30:57 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 44def87280ff2c7c1a36fa176155aad08d34f4b0
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Tue May 3 12:31:22 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 266c866fe0b52c9c1b3dbc702d08910ac55ef5fd
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Tue May 3 00:31:06 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 90f72b427c36d547c17a70d84b459487a938e5eb
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Mon May 2 18:31:26 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7512802c4d2a33546e8b9f7c88e71d7866a9f9dd
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Sun May 1 12:31:34 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 82e7903ef109cad4245ebdebe4240ba3b7c220f8
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Apr 27 00:30:38 2016 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b6aa8585097f6992a382565cd493de4620f53668
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Tue Apr 26 12:30:38 2016 +0200
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 91ac942bcae41bb65dd1bd198235f5b0626fa1d5
+Author: gyeben <gyonkibendeguz@gmail.com>
+Date:   Tue Mar 29 18:31:42 2016 +0200
+
+    I18n: Update translation hu (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4d1b76da6943d1cd221c71535100cc95f3213c67
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Mon Mar 21 18:32:07 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 55b3abbc3cb7c4d4c6163fdb7e4c2721672d7502
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Sun Mar 20 18:31:18 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a19f2010ef70fe448e15d13e07fb55758c1399bd
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Sun Mar 20 12:31:40 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 3f626e1bb2b1f491b79f282dc8cec02b3671e105
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Thu Mar 17 00:31:10 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 37a88e0c31775854f14b4a253ae02b1c3b2f145a
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Wed Mar 16 18:31:41 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4134b6c611f1dbcff682db9b674c386a1737791c
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Wed Mar 16 00:30:41 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit da3854657e9fe135e2f3042387f691865b225ba6
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Tue Mar 15 18:32:07 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ab9dfbdf6eb639ff3243da969c6ecb7d27ec162b
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Tue Mar 15 12:30:36 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ebd8a10797d070cb1cac782116f796c407e93b86
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Sun Mar 13 18:31:18 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 06257520b96246f944a31523fb0e63a703d0d6cd
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Sun Mar 13 12:30:59 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 085aa808e89d83e059b5135631d152a1bf94221f
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:   Fri Mar 11 18:32:19 2016 +0100
+
+    I18n: Update translation oc (98%).
+    
+    349 translated messages, 5 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit bfd5d08cb39f4098d32060e54854b03c5924e89a
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Fri Mar 11 18:32:19 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c872c22b3cc3746982e1aacad07fad53af18c8e4
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Fri Mar 11 12:32:03 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6eef1d371ed0ee9ecef119052420b8f5c1844959
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Thu Mar 10 12:31:10 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ce41cf90e58e56fb169eb426f4670d8b510cfb74
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Tue Mar 8 12:31:12 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 255174c823fd951908552d892b73c6c49146c66b
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Mon Mar 7 00:30:36 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b0eac70d618a67a2cb7be23f6a84f3023b36f112
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Sun Mar 6 18:31:42 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 8428a190b93e68ac21be720ef74216ff145c6b31
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Fri Mar 4 18:31:51 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 29f8d27f2c8f5b984bfcf3126d4deeafc06d5353
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Mar 2 00:31:33 2016 +0100
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0eb11ac38f83aa0d2db778548939acf67b57dadb
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Tue Feb 16 00:30:37 2016 +0100
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e95986faea621942c607a3dade6ad227d8373459
+Author: Elishai Eliyahu <e1907@mm.st>
+Date:   Sun Feb 14 18:30:40 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0f78ab67ba55c460b030bbe03624c8e433cec8ce
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Fri Feb 12 00:30:53 2016 +0100
+
+    I18n: Update translation el (96%).
+    
+    341 translated messages, 13 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6aecec774742d8d17c1ecf9382bc3acf54539c93
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Wed Feb 10 06:30:34 2016 +0100
+
+    I18n: Update translation el (96%).
+    
+    341 translated messages, 13 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e929d9492358fc9b11cb862d3dfcced6bb8ef24c
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Tue Feb 9 00:30:58 2016 +0100
+
+    I18n: Update translation el (96%).
+    
+    341 translated messages, 13 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 09ff281b02e1ce7bd6689276fd505b49ad8040dc
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Mon Feb 8 00:30:36 2016 +0100
+
+    I18n: Update translation el (93%).
+    
+    331 translated messages, 23 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 59e361a5ff233a19a6390ef9ac66f8308fec020a
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Sat Feb 6 18:31:05 2016 +0100
+
+    I18n: Update translation el (93%).
+    
+    330 translated messages, 24 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit efe07ce1f32fed4489bdb7614374bb3680bb08f0
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Sat Feb 6 00:30:42 2016 +0100
+
+    I18n: Update translation el (91%).
+    
+    325 translated messages, 29 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 207361ff902d07022f4109e02dfb96fbba13cbfb
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Fri Feb 5 00:31:04 2016 +0100
+
+    I18n: Update translation el (90%).
+    
+    320 translated messages, 34 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ec56db98a4283c133751931c589a78015d9d8f40
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Thu Feb 4 18:30:51 2016 +0100
+
+    I18n: Update translation el (87%).
+    
+    308 translated messages, 46 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2e8bd6c0eb5294f00cf430aecca7d66141cd66b0
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Thu Feb 4 06:30:48 2016 +0100
+
+    I18n: Update translation el (87%).
+    
+    308 translated messages, 46 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 62a5ccdb2d3f5dad0e5967a3794e485519269367
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Wed Feb 3 18:30:37 2016 +0100
+
+    I18n: Update translation el (83%).
+    
+    297 translated messages, 57 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a0d2f02d34d361245e1a1a6000d55a13cec55899
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Tue Feb 2 18:30:57 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c6f4c127239a5a119d2d092663e84424d1e72835
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Mon Feb 1 00:31:03 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7f01f811bec362994955ee600a60accad7a874bc
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Sun Jan 24 00:30:33 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0dc43aded264655ec5305140dd2d9b4375a8000d
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Wed Jan 20 12:31:02 2016 +0100
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 351217d7cc0249dc36e884dadb67df467cd6afdd
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Sun Jan 17 18:30:50 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4dd93d2301003ab3a9afe85d1be9dec8e2fb1642
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Sun Jan 17 00:31:06 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e92dce6537e04aa33afb8d0c46fd1b370b1bcc32
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Sat Jan 16 18:31:33 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6cbaae142a683d840fce8d19e73221ab7e7c5274
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Sat Jan 16 00:31:27 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e98e49a021cc6b1b6b8356d49479b6b87eab10f9
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Fri Jan 15 00:31:24 2016 +0100
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2943714feec847740b1820b9d982f7312d420814
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Jan 13 06:31:35 2016 +0100
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e63ac33d130540550d937e6d8be476e3200cfa05
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Jan 13 00:31:11 2016 +0100
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit d944fd9f2401fd40eb903a9cd5c45d2be88a1d3e
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Mon Jan 11 12:30:49 2016 +0100
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c2b0c70856917a9a94254d64a568b6beedb039e8
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Sun Jan 10 00:30:33 2016 +0100
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fe16afb5bc8ef85c05b5d29ab223cb61a07c5216
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:   Mon Dec 28 12:30:54 2015 +0100
+
+    I18n: Update translation is (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a7ecd06860d71587d70cf1657906b065a42bfbe5
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Sat Dec 26 00:30:34 2015 +0100
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit dba85836f10a19a0136cd9f72971a3679dd3fdb2
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:   Sun Dec 13 18:30:43 2015 +0100
+
+    I18n: Update translation is (91%).
+    
+    324 translated messages, 30 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fdf1cd53ec7d298b085e7dc6c5d6c8d0a2d504d9
+Author: Kristján Magnússon <kristjanmagnus@gmail.com>
+Date:   Fri Dec 11 18:31:44 2015 +0100
+
+    I18n: Update translation is (86%).
+    
+    305 translated messages, 49 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 69a94b145c56516e1d7cecf48d73cbd9498844c9
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Sun Dec 6 12:30:56 2015 +0100
+
+    I18n: Update translation hr (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e148886f831807a09071b64ec651460c45bb62a5
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Fri Dec 4 12:31:05 2015 +0100
+
+    I18n: Update translation hr (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c8b9cfb7c59e36976fa177e21a2116fd8bf9fed4
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Nov 27 00:31:15 2015 +0100
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 9db74ab8cfcbfdf67455e86c67eadbc036035bd1
+Author: Davidmp <medipas@gmail.com>
+Date:   Tue Nov 24 00:31:10 2015 +0100
+
+    I18n: Update translation ca (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2de988040209209f75ff2b37c734c34b47f62b1c
+Author: Davidmp <medipas@gmail.com>
+Date:   Mon Nov 23 18:31:01 2015 +0100
+
+    I18n: Update translation ca (99%).
+    
+    351 translated messages, 3 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 54870be105dde8436c3977734eb5b14d36908f24
+Author: Kristján Magnússon <kristjanmagnus@gmail.com>
+Date:   Sun Nov 22 12:30:48 2015 +0100
+
+    I18n: Update translation is (86%).
+    
+    305 translated messages, 49 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5d90efd5fb9ec0be8d0c9d4f8e2c9ec6881a498c
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Nov 21 00:30:46 2015 +0100
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit d1c1cae59926aecd641882039648762182eadb7b
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Nov 16 12:30:54 2015 +0100
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7624c5c814a89b045e45f05598c87162e1280a0a
+Author: enolp <enolp@softastur.org>
+Date:   Sun Nov 15 06:32:06 2015 +0100
+
+    I18n: Update translation ast (96%).
+    
+    342 translated messages, 12 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0f7ce99111217be79f69fa3c9784facffb8cdac6
+Author: enolp <enolp@softastur.org>
+Date:   Sun Nov 15 00:31:24 2015 +0100
+
+    I18n: Update translation ast (96%).
+    
+    342 translated messages, 12 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 8bbf1ea88c97938cf4b0ba135b4286499e9cbb77
+Author: Xfce Bot <transifex@xfce.org>
+Date:   Sat Nov 7 18:31:09 2015 +0100
+
+    I18n: Update translation oc (98%).
+    
+    347 translated messages, 7 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 417f0e18675742b85617cd2ab7de4ef1dee13cf8
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:   Fri Oct 30 12:31:30 2015 +0100
+
+    I18n: Update translation sk (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a5c9938dd84755b9c935f4b262bd04afdc4c1019
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:   Sun Oct 25 00:30:35 2015 +0200
+
+    I18n: Update translation sk (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0a5e556ceb452e4b20e3e4fd31a2c8b4d426a642
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Fri Oct 9 18:30:58 2015 +0200
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 84a5e5993481634c19612a64f874ac58976a1e6d
+Author: Ali Abdallah <aliovx@gmail.com>
+Date:   Thu Oct 8 13:25:32 2015 +0200
+
+    rename fce-settings-editor-dialog.c to fce-settings-editor-box.c in
+    POTFILES.in
+
+commit 3a50a2bebbb9277d5c556ae376011bfc82f49fa9
+Author: Ali Abdallah <aliovx@gmail.com>
+Date:   Wed Oct 7 18:53:54 2015 +0200
+
+    Make the 'Settings Editor Dialog' pluggable. For this XfceSettingsEditorDialog
+    is transformed to XfceSettingsEditorBox, a subclass of GtkBox, which is then packed
+    inside a XfceTitledDialog when in normal mode, and to GtkPlug when pluggable in the
+    settings manager.
+
+commit 085d07cdf1abbb716d00895e610a630e0e7a295d
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Sep 21 00:30:55 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a951f29e2fba6a80dc725463ef1ae386a9658a9f
+Author: Xosé <xosecalvo@gmail.com>
+Date:   Sat Sep 19 12:30:47 2015 +0200
+
+    I18n: Update translation gl (81%).
+    
+    290 translated messages, 64 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 90cf4c02ec479243d770326eda9f78a580e63cad
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Aug 8 00:31:01 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit d78fc885f9e10bfe2eb116c5ddf07162c9d0bad6
+Author: عبدالله رضوان <abbodmar@gmail.com>
+Date:   Sat Aug 8 00:31:01 2015 +0200
+
+    I18n: Update translation ar (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 8dee3423f2d36ab69fc3f51bdb2e99f72c3ea1af
+Author: Kiril Kirilov <cybercop_montana@abv.bg>
+Date:   Fri Jul 31 18:30:34 2015 +0200
+
+    I18n: Update translation bg (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7b7ef913109f558988cf09897cb2789b5b383714
+Author: Kiril Kirilov <cybercop_montana@abv.bg>
+Date:   Sat Jul 25 00:30:33 2015 +0200
+
+    I18n: Update translation bg (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 97251a350616abbfc229e702aac75ca82a10ece7
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Jul 21 18:31:04 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 3479b7f35dcc9b735a7a83aaa1ebe1de2bf60d71
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Mon Jul 20 00:32:07 2015 +0200
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 58c9600f71c28266893e01bfeb5b61d27287a034
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Jul 6 12:30:56 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 3fda5333424049a890d20ad3098e2bbfad847a85
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Jun 24 18:31:20 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit f97b7497d626b0d706a7bd14e62a08122ed5ec90
+Author: Michael Findlay <keltoiboy@gmail.com>
+Date:   Thu Jun 11 12:31:15 2015 +0200
+
+    I18n: Update translation en_AU (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 495ca0d7942200b604d71d82551460a2cc082a8f
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Wed Jun 3 18:32:15 2015 +0200
+
+    I18n: Update translation sv (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e31fc41cda2e586202cbccfe927eedfc5656909e
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Fri Apr 24 18:30:52 2015 +0200
+
+    I18n: Update translation he (99%).
+    
+    353 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b24308981b97daddb7354306fc172cfa9a32952e
+Author: Fredrik Nyqvist <fredrik@nyqvist.biz>
+Date:   Wed Apr 15 00:30:49 2015 +0200
+
+    I18n: Update translation sv (98%).
+    
+    347 translated messages, 7 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 88cae9e9fd9f8e9ac05f007fb36803668940dc10
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Apr 9 00:31:26 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fe39bbf939a8b9e55bc71fe4de9399f5cc248052
+Author: Piotr Sokół <psokol@jabster.pl>
+Date:   Mon Apr 6 18:30:48 2015 +0200
+
+    I18n: Update translation pl (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e0565a6262b487cc84617df1c1c2119861f9b12c
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Mar 21 00:30:48 2015 +0100
+
+    I18n: Update translation lt (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c94ec0c831ef6a767cfcfcda7c87dc0df7bea275
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Mar 20 00:30:52 2015 +0100
+
+    I18n: Update translation lt (98%).
+    
+    348 translated messages, 6 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5ac860a635b88f2770822a17a36c1b0dddb3942e
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Mar 19 18:30:44 2015 +0100
+
+    I18n: Update translation lt (98%).
+    
+    347 translated messages, 7 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 25ffcf6900c1c981b4e3ebb052da2d4676f9315b
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Mar 16 12:30:44 2015 +0100
+
+    I18n: Update translation lt (97%).
+    
+    344 translated messages, 10 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 42e35218019d5a84e8ff95f1ebd47565b019cb50
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Mar 14 18:30:56 2015 +0100
+
+    I18n: Update translation lt (96%).
+    
+    341 translated messages, 13 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 9252c88b46ed7896f905bd7188b5b51b3568351d
+Author: Efstathios Iosifidis <iefstathios@gmail.com>
+Date:   Sat Mar 14 18:30:56 2015 +0100
+
+    I18n: Update translation el (80%).
+    
+    286 translated messages, 68 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 3b0ed290a1d326425542aec2ff25cc843e39c213
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Mar 14 12:30:46 2015 +0100
+
+    I18n: Update translation lt (96%).
+    
+    341 translated messages, 13 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0803beb542c4f1ce82d75aea9ce3a721d31fe68c
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Mar 14 06:30:42 2015 +0100
+
+    I18n: Update translation lt (96%).
+    
+    341 translated messages, 13 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 76e12d244e607ea9527be6fa1c28f39f984ba2d1
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Mar 14 00:30:47 2015 +0100
+
+    I18n: Update translation lt (92%).
+    
+    326 translated messages, 28 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ef8e99de04f733954e42ea20e7b7e7f3322ff506
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Mar 12 00:31:07 2015 +0100
+
+    I18n: Update translation lt (88%).
+    
+    314 translated messages, 40 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2ad549f7b7117655fdf8a69d737da514b9077930
+Author: Ardjuna <Asyura.x@gmail.com>
+Date:   Thu Mar 5 12:31:09 2015 +0100
+
+    I18n: Update translation id (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b2c3df6015d2ab1b57e2532b05298803b28f2902
+Author: Peter de Ridder <peter@xfce.org>
+Date:   Wed Mar 4 11:03:28 2015 +0100
+
+    Make sure icon == NULL if no icon is found
+
+commit 7aae6a505139e898fac08ada1e1555862037b403
+Author: Tobias Bannert <tobannert@gmail.com>
+Date:   Sun Mar 1 18:30:59 2015 +0100
+
+    I18n: Update translation de (100%).
+    
+    354 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a28d358701d10cd4c0bba5a7fc0002f9215a21ca
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sat Feb 28 14:15:13 2015 -0500
+
+    Post release tag bump
+
+commit 4663144c56854f676f09a6217c2fcf6c6c1d3f52
+Author: Sean Davis <smd.seandavis@gmail.com>
+Date:   Sat Feb 28 14:12:03 2015 -0500
+
+    Updates for release
+
 commit 6f9cff8490159c5955c22b037557225003afa86a
 Author: Sean Davis <smd.seandavis@gmail.com>
 Date:   Sat Feb 28 00:13:20 2015 -0500
@@ -13912,7 +15670,7 @@ Date:   Tue Nov 17 19:37:19 2009 +0100
     
     Conflicts:
     
-    	xfce4-settings-helper/gsd-clipboard-manager.c
+            xfce4-settings-helper/gsd-clipboard-manager.c
 
 commit ccd105e1d2818edbecf1fef10ba81cc04324865e
 Author: Nick Schermer <nick@xfce.org>
@@ -14114,7 +15872,7 @@ Date:   Fri Aug 7 14:26:26 2009 +0000
 
     2009-08-07  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation updated.
+            * hu.po: Translation updated.
     
     (Old svn revision: 30442)
 
@@ -14143,8 +15901,8 @@ commit fb09b7fb6202cf486fc14602b81b32e0124b6e8b
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Thu Jul 30 08:08:29 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     (Old svn revision: 30420)
 
@@ -14177,9 +15935,9 @@ commit 64b7f2866f39ede0b29dc02c1b9e407f81d8130e
 Author: Xu Hunt <mhuntxu@gmail.com>
 Date:   Thu Jul 23 23:54:34 2009 +0000
 
-    	* zh_CN.po: Simplified Chinese translation update
-    	* zh_CN.po: Simplified Chinese translation update
-    	* zh_CN.po: Simplified Chinese translation update
+            * zh_CN.po: Simplified Chinese translation update
+            * zh_CN.po: Simplified Chinese translation update
+            * zh_CN.po: Simplified Chinese translation update
     
     (Old svn revision: 30380)
 
@@ -14189,7 +15947,7 @@ Date:   Mon Jul 20 14:33:52 2009 +0000
 
     2009-07-20  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation updated.
+            * hu.po: Translation updated.
     
     
     (Old svn revision: 30358)
@@ -14227,7 +15985,7 @@ Date:   Fri Jul 10 15:21:04 2009 +0000
 
     2009-07-10  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation updated.
+            * hu.po: Translation updated.
     
     
     (Old svn revision: 30249)
@@ -14238,7 +15996,7 @@ Date:   Fri Jul 10 15:15:44 2009 +0000
 
     2009-07-10  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation updated.
+            * hu.po: Translation updated.
     
     
     (Old svn revision: 30248)
@@ -14293,7 +16051,7 @@ Date:   Wed Jul 1 19:07:28 2009 +0000
 
     2009-07-01  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation reworked.
+            * hu.po: Translation reworked.
     
     (Old svn revision: 30131)
 
@@ -14371,7 +16129,7 @@ Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Sun May 10 07:57:48 2009 +0000
 
     trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     (Old svn revision: 29933)
 
@@ -14450,10 +16208,10 @@ commit ad28cb1ff6ec39439bde2973f9b9c56cbf4c9100
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Sat Apr 4 10:12:48 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
-    	* da.po: Danish translation update (Per Kongstad)
-    	* da.po: Danish translation update (Per Kongstad)
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     (Old svn revision: 29702)
 
@@ -14501,22 +16259,22 @@ commit 34e84707fe9d3a218ef605b27565cd0cc2bd9e4e
 Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
 Date:   Thu Mar 19 15:02:17 2009 +0000
 
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
     
     (Old svn revision: 29675)
 
@@ -14740,16 +16498,16 @@ commit dbbaad973ab4a78f483671090fe4b266ef1bf7ca
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Mon Feb 16 15:54:49 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
-     	* da.po: Danish translation update (Per Kongstad)
-    
-    
+            * da.po: Danish translation update (Per Kongstad)
     
     
     
     
-     	* da.po: Updated Danish traanslation (Per Kongstad)
+    
+    
+            * da.po: Updated Danish traanslation (Per Kongstad)
     
     
     
@@ -14808,17 +16566,17 @@ Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Mon Feb 9 00:43:54 2009 +0000
 
     xfprint/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-settings/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-mixer/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     squeeze/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     libxfce4util/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     libxfce4ui/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     (Old svn revision: 29473)
 
@@ -14834,9 +16592,9 @@ commit 668db49c268814bf19a9d74200fa3fbb402a1840
 Author: Olivier Fourdan <fourdan.olivier@wanadoo.fr>
 Date:   Sat Feb 7 20:13:22 2009 +0000
 
-    	* dialogs/keyboard-settings/xfce-keyboard-settings.c: Add the new
-    	  parameter required for the API change for xfce_shortcut_dialog_run(),
-    	  configure.ac.in: Add dependecy on libxfce4kbd_private revision.
+            * dialogs/keyboard-settings/xfce-keyboard-settings.c: Add the new
+              parameter required for the API change for xfce_shortcut_dialog_run(),
+              configure.ac.in: Add dependecy on libxfce4kbd_private revision.
     
     
     (Old svn revision: 29468)
@@ -15031,7 +16789,7 @@ commit 9e3a18e157ad9ad20e71f8f502954ca1ef558b02
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Fri Jan 23 15:36:15 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     
     
@@ -15039,7 +16797,7 @@ Date:   Fri Jan 23 15:36:15 2009 +0000
     
     
     
-     	* da.po: Danish translation updated (Per Kongstad)
+            * da.po: Danish translation updated (Per Kongstad)
     
     
     
@@ -15070,7 +16828,7 @@ Date:   Fri Jan 23 15:36:15 2009 +0000
     
     
     
-     	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     
     
@@ -15084,7 +16842,7 @@ Date:   Fri Jan 23 15:36:15 2009 +0000
     
     
     
-     	* da.po: Danish translation updated (Per Kongstad)
+            * da.po: Danish translation updated (Per Kongstad)
     
     
     
@@ -15094,7 +16852,7 @@ Date:   Fri Jan 23 15:36:15 2009 +0000
     
     
     
-     	* da.po: Danish translation updated to 0.5.2 (Per Kongstad)
+            * da.po: Danish translation updated to 0.5.2 (Per Kongstad)
     
     
     
@@ -15108,9 +16866,9 @@ Date:   Fri Jan 23 15:36:15 2009 +0000
     
     
     
-     	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
-     	* da.po: Danish tranlation update 4.5.93 (Per Kongstad)
+            * da.po: Danish tranlation update 4.5.93 (Per Kongstad)
     
     
     
@@ -15136,7 +16894,7 @@ Date:   Fri Jan 23 15:36:15 2009 +0000
     
     
     
-     	* da.po, LINGUAS: Danish translation added (Per Kongstad)
+            * da.po, LINGUAS: Danish translation added (Per Kongstad)
     
     
     
@@ -15148,7 +16906,7 @@ Date:   Fri Jan 23 15:36:15 2009 +0000
     
     
     
-     	* da.po : Danish translation updated (Per Kongstad)
+            * da.po : Danish translation updated (Per Kongstad)
     
     (Old svn revision: 29298)
 
@@ -15192,23 +16950,23 @@ Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Sun Jan 18 12:32:33 2009 +0000
 
     xfce4-session/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-panel/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-settings/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     libxfce4menu/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     libxfce4util/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfwm4/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-appfinder/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfconf/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     libxfcegui4/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     (Old svn revision: 29271)
 
@@ -15422,11 +17180,11 @@ Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Sat Dec 20 21:54:52 2008 +0000
 
     xfce4-session/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-settings/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfcalendar/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     (Old svn revision: 29037)
 
@@ -15551,8 +17309,8 @@ commit c2960b0bfb39f0237a0d61458b658318f22701b5
 Author: Olivier Fourdan <fourdan.olivier@wanadoo.fr>
 Date:   Sun Nov 23 10:43:05 2008 +0000
 
-    	* xfce4-settings-helper/workspaces.c: Fix xfce4-settings-helper not
-    	  setting workspace count.
+            * xfce4-settings-helper/workspaces.c: Fix xfce4-settings-helper not
+              setting workspace count.
     
     (Old svn revision: 28889)
 
@@ -15844,8 +17602,8 @@ commit 1b846b8ad972c593a90ff79116b99d933cde858b
 Author: Olivier Fourdan <fourdan.olivier@wanadoo.fr>
 Date:   Sat Nov 1 15:42:41 2008 +0000
 
-    	* dialogs/appearance-settings/main.c, xfsettingsd/registry.c: Use
-    	  "Rodent" as default icon theme (and not "hicolor" (Bug #4545)
+            * dialogs/appearance-settings/main.c, xfsettingsd/registry.c: Use
+              "Rodent" as default icon theme (and not "hicolor" (Bug #4545)
     
     (Old svn revision: 28560)
 
@@ -15853,8 +17611,8 @@ commit 23f94a34441e54e025f9a98bae2ed8e115503f1d
 Author: Olivier Fourdan <fourdan.olivier@wanadoo.fr>
 Date:   Sat Nov 1 11:50:07 2008 +0000
 
-    	* dialogs/keyboard-settings/xfce-keyboard-settings.c: Avoid duplication
-    	  of code.
+            * dialogs/keyboard-settings/xfce-keyboard-settings.c: Avoid duplication
+              of code.
     
     (Old svn revision: 28558)
 
@@ -15873,8 +17631,8 @@ commit 7bfdabc2e6b5183606a44150609f0bd495f90526
 Author: Olivier Fourdan <fourdan.olivier@wanadoo.fr>
 Date:   Fri Oct 31 20:48:04 2008 +0000
 
-    	* dialogs/keyboard-settings/xfce-keyboard-settings.c: Disable keyboard
-    	  layout frames when system default is active.
+            * dialogs/keyboard-settings/xfce-keyboard-settings.c: Disable keyboard
+              layout frames when system default is active.
     
     (Old svn revision: 28541)
 
@@ -16074,9 +17832,9 @@ commit 15205dded4328a0c5de107a8a1183308edcf2320
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Oct 19 00:45:28 2008 +0000
 
-    	* POTFILES.in: Update file list.
-    	* de.po: Update German translations.
-    	* xfce4-settings.pot, *.po: Update strings.
+            * POTFILES.in: Update file list.
+            * de.po: Update German translations.
+            * xfce4-settings.pot, *.po: Update strings.
     
     (Old svn revision: 28302)
 
@@ -16191,7 +17949,7 @@ commit 2b53723a95b5d1131ea6b0f63a48b166b65c108c
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Wed Oct 15 22:27:47 2008 +0000
 
-    	* LINGUAS: Remove hu because hu.po is missing.
+            * LINGUAS: Remove hu because hu.po is missing.
     
     (Old svn revision: 28264)
 
@@ -16911,9 +18669,9 @@ commit 7b2acef7d3575231dd596b1b7342ab606d1ea8df
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Tue Sep 9 18:55:15 2008 +0000
 
-    	* dialogs/appearance-settings/main.c: Don't multiply the DPI value with
-    	  1024. That should only be done for the XChangeProperty call (but why?).
-    	  The current behaviour breaks xrdb badly (and thereby all Qt apps).
+            * dialogs/appearance-settings/main.c: Don't multiply the DPI value with
+              1024. That should only be done for the XChangeProperty call (but why?).
+              The current behaviour breaks xrdb badly (and thereby all Qt apps).
     
     (Old svn revision: 27778)
 
@@ -16929,10 +18687,10 @@ commit 62303ed4379c427ea5b52da73f379065db3c0f38
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Mon Sep 8 22:32:16 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c,
-    	  xfce4-settings-helper/keyboard-shortcuts.c: Fix the checks for invalid
-    	  values when a property was removed (use G_VALUE_TYPE (value) !=
-    	  G_TYPE_INVALID instead of value != NULL).
+            * dialogs/keyboard-settings/main.c,
+              xfce4-settings-helper/keyboard-shortcuts.c: Fix the checks for invalid
+              values when a property was removed (use G_VALUE_TYPE (value) !=
+              G_TYPE_INVALID instead of value != NULL).
     
     (Old svn revision: 27770)
 
@@ -16953,11 +18711,11 @@ commit 5d0517e4ad656462e2d4f0dc911cc6b3b10a8031
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Mon Sep 8 19:12:45 2008 +0000
 
-    	* dialogs/keyboard-settings/frap-shortcuts.c,
-    	  dialogs/keyboard-settings/frap-shortcuts-dialog.c,
-    		xfce4-settings-helper/frap-shortcuts.c: Sync with latest
-    		changes made to libfrap (locally by now) and clean things up a little.
-     	* *.po, xfce4-settings.pot: Merge strings.
+            * dialogs/keyboard-settings/frap-shortcuts.c,
+              dialogs/keyboard-settings/frap-shortcuts-dialog.c,
+                    xfce4-settings-helper/frap-shortcuts.c: Sync with latest
+                    changes made to libfrap (locally by now) and clean things up a little.
+            * *.po, xfce4-settings.pot: Merge strings.
     
     (Old svn revision: 27760)
 
@@ -17012,8 +18770,8 @@ commit 98d8ce646c51cde07b2039cdb38f2e907b622665
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Sep 7 22:04:04 2008 +0000
 
-    	* POTFILES.in: Add missing files.
-    	* *.po, xfce4-settings.pot: Merge new strings.
+            * POTFILES.in: Add missing files.
+            * *.po, xfce4-settings.pot: Merge new strings.
     
     (Old svn revision: 27742)
 
@@ -17021,8 +18779,8 @@ commit f89b6fe124f3866d02af00b6ae7002659a0c6480
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Sep 7 21:59:53 2008 +0000
 
-    	* dialogs/keyboard-settings/frap-shortcuts-dialogs.c: Remove an unused
-    	  variable.
+            * dialogs/keyboard-settings/frap-shortcuts-dialogs.c: Remove an unused
+              variable.
     
     (Old svn revision: 27741)
 
@@ -17030,9 +18788,9 @@ commit fdbf7fb7888105e137474a12a122b4b1a3bc70aa
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Sep 7 21:52:26 2008 +0000
 
-    	* dialogs/keyboard-settings/frap-shortcuts-dialog.c: Update the dialog. It
-    	  now uses XfceTitledDialog as a parent and also displays the partial
-    	  shortcut while being entered - cool!
+            * dialogs/keyboard-settings/frap-shortcuts-dialog.c: Update the dialog. It
+              now uses XfceTitledDialog as a parent and also displays the partial
+              shortcut while being entered - cool!
     
     (Old svn revision: 27739)
 
@@ -17040,13 +18798,13 @@ commit 4ba77d9f4e4997a9f17773b152f245091478ed77
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Sep 7 21:18:34 2008 +0000
 
-    	* dialogs/keyboard-settings/frap-shortcuts.{c,h},
-    	  dialogs/keyboard-settings/frap-shortcuts.{c,h},
-    	  xfce4-settings-helper/Makefile.am,
-    	  xfce4-settings-helper/frap-shortcuts.{c,h}: Update to most recent
-    	  libfrap version.
-    	* xfce4-settings-helper/keyboard-shortcuts.c: Port the keyboard helper to
-    	  libfrap.
+            * dialogs/keyboard-settings/frap-shortcuts.{c,h},
+              dialogs/keyboard-settings/frap-shortcuts.{c,h},
+              xfce4-settings-helper/Makefile.am,
+              xfce4-settings-helper/frap-shortcuts.{c,h}: Update to most recent
+              libfrap version.
+            * xfce4-settings-helper/keyboard-shortcuts.c: Port the keyboard helper to
+              libfrap.
     
     (Old svn revision: 27737)
 
@@ -17054,19 +18812,19 @@ commit 89313806bca695460d1ff157c829cfb36ab52bde
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Sep 7 18:23:36 2008 +0000
 
-    	* dialogs/keyboard-settings/Makefile.am,
-    	  dialogs/keyboard-settings/frap-shortcuts.{c,h},
-    		dialogs/keyboard-settings/frap-shortcuts-dialog.{c,h},
-    		dialogs/keyboard-settings/main.c: Import frap utility functions and
-    		shortcut dialog into xfce4-settings. Modify the keyboard settings dialog
-    		so that it makes use of them. Make even better use of the xfconf
-    		'property-changed' signal by adding/removing rows from the shortcuts tree
-    		view when necessary.
-    	* dialogs/keyboard-settings/shortcut-dialog.{c,h}: Remove this one as it is
-    	  now replaced by FrapShortcutsDialog.
+            * dialogs/keyboard-settings/Makefile.am,
+              dialogs/keyboard-settings/frap-shortcuts.{c,h},
+                    dialogs/keyboard-settings/frap-shortcuts-dialog.{c,h},
+                    dialogs/keyboard-settings/main.c: Import frap utility functions and
+                    shortcut dialog into xfce4-settings. Modify the keyboard settings dialog
+                    so that it makes use of them. Make even better use of the xfconf
+                    'property-changed' signal by adding/removing rows from the shortcuts tree
+                    view when necessary.
+            * dialogs/keyboard-settings/shortcut-dialog.{c,h}: Remove this one as it is
+              now replaced by FrapShortcutsDialog.
     
-     	* POTFILES.in: Add frap-shortcuts.c and frap-shortcuts-dialog.c.
-    	* *.po, xfce4-settings.pot: Merge new strings.
+            * POTFILES.in: Add frap-shortcuts.c and frap-shortcuts-dialog.c.
+            * *.po, xfce4-settings.pot: Merge new strings.
     
     (Old svn revision: 27729)
 
@@ -17083,11 +18841,11 @@ commit b678b7bb537d418f391d715ec016a6f8186d4292
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Sep 6 14:37:03 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c: Add support for the
-    	  'property-changed' signal of the XfconfChannel. Update shortcuts and
-    	  actions whenever a property changes. Improve conflict resolving,
-    	  shorten the dialog messages.
-    	* TODO: Add some notes for the final release. n 	* *.po, xfce4-settings.pot: Merge new strings, remove the old ones.
+            * dialogs/keyboard-settings/main.c: Add support for the
+              'property-changed' signal of the XfconfChannel. Update shortcuts and
+              actions whenever a property changes. Improve conflict resolving,
+              shorten the dialog messages.
+            * TODO: Add some notes for the final release. n         * *.po, xfce4-settings.pot: Merge new strings, remove the old ones.
     
     (Old svn revision: 27691)
 
@@ -17148,7 +18906,7 @@ commit 7f071c33e71aba42fdfd4c43b1f37c61d504b156
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Sep 6 05:13:40 2008 +0000
 
-    	* *.po, xfce4-settings.pot: Merge new strings.
+            * *.po, xfce4-settings.pot: Merge new strings.
     
     (Old svn revision: 27674)
 
@@ -17156,12 +18914,12 @@ commit 0c2509d53988ebab0a8ea703fe638fea6c470a3c
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Sep 6 05:10:07 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c: Add two new methods
-    	  keyboard_settings_request_confirmation() and
-    	  read_shortcut_property() for handling conflicts with xfwm4
-    	  shortcuts. Provide nice 'please choose between A and B' dialogs in
-    	  case we are able to resolve these conflicts via xfconf. The same
-    	  dialogs are also going to appear in xfwm4. n
+            * dialogs/keyboard-settings/main.c: Add two new methods
+              keyboard_settings_request_confirmation() and
+              read_shortcut_property() for handling conflicts with xfwm4
+              shortcuts. Provide nice 'please choose between A and B' dialogs in
+              case we are able to resolve these conflicts via xfconf. The same
+              dialogs are also going to appear in xfwm4. n
     
     (Old svn revision: 27673)
 
@@ -17169,8 +18927,8 @@ commit 7180b54738da979909bd17fb556128eb8d66caf7
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Fri Sep 5 23:27:55 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c: Don't accept empty accelerator
-    	  names as shortcuts in keyboard_settings_validate_shortcut(). \n
+            * dialogs/keyboard-settings/main.c: Don't accept empty accelerator
+              names as shortcuts in keyboard_settings_validate_shortcut(). \n
     
     (Old svn revision: 27663)
 
@@ -17178,7 +18936,7 @@ commit 855568a7176653de4e61f0ed528747dfa09cf6e2
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Thu Sep 4 16:47:14 2008 +0000
 
-    	* autogen.sh: Fix git svn revision versioning.
+            * autogen.sh: Fix git svn revision versioning.
     
     (Old svn revision: 27652)
 
@@ -17186,16 +18944,16 @@ commit f73f25f800d30fc633c819dee89dee17cff940ef
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Aug 31 23:48:13 2008 +0000
 
-    	* dialogs/keyboard-settings/shortcuts-dialog.c,
-    	  xfce4-settings-helper/keyboard-shortcuts.c: Add two new functions
-    	  called get_modifier_masks() and get_ignore_mask(). The first
-    	  determines to which of the Mod2-Mod5 modifiers CapsLock, NumLock and
-    	  ScrollLock are mapped and generates a modifier mask for them. The
-    	  latter combines this mask with the IGNORED_MODIFIERS mask which we
-    	  already used before and which includes GDK_HYPER_MASK etc.. This
-    	  mask is then used in several places to avoid these modifiers to
-    	  appear in the result of gtk_accelerator_name() and to properly grab
-    	  the shortcuts. This should fix bug #4304.
+            * dialogs/keyboard-settings/shortcuts-dialog.c,
+              xfce4-settings-helper/keyboard-shortcuts.c: Add two new functions
+              called get_modifier_masks() and get_ignore_mask(). The first
+              determines to which of the Mod2-Mod5 modifiers CapsLock, NumLock and
+              ScrollLock are mapped and generates a modifier mask for them. The
+              latter combines this mask with the IGNORED_MODIFIERS mask which we
+              already used before and which includes GDK_HYPER_MASK etc.. This
+              mask is then used in several places to avoid these modifiers to
+              appear in the result of gtk_accelerator_name() and to properly grab
+              the shortcuts. This should fix bug #4304.
     
     
     (Old svn revision: 27632)
@@ -17204,17 +18962,17 @@ commit f6f6f98ae99c5f3203eef88ed350be16d3f88e4a
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Aug 31 13:38:18 2008 +0000
 
-    	* dialogs/keyboard-settings/shortcut-dialog.c: Ignore
-    	  GDK_SUPER_MASK, GDK_HYPER_MASK and GDK_META_MASK when parsing
-    	  key release events. xfce4-settings-helper handles X events
-    	  instead of Gdk events and unlike Gdk X doesn't know which
-    	  of the Super, Meta and Hyper keys are mapped to Mod2-Mod5.
-    	  Having <Super>, <Meta>, <Hyper> or even <Super>Super_L in the
-    	  accelerator name will cause the saved shortcut names to be
-    	  different than the ones generated by parsing X key events.
-    	  This should fix bug #4304 although I suppose it would be
-    	  nicer to determine which keys are mapped to Mod2-Mod5 when
-    	  parsing X key events from the semantic point of view.
+            * dialogs/keyboard-settings/shortcut-dialog.c: Ignore
+              GDK_SUPER_MASK, GDK_HYPER_MASK and GDK_META_MASK when parsing
+              key release events. xfce4-settings-helper handles X events
+              instead of Gdk events and unlike Gdk X doesn't know which
+              of the Super, Meta and Hyper keys are mapped to Mod2-Mod5.
+              Having <Super>, <Meta>, <Hyper> or even <Super>Super_L in the
+              accelerator name will cause the saved shortcut names to be
+              different than the ones generated by parsing X key events.
+              This should fix bug #4304 although I suppose it would be
+              nicer to determine which keys are mapped to Mod2-Mod5 when
+              parsing X key events from the semantic point of view.
     
     
     (Old svn revision: 27628)
@@ -17223,8 +18981,8 @@ commit e172ad57f37c619727423b1ec940dc594aef2f54
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Aug 30 21:16:27 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c: Don't call gtk_widget_hide()
-    	  after creating the main dialog. This should fix bug #4335.
+            * dialogs/keyboard-settings/main.c: Don't call gtk_widget_hide()
+              after creating the main dialog. This should fix bug #4335.
     
     
     (Old svn revision: 27616)
@@ -17345,9 +19103,9 @@ commit 7df4de385e8e9e7b2737cf1eeaec9d509d87beb3
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Aug 17 18:38:02 2008 +0000
 
-    	* xfce4-settings-editor/Makefile.am,
-    	  po/POTFILES.in: Fix distcheck.
-    	* po/: Regenerate po files.
+            * xfce4-settings-editor/Makefile.am,
+              po/POTFILES.in: Fix distcheck.
+            * po/: Regenerate po files.
     
     (Old svn revision: 27460)
 
@@ -17355,8 +19113,8 @@ commit 90f2ed7a1d9010717b0c1715a8d8bb83dfed7391
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Aug 17 18:05:09 2008 +0000
 
-    	* dialogs/display-settings/: Disable randr 1.2 support
-    	  for pinky release.
+            * dialogs/display-settings/: Disable randr 1.2 support
+              for pinky release.
     
     (Old svn revision: 27459)
 
@@ -17413,12 +19171,12 @@ commit 89b6671f733a20c0f5c349c6980244f0d633a56e
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 27 21:52:37 2008 +0000
 
-    	* dialogs/mouse-settings/main.c: Always save the RightHand
-    	  property, because the deamon uses that property to detect
-    	  a device. Use a static property string size. Default for
-    	  ReverseScrolling is FALSE.
-    	  Those changes fix a bug where an added device was not
-    	  restored property.
+            * dialogs/mouse-settings/main.c: Always save the RightHand
+              property, because the deamon uses that property to detect
+              a device. Use a static property string size. Default for
+              ReverseScrolling is FALSE.
+              Those changes fix a bug where an added device was not
+              restored property.
     
     (Old svn revision: 27389)
 
@@ -17426,11 +19184,11 @@ commit f338efec4351b8bb818d6aa464a52640d62ff311
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 27 21:33:25 2008 +0000
 
-    	* configure.ac.in, dialogs/mouse-settings/main.c,
-    	  dialogs/mouse-settings/Makefile.am,
-    	  xfce4-settings-helper/pointers.c,
-    	  xfce4-settings-helper/Makefile.am: Drop HAL dependency
-    	  and use Xevent for monitoring device changes.
+            * configure.ac.in, dialogs/mouse-settings/main.c,
+              dialogs/mouse-settings/Makefile.am,
+              xfce4-settings-helper/pointers.c,
+              xfce4-settings-helper/Makefile.am: Drop HAL dependency
+              and use Xevent for monitoring device changes.
     
     (Old svn revision: 27388)
 
@@ -17438,9 +19196,9 @@ commit 8f8bd904c84a1b6d736f57464ba1112dc2abc1a9
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Jul 27 05:34:14 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c,
-    	  xfce4-settings-helper/keyboard-shortcuts.c: Use
-    	  xfconf_channel_get_properties() instead of xfconf_channel_get_all().
+            * dialogs/keyboard-settings/main.c,
+              xfce4-settings-helper/keyboard-shortcuts.c: Use
+              xfconf_channel_get_properties() instead of xfconf_channel_get_all().
     
     (Old svn revision: 27378)
 
@@ -17467,24 +19225,24 @@ commit 0feb9c6b8f185431e46119413c7c10ac163f4a8c
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 25 23:20:21 2008 +0000
 
-    	First commit with legacy code working (randr < 1.2). Randr
-    	1.2 code disabled for now.
+            First commit with legacy code working (randr < 1.2). Randr
+            1.2 code disabled for now.
     
-    	* xfce4-settings-helper/Makefile.am,
-    	  configure.ac.in: Depend on randr 1.1 and remove xxf86vm.
-    	* dialogs/display-settings/xfce-randr-legacy.c,
-    	  dialogs/display-settings/xfce-randr-legacy.h: Lagecy backend.
-    	  This is used when compiled with randr < 1.2, when the drivers
-    	  is not really randr 1.2 or when there are more then one screen
-    	  on the default display.
-    	* dialogs/display-settings/xfce-randr.c,
-    	  dialogs/display-settings/xfce-randr.h: Randr 1.2 code, not
-    	  working yet. Disabled it for the moment.
-    	* dialogs/display-settings/main.c: Updates.
-    	* dialogs/display-settings/Makefile.am: Add new files.
-    	* xfce4-settings-helper/displays.c: Make legacy randr
-    	  code work.
-    	* dialogs/display-settings/display-dialog.glade: Updates.
+            * xfce4-settings-helper/Makefile.am,
+              configure.ac.in: Depend on randr 1.1 and remove xxf86vm.
+            * dialogs/display-settings/xfce-randr-legacy.c,
+              dialogs/display-settings/xfce-randr-legacy.h: Lagecy backend.
+              This is used when compiled with randr < 1.2, when the drivers
+              is not really randr 1.2 or when there are more then one screen
+              on the default display.
+            * dialogs/display-settings/xfce-randr.c,
+              dialogs/display-settings/xfce-randr.h: Randr 1.2 code, not
+              working yet. Disabled it for the moment.
+            * dialogs/display-settings/main.c: Updates.
+            * dialogs/display-settings/Makefile.am: Add new files.
+            * xfce4-settings-helper/displays.c: Make legacy randr
+              code work.
+            * dialogs/display-settings/display-dialog.glade: Updates.
     
     (Old svn revision: 27373)
 
@@ -17492,8 +19250,8 @@ commit fb45feb3ea09dd8736537d3fc486b5d997b5f8a9
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sat Jul 19 06:47:03 2008 +0000
 
-    	* dialogs/mouse-settings/mouse-dialog.glade: Simplify packing
-    	  of the widgets, like we do in the other dialogs.
+            * dialogs/mouse-settings/mouse-dialog.glade: Simplify packing
+              of the widgets, like we do in the other dialogs.
     
     (Old svn revision: 27350)
 
@@ -17501,9 +19259,9 @@ commit 7d525ee2011d4c697f306a1d14f94cfe03c81091
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sat Jul 19 06:38:26 2008 +0000
 
-    	* dialogs/mouse-settings/main.c, xfce4-settings-helper/pointers.c:
-    	  Remove the notification. Not a good idea since it also shows
-    	  after suspend.
+            * dialogs/mouse-settings/main.c, xfce4-settings-helper/pointers.c:
+              Remove the notification. Not a good idea since it also shows
+              after suspend.
     
     (Old svn revision: 27349)
 
@@ -17511,9 +19269,9 @@ commit 3495225cb590ba2e61173cc0dcb33dc4c2a17625
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 23:35:31 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c,
-    	  dialogs/keyboard-settings/keyboard-dialog.glade: Set default
-    	  window width in the glade file, not in the code.
+            * dialogs/keyboard-settings/main.c,
+              dialogs/keyboard-settings/keyboard-dialog.glade: Set default
+              window width in the glade file, not in the code.
     
     (Old svn revision: 27348)
 
@@ -17521,11 +19279,11 @@ commit ce777987ac708b23869c374ff44a11e36d92dc9b
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 23:27:06 2008 +0000
 
-    	* xfce4-settings-helper/Makefile.am, xfce4-settings-helper/main.c,
-    	  xfce4-settings-helper/keyboards.c/h: Add basic gobject stuff.
-    	* xfce4-settings-helper/accessibility.c,
-    	  xfce4-settings-helper/keyboards.c,
-    	  xfce4-settings-helper/pointers.c: Fix some indentation.
+            * xfce4-settings-helper/Makefile.am, xfce4-settings-helper/main.c,
+              xfce4-settings-helper/keyboards.c/h: Add basic gobject stuff.
+            * xfce4-settings-helper/accessibility.c,
+              xfce4-settings-helper/keyboards.c,
+              xfce4-settings-helper/pointers.c: Fix some indentation.
     
     (Old svn revision: 27347)
 
@@ -17541,17 +19299,17 @@ commit 6eb6338ce45e46dc896b02c2333b0f598ca48ee8
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 19:43:35 2008 +0000
 
-    	* configure.ac.in, xfce4-settings-helper/Makefile.am,
-    	  xfce4-settings-helper/keyboards.c: Drop libxxf86misc dependency.
-    	  Xkb can do all this, it's not needed anymore and already
-    	  removed from Xorg git master.
-    	* dialogs/keyboard-settings/keyboard-dialog.glade: Show the slider
-    	  values, add tooltips and change the slider ranges a bit.
-    	* dialogs/keyboard-settings/main.c: Set default window size width to
-    	  400px instead on in the glade code.
-    	* xfce4-settings-helper/pointers.c, xfce4-settings-helper/keyboards.c,
-    	  xfce4-settings-helper/accessibility.c: Property push and trap
-    	  x errors.
+            * configure.ac.in, xfce4-settings-helper/Makefile.am,
+              xfce4-settings-helper/keyboards.c: Drop libxxf86misc dependency.
+              Xkb can do all this, it's not needed anymore and already
+              removed from Xorg git master.
+            * dialogs/keyboard-settings/keyboard-dialog.glade: Show the slider
+              values, add tooltips and change the slider ranges a bit.
+            * dialogs/keyboard-settings/main.c: Set default window size width to
+              400px instead on in the glade code.
+            * xfce4-settings-helper/pointers.c, xfce4-settings-helper/keyboards.c,
+              xfce4-settings-helper/accessibility.c: Property push and trap
+              x errors.
     
     (Old svn revision: 27344)
 
@@ -17559,8 +19317,8 @@ commit 7bb5595bc6b91bc2dd6f3c65b05c77c85a3cf33c
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 16:44:24 2008 +0000
 
-    	* xfce4-settings-helper/main.c, configure.ac.in: Properly quit
-    	  the main loop when a signal is received.
+            * xfce4-settings-helper/main.c, configure.ac.in: Properly quit
+              the main loop when a signal is received.
     
     (Old svn revision: 27341)
 
@@ -17568,9 +19326,9 @@ commit 76e81e807ba155a39bf250241906a15437d6c4c8
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 14:48:17 2008 +0000
 
-    	* dialogs/mouse-settings/main.c: Allow editing the display name
-    	  of the device in the dialog. This way users can set usable names
-    	  for devices that are plugged.
+            * dialogs/mouse-settings/main.c: Allow editing the display name
+              of the device in the dialog. This way users can set usable names
+              for devices that are plugged.
     
     (Old svn revision: 27340)
 
@@ -17578,8 +19336,8 @@ commit 487a1ed2ee9e57abbb61672e0f8d8b5f61a9d213
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 13:53:06 2008 +0000
 
-    	* dialogs/mouse-settings/main.c: Change option values string.
-    	  mouse device is added. Notification has a button to open
+            * dialogs/mouse-settings/main.c: Change option values string.
+              mouse device is added. Notification has a button to open
     
     (Old svn revision: 27339)
 
@@ -17587,10 +19345,10 @@ commit 54a21fcccebb90f7ff5c22e5ddd0b7e493c1cab7
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 13:50:35 2008 +0000
 
-    	* dialogs/mouse-settings/main.c, xfce4-settings-helper/pointers.c,
-    	  xfce4-settings-helper/Makefile.am: Show a notification when a
-    	  mouse device is added. Notifications has a button to open
-    	  the settings dialog, which will select the new device (if possible).
+            * dialogs/mouse-settings/main.c, xfce4-settings-helper/pointers.c,
+              xfce4-settings-helper/Makefile.am: Show a notification when a
+              mouse device is added. Notifications has a button to open
+              the settings dialog, which will select the new device (if possible).
     
     (Old svn revision: 27338)
 
@@ -17598,8 +19356,8 @@ commit 3626e892afaa1a04b8882f34f4747bde3de14638
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 11:34:38 2008 +0000
 
-    	* dialogs/mouse-settings/main.c: Properly fix previous commit. Also
-    	  make the code more readable.
+            * dialogs/mouse-settings/main.c: Properly fix previous commit. Also
+              make the code more readable.
     
     (Old svn revision: 27337)
 
@@ -17607,10 +19365,10 @@ commit 818903bb70f21915fd4c3681c03e9d1acc66f15f
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 11:23:58 2008 +0000
 
-    	* dialogs/mouse-settings/main.c, dialogs/appearance-settings/main.c:
-    	  Escape the tooltip string, since Gtk+ 2.12 tree tooltips support
-    	  markup which results in errors with tips like <default pointer>.
-    	* dialogs/keyboard-settings/main.c: Drop unused variables.
+            * dialogs/mouse-settings/main.c, dialogs/appearance-settings/main.c:
+              Escape the tooltip string, since Gtk+ 2.12 tree tooltips support
+              markup which results in errors with tips like <default pointer>.
+            * dialogs/keyboard-settings/main.c: Drop unused variables.
     
     (Old svn revision: 27336)
 
@@ -17618,23 +19376,23 @@ commit ba24daa83283fbe141d0785364d82e1721ec9868
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 18 10:30:44 2008 +0000
 
-    	* xfce4-settings-helper/accessibility.c: Improve the code a bit
-    	  and calculate the max_speed and time_to_max using the interval,
-    	  so the user can set a speed in pixels/sec and time in msec.
-    	* dialogs/accessibility-settings/accessibility-dialog.glade: Redesign
-    	  the dialog so you can see the values.
-    	* dialogs/display-settings/xfce4-display-settings.desktop.in,
-    	  dialogs/display-settings/display-dialog.glade,
-    	  dialogs/accessibility-settings/accessibility-dialog.glade,
-    	  dialogs/accessibility-settings/xfce4-accessibility-settings.desktop.in,
-    	  dialogs/mouse-settings/mouse-dialog.glade,
-    	  dialogs/mouse-settings/xfce4-mouse-settings.desktop.in,
-    	  dialogs/appearance-settings/xfce4-appearance-settings.desktop.in,
-    	  dialogs/appearance-settings/appearance-dialog.glade,
-    	  dialogs/keyboard-settings/xfce4-keyboard-settings.desktop.in,
-    	  dialogs/keyboard-settings/keyboard-dialog.glade: Synchronize the
-    	  dialog's sub title and .desktop comment, same for the generic name
-    	  and window title.
+            * xfce4-settings-helper/accessibility.c: Improve the code a bit
+              and calculate the max_speed and time_to_max using the interval,
+              so the user can set a speed in pixels/sec and time in msec.
+            * dialogs/accessibility-settings/accessibility-dialog.glade: Redesign
+              the dialog so you can see the values.
+            * dialogs/display-settings/xfce4-display-settings.desktop.in,
+              dialogs/display-settings/display-dialog.glade,
+              dialogs/accessibility-settings/accessibility-dialog.glade,
+              dialogs/accessibility-settings/xfce4-accessibility-settings.desktop.in,
+              dialogs/mouse-settings/mouse-dialog.glade,
+              dialogs/mouse-settings/xfce4-mouse-settings.desktop.in,
+              dialogs/appearance-settings/xfce4-appearance-settings.desktop.in,
+              dialogs/appearance-settings/appearance-dialog.glade,
+              dialogs/keyboard-settings/xfce4-keyboard-settings.desktop.in,
+              dialogs/keyboard-settings/keyboard-dialog.glade: Synchronize the
+              dialog's sub title and .desktop comment, same for the generic name
+              and window title.
     
     (Old svn revision: 27335)
 
@@ -17642,13 +19400,13 @@ commit 43f35114a104f8d34909f934dcb12a6f94ed2100
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Fri Jul 18 00:28:43 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c: Fix some issues with multiple row
-    	  selection in the shortcuts tree view. Properly destroy the command
-    	  dialog when adding a new command but pressing the cancel button in
-    	  the command dialog.
-    	* dialogs/keyboard-settings/shortcut-dialog.c: Remove the "No
-    	  shortcut" button as we don't support empty shortcut properties
-    	  anyway.
+            * dialogs/keyboard-settings/main.c: Fix some issues with multiple row
+              selection in the shortcuts tree view. Properly destroy the command
+              dialog when adding a new command but pressing the cancel button in
+              the command dialog.
+            * dialogs/keyboard-settings/shortcut-dialog.c: Remove the "No
+              shortcut" button as we don't support empty shortcut properties
+              anyway.
     
     (Old svn revision: 27334)
 
@@ -17656,14 +19414,14 @@ commit 91ea69517b74386aad1007445ed49989d30bcf44
 Author: Nick Schermer <nick@xfce.org>
 Date:   Thu Jul 17 18:19:09 2008 +0000
 
-    	* dialogs/display-settings/Makefile.am,
-    	  dialogs/accessibility-settings/Makefile.am,
-    	  dialogs/mouse-settings/Makefile.am,
-    	  dialogs/appearance-settings/Makefile.am,
-    	  dialogs/keyboard-settings/Makefile.am: Add --strip-comments
-    	  --strip-content to exo-csource for generating glade headers.
-    	* configure.ac.in: Bump exo version to 0.3.7.1 since stripping
-    	  glade files on older versions is broken.
+            * dialogs/display-settings/Makefile.am,
+              dialogs/accessibility-settings/Makefile.am,
+              dialogs/mouse-settings/Makefile.am,
+              dialogs/appearance-settings/Makefile.am,
+              dialogs/keyboard-settings/Makefile.am: Add --strip-comments
+              --strip-content to exo-csource for generating glade headers.
+            * configure.ac.in: Bump exo version to 0.3.7.1 since stripping
+              glade files on older versions is broken.
     
     (Old svn revision: 27331)
 
@@ -17671,9 +19429,9 @@ commit 4e6d9a8e5e1546bd5b04ebef1254a5efaddbb0c0
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Thu Jul 17 15:25:43 2008 +0000
 
-    	* dialogs/keyboard-settings/command-dialog.c: Make entry activate the
-    	  default widget of the dialog. Make GTK_RESPONSE_OK the default
-    	  dialog response.
+            * dialogs/keyboard-settings/command-dialog.c: Make entry activate the
+              default widget of the dialog. Make GTK_RESPONSE_OK the default
+              dialog response.
     
     (Old svn revision: 27329)
 
@@ -17681,16 +19439,16 @@ commit 601e4f9d0d9f12017d3dcf4ee40cbf06e027437f
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Wed Jul 16 23:14:49 2008 +0000
 
-    	* dialogs/accessibility-settings/accessibility-dialog.glade,
-    	  dialogs/appearance-settings/appearance-dialog.glade,
-    	  dialogs/display-settings/display-dialog.glade,
-    	  dialogs/keyboard-settings/keyboard-dialog.glade,
-    	  dialogs/mouse-settings/mouse-dialog.glade: Make all dialogs use
-    	  consistent borders/paddings/distances etc. again. Please keep it
-    	  this way when adding new dialogs/widgets.
-    	* dialogs/accesibility-settings/main.c,
-    	  dialogs/keyboard-settings/main.c: Destroy GladeXML after the dialog
-    	  is destroyed.
+            * dialogs/accessibility-settings/accessibility-dialog.glade,
+              dialogs/appearance-settings/appearance-dialog.glade,
+              dialogs/display-settings/display-dialog.glade,
+              dialogs/keyboard-settings/keyboard-dialog.glade,
+              dialogs/mouse-settings/mouse-dialog.glade: Make all dialogs use
+              consistent borders/paddings/distances etc. again. Please keep it
+              this way when adding new dialogs/widgets.
+            * dialogs/accesibility-settings/main.c,
+              dialogs/keyboard-settings/main.c: Destroy GladeXML after the dialog
+              is destroyed.
     
     (Old svn revision: 27322)
 
@@ -17698,20 +19456,20 @@ commit 84354dea5e32343e979a3fb5ec14d9ba07ab75dd
 Author: Nick Schermer <nick@xfce.org>
 Date:   Wed Jul 16 20:33:32 2008 +0000
 
-    	* Mv xfce4-settings-helper/xkb.* xfce4-settings-helper/keyboards.*:
-    	  Rename the files and change the internal names too. Settings
-    	  channel name renamed from 'xkb' to 'keyboards'.
-    	* Mv xfce4-settings-helper/accessx.* xfce4-settings-helper/accessibility.*:
-    	  Rename the files and change the internal names too. Settings
-    	  channel name renamed from 'accessx' to 'accessibility'.
-    	* xfce4-settings-helper/pointers.c: Rename the channel name from
-    	  'devices' to 'pointers'.
-    	* dialogs/keyboard-settings/main.c: Cleanup code.
-    	* dialogs/accessibility-settings/main.c: Cleanup code.
-    	* TODO: Add some stuff we need to take a look at.
-    	* dialogs/display-settings/: Update glade file and add a bit more code.
-    	* *.c, *.h: Add svn:keywords Id on all the source files and add $Id$
-    	  where needed. Various other small changes to make to changes above work.
+            * Mv xfce4-settings-helper/xkb.* xfce4-settings-helper/keyboards.*:
+              Rename the files and change the internal names too. Settings
+              channel name renamed from 'xkb' to 'keyboards'.
+            * Mv xfce4-settings-helper/accessx.* xfce4-settings-helper/accessibility.*:
+              Rename the files and change the internal names too. Settings
+              channel name renamed from 'accessx' to 'accessibility'.
+            * xfce4-settings-helper/pointers.c: Rename the channel name from
+              'devices' to 'pointers'.
+            * dialogs/keyboard-settings/main.c: Cleanup code.
+            * dialogs/accessibility-settings/main.c: Cleanup code.
+            * TODO: Add some stuff we need to take a look at.
+            * dialogs/display-settings/: Update glade file and add a bit more code.
+            * *.c, *.h: Add svn:keywords Id on all the source files and add $Id$
+              where needed. Various other small changes to make to changes above work.
     
     (Old svn revision: 27319)
 
@@ -17719,9 +19477,9 @@ commit e4b7cca4ff0d1963d1a1ac10a165033592c985c5
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Wed Jul 16 19:59:26 2008 +0000
 
-    	* xfce4-settings-helper/accessx.c, xfce4-settings-helper/xkb.c: Call
-    	  XkbFreeControls prior to XkbFree. This should fix two memory leaks
-    	  and hopefully doesn't break anything.
+            * xfce4-settings-helper/accessx.c, xfce4-settings-helper/xkb.c: Call
+              XkbFreeControls prior to XkbFree. This should fix two memory leaks
+              and hopefully doesn't break anything.
     
     (Old svn revision: 27318)
 
@@ -17745,10 +19503,10 @@ commit e868ca04a257581099631ef122f409173eac89f5
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Wed Jul 16 19:44:27 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c: Save property when a new shortcut
-    	  is created.
-    	* dialogs/keyboard-settings/main.c,
-    	  dialogs/keyboard-settings/command-dialog.c: Fix compilation.
+            * dialogs/keyboard-settings/main.c: Save property when a new shortcut
+              is created.
+            * dialogs/keyboard-settings/main.c,
+              dialogs/keyboard-settings/command-dialog.c: Fix compilation.
     
     (Old svn revision: 27315)
 
@@ -17756,10 +19514,10 @@ commit 1e6276d905455c28364ef0f3e460719bf22e5e72
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Wed Jul 16 19:44:23 2008 +0000
 
-    	* xfce4-settings-helper/keyboard-shortcuts.c: Connect to the
-    	  "property-changed" signal of the XfconfChannel. Ungrab keys when a
-    	  property is removed and grab keys when a new property is added.
-    	  Update the shortcuts -> command hash table according to the changes.
+            * xfce4-settings-helper/keyboard-shortcuts.c: Connect to the
+              "property-changed" signal of the XfconfChannel. Ungrab keys when a
+              property is removed and grab keys when a new property is added.
+              Update the shortcuts -> command hash table according to the changes.
     
     (Old svn revision: 27314)
 
@@ -17767,8 +19525,8 @@ commit 5af1dcefeb9cfeacbe6ba52a6a91a25de5727bc1
 Author: Nick Schermer <nick@xfce.org>
 Date:   Wed Jul 16 17:45:40 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c,
-    	  dialogs/keyboard-settings/command-dialog.c: Fix compilation.
+            * dialogs/keyboard-settings/main.c,
+              dialogs/keyboard-settings/command-dialog.c: Fix compilation.
     
     (Old svn revision: 27313)
 
@@ -17784,10 +19542,10 @@ commit f746bbe78f96eff4a7f002628e3bc26f06f1b014
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Tue Jul 15 22:58:55 2008 +0000
 
-    	* dialogs/keyboard-settings/keyboard-dialog.glade: In the last commit
-    	  I forgot to mention that I've removed the keyboard theme stuff from
-    	  the dialog because this would be too complicated to implement before
-    	  the release.
+            * dialogs/keyboard-settings/keyboard-dialog.glade: In the last commit
+              I forgot to mention that I've removed the keyboard theme stuff from
+              the dialog because this would be too complicated to implement before
+              the release.
     
     (Old svn revision: 27305)
 
@@ -17795,17 +19553,17 @@ commit 50d8961068788829bef66449b047ae6dc5dc1205
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Tue Jul 15 22:57:11 2008 +0000
 
-    	* dialogs/keyboard-settings/Makefile.am,
-    	  dialogs/keyboard-settings/command-dialog{c,h},
-    	  dialogs/keyboard-settings/main.c,
-    	  dialogs/keyboard-settings/shortcut-dialog.{c,h}: Add command dialog
-    	  for entering/selecting a command for a shortcut. Finally implement
-    	  the button for adding a new shortcut. Editing both, shortcuts and
-    	  commands also works now. I might have to tweak the command dialog a
-    	  little so the file chooser behaves similar to the panel launcher
-    	  dialog. The last thing really missing now is that the
-    	  xfce4-settings-helper refreshes itself when a shortcut is
-    	  changed/removed/added.
+            * dialogs/keyboard-settings/Makefile.am,
+              dialogs/keyboard-settings/command-dialog{c,h},
+              dialogs/keyboard-settings/main.c,
+              dialogs/keyboard-settings/shortcut-dialog.{c,h}: Add command dialog
+              for entering/selecting a command for a shortcut. Finally implement
+              the button for adding a new shortcut. Editing both, shortcuts and
+              commands also works now. I might have to tweak the command dialog a
+              little so the file chooser behaves similar to the panel launcher
+              dialog. The last thing really missing now is that the
+              xfce4-settings-helper refreshes itself when a shortcut is
+              changed/removed/added.
     
     (Old svn revision: 27304)
 
@@ -17832,7 +19590,7 @@ commit b472f7fa0887fc97837da7c0ee806d38e5c3d9b8
 Author: Nick Schermer <nick@xfce.org>
 Date:   Tue Jul 15 19:48:02 2008 +0000
 
-    	* configure.ac.in: Show if Xf86misc was found.
+            * configure.ac.in: Show if Xf86misc was found.
     
     (Old svn revision: 27300)
 
@@ -17840,9 +19598,9 @@ commit 23a74f3664653f8f88ea1c4abc661d69efb3265e
 Author: Nick Schermer <nick@xfce.org>
 Date:   Tue Jul 15 19:39:00 2008 +0000
 
-    	* xfce4-settings-helper/keyboard-shortcuts.c: Make it compile
-    	  here.
-    	* xfce4-settings-helper/xkb.c: Avoid vision by zerro.
+            * xfce4-settings-helper/keyboard-shortcuts.c: Make it compile
+              here.
+            * xfce4-settings-helper/xkb.c: Avoid vision by zerro.
     
     (Old svn revision: 27298)
 
@@ -17850,23 +19608,23 @@ commit 75aa0461cda0c7fefe96f7b866c4bccdd09fd0f5
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Tue Jul 15 10:25:25 2008 +0000
 
-    	* xfce4-settings-helper/keyboard-shortcuts{c,h},
-    	  xfce4-settings-helper/Makefile.am,
-    	  xfce4-settings-helper/main.c: Add support for keyboard shortcuts.
-    	  Shortcuts are loaded, passive keyboard grabs are performed and
-    	  events with different modifier combinations are handled. The code
-    	  related to modifiers might not be sane, but it works quite well
-    	  here, even with changes made in .Xmodmap. I'd be curious to know
-    	  what happens if you change the keymap at runtime though.
-    	  xfce4-settings-helper/main.c: Add same and improved error
-    	* xfce4-settings-helper/accessx.c,
-    	* dialogs/keyboard-settings/main.c,
-    	  loading, saving, modifying and removing shortcuts. Not
-    	  supported yet: Adding new ones.
-    	* AUTHORS: I took the liberty to add my name here.
-    	* xfce4-settings-manager/xfce-settings-manager-dialog.c:
-    	  toplevel boxes inside notebooks to 12px for the sake of
-    	* dialogs/keyboard-settings/keyboard-dialog.glade: Same
+            * xfce4-settings-helper/keyboard-shortcuts{c,h},
+              xfce4-settings-helper/Makefile.am,
+              xfce4-settings-helper/main.c: Add support for keyboard shortcuts.
+              Shortcuts are loaded, passive keyboard grabs are performed and
+              events with different modifier combinations are handled. The code
+              related to modifiers might not be sane, but it works quite well
+              here, even with changes made in .Xmodmap. I'd be curious to know
+              what happens if you change the keymap at runtime though.
+              xfce4-settings-helper/main.c: Add same and improved error
+            * xfce4-settings-helper/accessx.c,
+            * dialogs/keyboard-settings/main.c,
+              loading, saving, modifying and removing shortcuts. Not
+              supported yet: Adding new ones.
+            * AUTHORS: I took the liberty to add my name here.
+            * xfce4-settings-manager/xfce-settings-manager-dialog.c:
+              toplevel boxes inside notebooks to 12px for the sake of
+            * dialogs/keyboard-settings/keyboard-dialog.glade: Same
     
     (Old svn revision: 27292)
 
@@ -17874,14 +19632,14 @@ commit e5d62254847daf92bc15a431c2b5067151cf987b
 Author: Nick Schermer <nick@xfce.org>
 Date:   Mon Jul 14 19:35:00 2008 +0000
 
-    	* dialogs/display-settings/, dialogs/Makefile.am,
-    	  configure.ac.in: Initial import of the display
-    	  dialog code. Some basic stuff is working, but
-    	  not finished yet.
-    	* dialogs/mouse-settings/main.c: Set display name
-    	  as tooltip to make ellipsized string readable
-    	  with resizing the dialog.
-    	* TODO: Update.
+            * dialogs/display-settings/, dialogs/Makefile.am,
+              configure.ac.in: Initial import of the display
+              dialog code. Some basic stuff is working, but
+              not finished yet.
+            * dialogs/mouse-settings/main.c: Set display name
+              as tooltip to make ellipsized string readable
+              with resizing the dialog.
+            * TODO: Update.
     
     (Old svn revision: 27286)
 
@@ -17898,20 +19656,20 @@ commit 7f2c8f9efb13a5fae12c66cdcd8c603e645b2cce
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 13 19:24:20 2008 +0000
 
-    	* xfce4-settings-manager/Makefile.am,
-    	  dialogs/accessibility-settings/Makefile.am,
-    	  dialogs/mouse-settings/Makefile.am, dialogs/Makefile.am,
-    	  dialogs/appearance-settings/Makefile.am,
-    	  dialogs/keyboard-settings/Makefile.am,
-    	  xfce4-settings-helper/Makefile.am: Make all the make files look
-    	  the same. Add LDFLAGS and G_LOG_DOMAIN. Add PLATFORM_CPPFLAGS
-    	  for the CFLAGS used for debugging.
-    	* xfce4-settings-manager/main.c, dialogs/accessibility-settings/main.c,
-    	  dialogs/mouse-settings/main.c, dialogs/appearance-settings/main.c,
-    	  dialogs/keyboard-settings/main.c, xfce4-settings-helper/main.c:
-    	  Use the G_LOG_DOMAIN for the version info and init error.
-    	  Add the Xfce version to the version information.
-    	* Set svn:keywords Id on all the make files and configure.ac.in.
+            * xfce4-settings-manager/Makefile.am,
+              dialogs/accessibility-settings/Makefile.am,
+              dialogs/mouse-settings/Makefile.am, dialogs/Makefile.am,
+              dialogs/appearance-settings/Makefile.am,
+              dialogs/keyboard-settings/Makefile.am,
+              xfce4-settings-helper/Makefile.am: Make all the make files look
+              the same. Add LDFLAGS and G_LOG_DOMAIN. Add PLATFORM_CPPFLAGS
+              for the CFLAGS used for debugging.
+            * xfce4-settings-manager/main.c, dialogs/accessibility-settings/main.c,
+              dialogs/mouse-settings/main.c, dialogs/appearance-settings/main.c,
+              dialogs/keyboard-settings/main.c, xfce4-settings-helper/main.c:
+              Use the G_LOG_DOMAIN for the version info and init error.
+              Add the Xfce version to the version information.
+            * Set svn:keywords Id on all the make files and configure.ac.in.
     
     (Old svn revision: 27279)
 
@@ -17935,12 +19693,12 @@ commit 5eb10ca836c34b73f14eeeca01d78c61462234f7
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 13 17:49:44 2008 +0000
 
-    	* dialogs/accessibility-settings/main.c,
-    	  dialogs/mouse-settings/main.c,
-    	  dialogs/appearance-settings/main.c,
-    	  dialogs/keyboard-settings/main.c,
-    	  xfce4-settings-helper/main.c: Add same ad improved error
-    	  messages and version information.
+            * dialogs/accessibility-settings/main.c,
+              dialogs/mouse-settings/main.c,
+              dialogs/appearance-settings/main.c,
+              dialogs/keyboard-settings/main.c,
+              xfce4-settings-helper/main.c: Add same ad improved error
+              messages and version information.
     
     (Old svn revision: 27277)
 
@@ -17948,8 +19706,8 @@ commit 7aa565fed7b2de9ea5c2b047a239436196cd2f99
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 13 15:24:38 2008 +0000
 
-    	* dialogs/keyboard-settings/main.c: Fix code. Thought I saved it,
-    	  but I didn't...
+            * dialogs/keyboard-settings/main.c: Fix code. Thought I saved it,
+              but I didn't...
     
     (Old svn revision: 27276)
 
@@ -17967,26 +19725,26 @@ commit 1d1b1b00edc6f8ae723b4e536db20fe1db5752fd
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 13 15:14:04 2008 +0000
 
-    	* dialogs/mouse-settings/mouse-dialog.glade,
-    	  dialogs/mouse-settings/main.c,
-    	  dialogs/mouse-settings/Makefile.am,
-    	  xfce4-settings-helper/pointers.h,
-    	  xfce4-settings-helper/pointers.c: Merge multi pointer
-    	  branch code.
-    	* dialogs/keyboard-settings/main.c: Release the channels
-    	  after running the dialog.
-    	* xfce4-settings-helper/accessx.c,
-    	  xfce4-settings-helper/accessx.h,
-    	  xfce4-settings-helper/xkb.c,
-    	  xfce4-settings-helper/xkb.h: Move code into objects. Will
-    	  make things look nice and allows the code to cleanup when
-    	  the objects are released in main.c.
-    	* xfce4-settings-helper/main.c: Use the objects and do some
-    	  more checking before running the dialog.
-    	* xfce4-settings-helper/accessx.c: Make disabling the mouse
-    	  keys work; don't call channel_get functions when not needed.
-    	* dialogs/keyboard-settings/main.c: Release the channels after
-    	  running the dialog, also destroy the dialog after using it.
+            * dialogs/mouse-settings/mouse-dialog.glade,
+              dialogs/mouse-settings/main.c,
+              dialogs/mouse-settings/Makefile.am,
+              xfce4-settings-helper/pointers.h,
+              xfce4-settings-helper/pointers.c: Merge multi pointer
+              branch code.
+            * dialogs/keyboard-settings/main.c: Release the channels
+              after running the dialog.
+            * xfce4-settings-helper/accessx.c,
+              xfce4-settings-helper/accessx.h,
+              xfce4-settings-helper/xkb.c,
+              xfce4-settings-helper/xkb.h: Move code into objects. Will
+              make things look nice and allows the code to cleanup when
+              the objects are released in main.c.
+            * xfce4-settings-helper/main.c: Use the objects and do some
+              more checking before running the dialog.
+            * xfce4-settings-helper/accessx.c: Make disabling the mouse
+              keys work; don't call channel_get functions when not needed.
+            * dialogs/keyboard-settings/main.c: Release the channels after
+              running the dialog, also destroy the dialog after using it.
     
     (Old svn revision: 27274)
 
@@ -18003,8 +19761,8 @@ commit 5e595c913ff8de69d429dd8181cbb774d59c4f98
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 11 19:12:26 2008 +0000
 
-    	* dialogs/mouse-settings/mouse-dialog.glade: Add some tooltips
-    	  so people have a clue what the sliders actually do.
+            * dialogs/mouse-settings/mouse-dialog.glade: Add some tooltips
+              so people have a clue what the sliders actually do.
     
     (Old svn revision: 27257)
 
@@ -18012,13 +19770,13 @@ commit be91c8d6455929c93bc668b5676d5b3c34035651
 Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 11 19:05:55 2008 +0000
 
-    	* dialogs/appearance-settings/main.c: Some code cleanups and
-    	  plug a stupid leak.
-    	* dialogs/appearance-settings/appearance-dialog.glade: Redesign
-    	  the dialog a bit, a notebook inside a notebook is not practical.
-    	* dialogs/keyboard-settings/main.c,
-    	  dialogs/keyboard-settings/shortcut-dialog.c: Fix includes to make
-    	  it compile.
+            * dialogs/appearance-settings/main.c: Some code cleanups and
+              plug a stupid leak.
+            * dialogs/appearance-settings/appearance-dialog.glade: Redesign
+              the dialog a bit, a notebook inside a notebook is not practical.
+            * dialogs/keyboard-settings/main.c,
+              dialogs/keyboard-settings/shortcut-dialog.c: Fix includes to make
+              it compile.
     
     (Old svn revision: 27256)
 
@@ -18026,8 +19784,8 @@ commit 93dd13542b6dbed42db43f33f0b01d1275d95839
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Fri Jul 11 10:07:13 2008 +0000
 
-    	* TODO: Add TODO file and fill it with the stuff that's still
-    	  missing in the keyboard settings.
+            * TODO: Add TODO file and fill it with the stuff that's still
+              missing in the keyboard settings.
     
     (Old svn revision: 27254)
 
@@ -18035,10 +19793,10 @@ commit 2402aa5edd9c53521f32c0f10f25e3a7de5f0283
 Author: Nick Schermer <nick@xfce.org>
 Date:   Thu Jul 10 15:55:22 2008 +0000
 
-    	* dialogs/appearance-settings/images.h,
-    	  dialogs/appearance-settings/main.c,
-    	  dialogs/appearance-settings/Makefile.am: Add rgba images
-    	  to the combobox, like in 4.4.
+            * dialogs/appearance-settings/images.h,
+              dialogs/appearance-settings/main.c,
+              dialogs/appearance-settings/Makefile.am: Add rgba images
+              to the combobox, like in 4.4.
     
     (Old svn revision: 27252)
 
@@ -18046,15 +19804,15 @@ commit e5c26a2c5e8574e79a12c3a8c5beabe052675ed7
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Thu Jul 10 10:14:50 2008 +0000
 
-    	* dialogs/keyboard-settings/keyboard-dialog.glade,
-    	  dialogs/keyboard-settings/Makefile.am,
-    	  dialogs/keyboard-settings/main.c,
-    	  dialogs/keyboard-settings/shortcut-dialog.{c,h}:
-    	  Revamped the dialog a bit. Add dialog widget for entering
-    	  shortcuts. Rewrite the settings dialog and add support for
-    	  loading, saving, modifying and removing shortcuts. Not
-    	  supported yet: Adding new ones.
-    	* dialogs/appearance-settings/main.c: Load icon themes properly.
+            * dialogs/keyboard-settings/keyboard-dialog.glade,
+              dialogs/keyboard-settings/Makefile.am,
+              dialogs/keyboard-settings/main.c,
+              dialogs/keyboard-settings/shortcut-dialog.{c,h}:
+              Revamped the dialog a bit. Add dialog widget for entering
+              shortcuts. Rewrite the settings dialog and add support for
+              loading, saving, modifying and removing shortcuts. Not
+              supported yet: Adding new ones.
+            * dialogs/appearance-settings/main.c: Load icon themes properly.
     
     (Old svn revision: 27251)
 
@@ -18070,8 +19828,8 @@ commit 90ababfa72b5444fdeb8b2cccbf59d94d7a18629
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 6 20:56:55 2008 +0000
 
-    	* dialogs/mouse-settings/main.c: Bring support for the
-    	  default icon theme back.
+            * dialogs/mouse-settings/main.c: Bring support for the
+              default icon theme back.
     
     (Old svn revision: 27219)
 
@@ -18079,11 +19837,11 @@ commit 05dc9856bac2657909e5b52384a84e9a7b90faab
 Author: Nick Schermer <nick@xfce.org>
 Date:   Thu Jul 3 19:04:25 2008 +0000
 
-    	* dialogs/appearance-dialog/main.c: Only add the icon theme
-    	  to the check list when it's actually added to the store.
-    	  Revert strcmp to g_utf8_collate. Strip trailing spaces.
+            * dialogs/appearance-dialog/main.c: Only add the icon theme
+              to the check list when it's actually added to the store.
+              Revert strcmp to g_utf8_collate. Strip trailing spaces.
     
-    	  Both fixes where mentioned by Jannis, thanks for that.
+              Both fixes where mentioned by Jannis, thanks for that.
     
     (Old svn revision: 27207)
 
@@ -18100,16 +19858,16 @@ commit ab00590a4135969b2fec87f795cc22475bb5569d
 Author: Nick Schermer <nick@xfce.org>
 Date:   Thu Jul 3 18:35:03 2008 +0000
 
-    	* dialogs/appearance-dialog/main.c: Use a similar function
-    	  for loading ui themes as icon themes. Add a list in both
-    	  theme load functions to avoid dupplicates. Read extra ui
-    	  theme information from the index.theme file if available.
-    	  Store the theme name (folder name) and display name separatly
-    	  in the store, authors can define another theme name in the
-    	  index.theme file which will result in settings a theme
-    	  that is not recognized by Gtk. Use hicolor as default icon
-    	  theme name. Fix the icon theme directory that was pushed
-    	  (its $datadir/icons, not $datadir/xfce4/icons).
+            * dialogs/appearance-dialog/main.c: Use a similar function
+              for loading ui themes as icon themes. Add a list in both
+              theme load functions to avoid dupplicates. Read extra ui
+              theme information from the index.theme file if available.
+              Store the theme name (folder name) and display name separatly
+              in the store, authors can define another theme name in the
+              index.theme file which will result in settings a theme
+              that is not recognized by Gtk. Use hicolor as default icon
+              theme name. Fix the icon theme directory that was pushed
+              (its $datadir/icons, not $datadir/xfce4/icons).
     
     (Old svn revision: 27205)
 
@@ -18117,10 +19875,10 @@ commit c4bc578da1d5028b19596d7eb70570590f1f2587
 Author: Nick Schermer <nick@xfce.org>
 Date:   Thu Jul 3 17:46:41 2008 +0000
 
-    	* dialogs/appearance-dialog/main.c: Fix indentation of Jannis'
-    	  code to match the rest. Add Icon theme comments in the list
-    	  for Gtk 2.12. Make some strings static and merge the
-    	  selection_changed functions into one. Plug some leaks.
+            * dialogs/appearance-dialog/main.c: Fix indentation of Jannis'
+              code to match the rest. Add Icon theme comments in the list
+              for Gtk 2.12. Make some strings static and merge the
+              selection_changed functions into one. Plug some leaks.
     
     (Old svn revision: 27203)
 
@@ -18128,8 +19886,8 @@ commit d183b53e75e1d45e3776a9b3105c9104a809b542
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Wed Jul 2 22:45:02 2008 +0000
 
-    	* dialogs/appearance-dialog/main.c: Sort user interface and
-    	  icon themes. Use the only column (0) for searching.
+            * dialogs/appearance-dialog/main.c: Sort user interface and
+              icon themes. Use the only column (0) for searching.
     
     (Old svn revision: 27197)
 
@@ -18137,9 +19895,9 @@ commit 5061984ed5d20306196e604fa8d64698b59a2976
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Wed Jul 2 22:35:29 2008 +0000
 
-    	* dialogs/appearance-dialog/main.c: Load icon themes properly.
-    	  I used some of the code from the old mcs ui plugin.
-    	* AUTHORS: I took the liberty to add my name here.
+            * dialogs/appearance-dialog/main.c: Load icon themes properly.
+              I used some of the code from the old mcs ui plugin.
+            * AUTHORS: I took the liberty to add my name here.
     
     (Old svn revision: 27196)
 
@@ -18168,13 +19926,13 @@ commit fc867241ef4531084ad4a70b71a897efc378c8ee
 Author: Nick Schermer <nick@xfce.org>
 Date:   Tue Jul 1 20:46:06 2008 +0000
 
-    	* dialogs/accessibility-settings/accessibility-dialog.glade,
-    	  dialogs/mouse-settings/mouse-dialog.glade,
-    	  dialogs/appearance-settings/appearance-dialog.glade,
-    	  dialogs/keyboard-settings/keyboard-dialog.glade: Make labels next
-    	  to the sliders small italic, like in Xfwm4; Make mnemonic widgets
-    	  work and some a buch of new ones where possible/suitable; Fix
-    	  case usage in labels.
+            * dialogs/accessibility-settings/accessibility-dialog.glade,
+              dialogs/mouse-settings/mouse-dialog.glade,
+              dialogs/appearance-settings/appearance-dialog.glade,
+              dialogs/keyboard-settings/keyboard-dialog.glade: Make labels next
+              to the sliders small italic, like in Xfwm4; Make mnemonic widgets
+              work and some a buch of new ones where possible/suitable; Fix
+              case usage in labels.
     
     (Old svn revision: 27190)
 
@@ -18182,10 +19940,10 @@ commit 3fe68d77f2f657b20a1879c8ba1ecd9b85468b05
 Author: Nick Schermer <nick@xfce.org>
 Date:   Tue Jul 1 19:46:42 2008 +0000
 
-    	* dialogs/mouse-settings/main.c: Destroy the dialog on exit
-    	  and Xfce4-mouse-settings in the version information.
-    	* dialogs/mouse-settings/Makefile.am: Add the G_LOG_DOMAIN
-    	  for glib warnings, errors and messages in the code.
+            * dialogs/mouse-settings/main.c: Destroy the dialog on exit
+              and Xfce4-mouse-settings in the version information.
+            * dialogs/mouse-settings/Makefile.am: Add the G_LOG_DOMAIN
+              for glib warnings, errors and messages in the code.
     
     (Old svn revision: 27189)
 
@@ -18213,10 +19971,10 @@ commit 39f3d6c7153d19926bea71d5dc23c5f5598c1f37
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Jun 29 12:31:40 2008 +0000
 
-    	* xfce4-settings-manager/xfce-settings-manager-dialog.c:
-    	  Add 6px border to the scrolled window in order to align it
-    	  with the dialog buttons.
-    	* xfce4-settings-manager/xfce-settings-manager-dialog.c: Dialog
+            * xfce4-settings-manager/xfce-settings-manager-dialog.c:
+              Add 6px border to the scrolled window in order to align it
+              with the dialog buttons.
+            * xfce4-settings-manager/xfce-settings-manager-dialog.c: Dialog
     
     (Old svn revision: 27181)
 
@@ -18224,13 +19982,13 @@ commit 0b7de439d46db57ee9003e32e3ad130f5725dddc
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sun Jun 29 12:31:36 2008 +0000
 
-    	* dialogs/accessibility-settings/accessibility-dialog.glade,
-    	  dialogs/appearance-settings/appearance-dialog.glade,
-    	  dialogs/keyboard-settings/keyboard-dialog.glade,
-    	  dialogs/mouse-settings/mouse-dialog.glade: Change border of
-    	  toplevel boxes inside notebooks to 12px for the sake of
-    	  consistency (thunar does the same). Add bottom padding of
-    	  alignments below section titles to 6px.
+            * dialogs/accessibility-settings/accessibility-dialog.glade,
+              dialogs/appearance-settings/appearance-dialog.glade,
+              dialogs/keyboard-settings/keyboard-dialog.glade,
+              dialogs/mouse-settings/mouse-dialog.glade: Change border of
+              toplevel boxes inside notebooks to 12px for the sake of
+              consistency (thunar does the same). Add bottom padding of
+              alignments below section titles to 6px.
     
     (Old svn revision: 27180)
 
@@ -18238,19 +19996,19 @@ commit d245739e95bde90db4f20ad3aa8799f77d11a619
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jun 29 12:11:52 2008 +0000
 
-    	* xfce4-settings-manager/xfce-settings-manager-dialog.c Dialog
-    	  default size is 600x400px; Changed window icon name to
-    	  preferences-desktop instead of xfce4-settings, since that's
-    	  the default icon name; Don't show the dialog separator.
-    	  Scrolled window shadow is GTK_SHADOW_IN.
-    	* xfce4-settings-manager/xfce-settings-manager.desktop.in: Changed
-    	  Exec to xfce4-settings-manager.
-    	* dialogs/appearance-settings/appearance-dialog.glade: Make window
-    	  resizable; Put hinting and rgb widgets in a table for proper
-    	  scaling.
-    	* dialogs/mouse-settings/mouse-dialog.glade: Expand the icon theme
-    	  list, not the size/preview widget.
-    	* dialogs/mouse-settings/main.c: Fix compiler warnings.
+            * xfce4-settings-manager/xfce-settings-manager-dialog.c Dialog
+              default size is 600x400px; Changed window icon name to
+              preferences-desktop instead of xfce4-settings, since that's
+              the default icon name; Don't show the dialog separator.
+              Scrolled window shadow is GTK_SHADOW_IN.
+            * xfce4-settings-manager/xfce-settings-manager.desktop.in: Changed
+              Exec to xfce4-settings-manager.
+            * dialogs/appearance-settings/appearance-dialog.glade: Make window
+              resizable; Put hinting and rgb widgets in a table for proper
+              scaling.
+            * dialogs/mouse-settings/mouse-dialog.glade: Expand the icon theme
+              list, not the size/preview widget.
+            * dialogs/mouse-settings/main.c: Fix compiler warnings.
     
     (Old svn revision: 27179)
 
@@ -18258,13 +20016,13 @@ commit 3d1955d62653928659000f805298713f25aabd84
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Jun 28 23:02:33 2008 +0000
 
-    	* dialogs/accessibility-settings/accessibility-dialog.glade,
-    	  dialogs/appearance-settings/appearance-dialog.glade,
-    	  dialogs/keyboard-settings/keyboard-dialog.glade,
-    	  dialogs/mouse-settings/mouse-dialog.glade: Change maximum
-    	  border width of all boxes to 6 in order to align the toplevel
-    	  boxes with the dialog buttons. Update the mouse dialog in
-    	  the same way as I did with the others before.
+            * dialogs/accessibility-settings/accessibility-dialog.glade,
+              dialogs/appearance-settings/appearance-dialog.glade,
+              dialogs/keyboard-settings/keyboard-dialog.glade,
+              dialogs/mouse-settings/mouse-dialog.glade: Change maximum
+              border width of all boxes to 6 in order to align the toplevel
+              boxes with the dialog buttons. Update the mouse dialog in
+              the same way as I did with the others before.
     
     (Old svn revision: 27178)
 
@@ -18272,8 +20030,8 @@ commit 1a07266215a02f7ea91ee9f5a84fc3287757ea57
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Jun 28 22:42:45 2008 +0000
 
-    	* dialogs/keyboard-settings/keyboard-dialog.glade: Same
-    	  procedure as before.
+            * dialogs/keyboard-settings/keyboard-dialog.glade: Same
+              procedure as before.
     
     (Old svn revision: 27177)
 
@@ -18281,9 +20039,9 @@ commit 10c13a9f3836ca602c2a7cd66ac9abaedbff1533
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Jun 28 22:28:58 2008 +0000
 
-    	* dialogs/accessibility-settings/accessibility-dialog.glade:
-    	  Same here. Maybe I should also mention that all these dialogs
-    	  now use XfceTitledDialog instead of GtkDialog and XfceHeading.
+            * dialogs/accessibility-settings/accessibility-dialog.glade:
+              Same here. Maybe I should also mention that all these dialogs
+              now use XfceTitledDialog instead of GtkDialog and XfceHeading.
     
     (Old svn revision: 27176)
 
@@ -18291,11 +20049,11 @@ commit 2cd8d590dddd2244af3930fbd7d4ab1a67a7f5ab
 Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Jun 28 22:18:26 2008 +0000
 
-    	* dialogs/appearance-settings/appearance-dialog.glade: Improve
-    	  the dialog layout. I've chosen 12px for horizontal distance
-    	  and 6px for horizontal distance between neighboured widgets.
-    	  All boxes now have a border of 10px expect for those inside
-    	  notebooks+alignments: they now have a border of 6px.
+            * dialogs/appearance-settings/appearance-dialog.glade: Improve
+              the dialog layout. I've chosen 12px for horizontal distance
+              and 6px for horizontal distance between neighboured widgets.
+              All boxes now have a border of 10px expect for those inside
+              notebooks+alignments: they now have a border of 6px.
     
     (Old svn revision: 27172)
 

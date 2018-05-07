@@ -1,3 +1,47 @@
+4.12.3
+======
+- Improvements for multimonitor support:
+  - Visualize all three display configuration states
+  - Visually note if two displays overlap (mirrored) but are not cloned
+  - Always draw active display last so it's on top
+  - Fix: Correctly position monitors in extended mode
+  - Fix: Race condition with monitor connect and disconnect
+  - Fix: Segfault on monitor reconnect
+- Translation updates: Belarusian, Danish, Greek, Italian, Malay,
+  Norwegian Bokmål, Polish, Portuguese (Brazil), Serbian, Swedish, Turkish
+
+4.12.2
+======
+- Fix: Leave monitors where they were if possible (Xfce #14096)
+- Fix: syncdaemon not starting with certain locales
+- Fix: division by 0 crash from gdk_screen_height_mm()
+- New: Default monospace font option in the Appearance dialog
+- New: Improved support for embedded DisplayPort connectors
+- New: Show location of the mouse pointer on keypress
+- Translation updates: Arabic, Asturian, Basque, Bengali, Bulgarian,
+  Catalan, Chinese (China), Chinese (Hong Kong), Chinese (Taiwan), Croatian,
+  Czech, Danish, Dutch, English (Australia), English (United Kingdom),
+  Finnish, French, Galician, German, Greek, Hebrew, Hungarian, Icelandic,
+  Indonesian, Italian, Japanese, Kazakh, Korean, Lithuanian, Malay,
+  Norwegian Bokmål, Norwegian Nynorsk, Occitan (post 1500), Polish,
+  Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak,
+  Slovenian, Spanish, Swedish, Thai, Turkish, Uighur, Ukrainian
+
+4.12.1
+======
+- Fix: Color scheme preview on low bit depth displays (Xfce #12223)
+- Fix: Memory leak in xfce4-appearance-settings (Xfce #11746)
+- Fix: /Xft/Hinting is never set (Xfce #12086)
+- Fix: Segfault in convert_xfce_output_info when plugging in
+  an external model, fallback on 640x480 (Xfce #12580, RH #1317382)
+- Fix: xfsettingsd resets TV mode to NULL on power cycle (Xfce #11107)
+- Make sure icon == NULL if no icon is found
+- Make the 'Settings Editor Dialog' pluggable.
+- Translation updates: Arabic, Asturian, Bulgarian, Catalan,
+  Croatian, English (Australia), Galician, German, Greek,
+  Hebrew, Hungarian, Icelandic, Indonesian, Lithuanian,
+  Occitan (post 1500), Polish, Russian, Slovak, Swedish
+
 4.12.0
 ======
 - Do not change properties on disabled libinput devices
@@ -5,8 +49,8 @@
 - Fix crashes for missing icons (bug #11568)
 - Fix warnings during configure
 - Fix primary checkbox expansion in the display settings
-- Translation updates: Asturian, Bulgarian, Chinese (China), 
-  Czech, Finnish, French, Hebrew, German, Spanish, 
+- Translation updates: Asturian, Bulgarian, Chinese (China),
+  Czech, Finnish, French, Hebrew, German, Spanish,
   Norwegian Bokmål, Portuguese, Romanian, Slovak, Turkish
 
 4.11.4
