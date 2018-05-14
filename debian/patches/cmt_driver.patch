@@ -142,18 +142,18 @@
  CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CYGPATH_W = @CYGPATH_W@
---- a/dialogs/display-settings/main.c
-+++ b/dialogs/display-settings/main.c
-@@ -968,8 +968,7 @@
-         if (xfce_randr->mode[n] == None)
-             continue;
- 
--        cloned &= (xfce_randr->mode[n] == mode &&
--                   xfce_randr->mirrored[n]);
-+	cloned = xfce_randr->mirrored[n];
- 
-         if (!cloned)
-             break;
+#--- a/dialogs/display-settings/main.c
+#+++ b/dialogs/display-settings/main.c
+#@@ -968,8 +968,7 @@
+#         if (xfce_randr->mode[n] == None)
+#             continue;
+# 
+#-        cloned &= (xfce_randr->mode[n] == mode &&
+#-                   xfce_randr->mirrored[n]);
+#+	cloned = xfce_randr->mirrored[n];
+# 
+#         if (!cloned)
+#             break;
 --- a/dialogs/keyboard-settings/Makefile.in
 +++ b/dialogs/keyboard-settings/Makefile.in
 @@ -215,6 +215,10 @@
@@ -1609,7 +1609,7 @@
  
  .MAKE: install-am install-strip
  
-@@ -1103,18 +1076,18 @@
+@@ -1103,18 +1076,17 @@
  	clean-binPROGRAMS clean-generic clean-libtool cscopelist-am \
  	ctags ctags-am distclean distclean-compile distclean-generic \
  	distclean-libtool distclean-tags distdir dvi dvi-am html \
@@ -1634,10 +1634,9 @@
 +	pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am \
  	uninstall-binPROGRAMS uninstall-settingsDATA
  
-+
+ .PRECIOUS: Makefile
+
  @INTLTOOL_DESKTOP_RULE@
- 
- # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
 --- a/xfsettingsd/pointers.c
 +++ b/xfsettingsd/pointers.c
 @@ -203,7 +203,7 @@
@@ -1922,16 +1921,16 @@
      gdk_error_trap_push ();
  
      /* set the new resource manager string */
---- a/xfsettingsd/xsettings.xml
-+++ b/xfsettingsd/xsettings.xml
-@@ -6,8 +6,8 @@
- <?xml version="1.0" encoding="UTF-8"?>
- <channel name="xsettings" version="1.0">
-   <property name="Net" type="empty">
--    <property name="ThemeName" type="string" value="Greybird"/>
--    <property name="IconThemeName" type="string" value="elementary-xfce-dark"/>
-+    <property name="ThemeName" type="empty"/>
-+    <property name="IconThemeName" type="empty"/>
-     <property name="DoubleClickTime" type="int" value="400"/>
-     <property name="DoubleClickDistance" type="int" value="5"/>
-     <property name="DndDragThreshold" type="int" value="8"/>
+#--- a/xfsettingsd/xsettings.xml
+#+++ b/xfsettingsd/xsettings.xml
+#@@ -6,8 +6,8 @@
+# <?xml version="1.0" encoding="UTF-8"?>
+# <channel name="xsettings" version="1.0">
+#   <property name="Net" type="empty">
+#-    <property name="ThemeName" type="string" value="Greybird"/>
+#-    <property name="IconThemeName" type="string" value="elementary-xfce-dark"/>
+#+    <property name="ThemeName" type="empty"/>
+#+    <property name="IconThemeName" type="empty"/>
+#     <property name="DoubleClickTime" type="int" value="400"/>
+#     <property name="DoubleClickDistance" type="int" value="5"/>
+#     <property name="DndDragThreshold" type="int" value="8"/>
